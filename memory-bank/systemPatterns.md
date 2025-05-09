@@ -23,6 +23,7 @@ ClineAGI employs a two-tiered architecture:
 -   **Iterative Development:** The AGI will be built incrementally.
 -   **Role-Based Operations:** Project interactions and workflows will be governed by defined roles (e.g., `ClineAGI-ADMIN`).
 -   **Dynamic Prompting (`.clinerules`):** My behavior and context will be dynamically managed through a `.clinerules` system.
+-   **AGI Agent Prompting and Knowledge Organization:** Developing prompts and organizing research findings to enhance capabilities towards a self-programming AGI agent.
 
 ## 3. Version Control Workflow (Gitflow Adaptation)
 For the core `ClineAGI` repository, especially when operating under a role like `ClineAGI-ADMIN`:
@@ -49,7 +50,7 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 -   **Structure:** The active `.clinerules/` directory contains files organized by this naming convention within subdirectories corresponding to the `NNN` prefix (e.g., `000_core/`, `001_reference/`).
 -   **Content:** Contains specific instructions, prompt segments, meta-guidelines, and rules that Cline will load based on the active role or task. Cline will collaboratively build and refine these rules.
     -   `000_core/000-00_core-memory-bank-structure.md`: Defines the core Memory Bank structure and workflows.
-    -   `000_core/000-01_core-continuous-improvement-protocol.md`: Protocol for Cline's self-reflection and learning.
+    -   `000_core/000-01_core-continuous_improvement-protocol.md`: Protocol for Cline's self-reflection and learning.
     -   `000_core/000-02_core-intake-processing.md`: Workflow for processing intake files.
     -   `000_core/000-03_core-prometheus-0-prompting.md`: Core prompting styles for Prometheus-0.
     -   `000_core/000-04_core-ai-response-styles.md`: Defines different response styles.
@@ -75,7 +76,7 @@ For the core `ClineAGI` repository, especially when operating under a role like 
     -   `002_workflow/002-00_workflow-cline-for-research.md`: Guidelines for using Cline as a research assistant.
     -   `002_workflow/002-01_workflow-cline-for-slides.md`: Instructions for working with Slidev projects.
     -   `002_workflow/002-02_workflow-planning-mode.md`: Workflow and behavior for Plan Mode.
-    -   `002_workflow/002-03_workflow-todo-list.md`: Workflow for using a todo list file.
+    -   `002_workflow/02-03_workflow-todo-list.md`: Workflow for using a todo list file.
     -   `002_workflow/002-04_workflow-agility-story.md`: Guidelines for using the agility story pattern.
     -   `002_workflow/002-05_workflow-analyze-comments.md`: Guidelines for using the analyze comments pattern.
     -   `002_workflow/002-06_workflow-create-5-sentence-summary.md`: Guidelines for creating 5-sentence summaries.
@@ -122,4 +123,4 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 ## 10. Future Considerations
 -   **Inter-Project Communication:** How will different user projects (or the core AGI and a user project) communicate if needed? (e.g., APIs, shared data formats).
 -   **Dependency Management:** How will dependencies be managed for the core AGI versus individual projects?
--   **Standardization:** Will there be any enforced standards (e.g., for data formats, API contracts) for projects within the `projects/` directory to ensure interoperability with the core AGI, if desired?
+-   **Standardization:** Will there be any enforced standards (e.g., for data formats, API contracts) for projects within the `projects/` directory to ensure interoperability with the core AGI, if desired).

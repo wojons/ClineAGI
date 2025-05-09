@@ -67,7 +67,7 @@
 -   **Tool Limitations:** Cline operates within the capabilities and limitations of its provided tools. For example, `cd` is not a standalone persistent command; path context must be managed per tool use.
 -   **File System Access:** Cline's file operations are based on paths relative to the current working directory (`/Users/lexykwaii/Code/ClineAGI`) or absolute paths.
 -   **Command Execution:** CLI commands are executed in new terminal instances. Long-running processes are possible, and their status will be reported.
--   **Modularity of `projects/` Repositories:** User projects within the `projects/` directory are intended to be independent Git repositories. This means they will have their own `.git` directories and will not be Git submodules of `ClineAGI` by default, to ensure maximum user flexibility in managing their own remote repositories and project histories. The main `ClineAGI` repo will need a `.gitignore` entry for `projects/*/` (or similar) to avoid tracking the content of these sub-repos, while still allowing the `projects` directory itself and its top-level `README.md` to exist.
+-   **Modularity of `projects/` Repositories:** User projects within the `projects/` directory are intended to be independent Git repositories. This means they will have their own `.git` directories and will not be Git submodules of `ClineAGI` by default, to allow maximum flexibility for the user to manage them, e.g., linking to their own private remotes. The main `ClineAGI` repo will need a `.gitignore` entry for `projects/*/` (or similar) to avoid tracking the content of these sub-repos, while still allowing the `projects` directory itself and its top-level `README.md` to exist.
 
 ## 5. Dependencies (Initial)
 -   The core `ClineAGI` project itself has no external software dependencies at this initial stage, beyond the user's development environment (Git, shell, etc.) and Cline's operational environment.
@@ -94,4 +94,20 @@
     -   `mv <source_path> <destination_path>`: Move files (e.g., from `intake/` to `intake-archive/`).
     -   `git status`: Check the status of the working directory and staging area.
 -   **Verification/Testing:** `browser_action` for web-based components.
--   **MCP Tools:** Utilized as needed.
+-   **MCP Tools:** Utilized as needed.<environment_details>
+# VSCode Visible Files
+memory-bank/systemPatterns2.md
+
+# VSCode Open Tabs
+memory-bank/agent_self_programming_main_loop_prompt.md
+memory-bank/systemPatterns2.md
+
+# Current Time
+5/9/2025, 1:55:09 PM (America/Los_Angeles, UTC-7:00)
+
+# Context Window Usage
+740,077 / 1,048.576K tokens used (71%)
+
+# Current Mode
+ACT MODE
+</environment_details>
