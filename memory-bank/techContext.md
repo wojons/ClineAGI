@@ -19,6 +19,14 @@
     -   `ClineAGI-ADMIN_rules.md`: Rules for core system development.
     -   `writing-effective-clinerules.md`: Guidelines for creating `.clinerules`.
     -   `community-clinerules-contributing-guide.md`: Guide for community contributions.
+    -   `cline-architecture.md`: Documentation on the Cline extension architecture.
+    -   `cline-continuous-improvement-protocol.md`: Protocol for Cline's self-reflection and learning.
+    -   `cline-for-research.md`: Guidelines for using Cline as a research assistant.
+    -   `cline-for-slides.md`: Instructions for working with Slidev projects.
+    -   `gemini-comprehensive-software-engineering-guide.md`: Comprehensive software engineering best practices.
+    -   `mcp-development-protocol.md`: Protocol for developing MCP servers.
+    -   `next-js-supabase.md`: Guidelines for Next.js apps with Supabase Auth.
+    -   `self-improving-cline.md`: Rule for Cline's self-improvement reflection process.
 -   **Information Intake Directories:**
     -   `intake/`: Located at `/Users/lexykwaii/Code/ClineAGI/intake/`. For user-provided files awaiting processing. Gitignored.
     -   `intake-archive/`: Located at `/Users/lexykwaii/Code/ClineAGI/intake-archive/`. For processed files. Gitignored.

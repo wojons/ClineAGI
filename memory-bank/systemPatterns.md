@@ -43,9 +43,17 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 -   **Location:** A project-specific `.clinerules` directory at `/Users/lexykwaii/Code/ClineAGI/.clinerules` stores these configurations. This directory IS version-controlled with the main ClineAGI repo.
 -   **Structure:** The directory is organized by role or topic (e.g., `.clinerules/ClineAGI-ADMIN_rules.md`, `.clinerules/writing-effective-clinerules.md`).
 -   **Content:** Contains specific instructions, prompt segments, meta-guidelines for writing rules, and rules that Cline will load based on the active role or task. Cline will collaboratively build and refine these rules.
-    -   `ClineAGI-ADMIN_rules.md`: Contains rules specific to core ClineAGI development. (Created)
+    -   `ClineAGI-ADMIN_rules.md`: Rules specific to core ClineAGI development. (Created)
     -   `writing-effective-clinerules.md`: Meta-guidelines for creating effective `.clinerules`. (Added from intake)
     -   `community-clinerules-contributing-guide.md`: Guide for community contributions to a broader ruleset. (Added from intake)
+    -   `cline-architecture.md`: Documentation on the Cline extension architecture. (Added from intake)
+    -   `cline-continuous-improvement-protocol.md`: Protocol for Cline's self-reflection and learning. (Added from intake)
+    -   `cline-for-research.md`: Guidelines for using Cline as a research assistant. (Added from intake)
+    -   `cline-for-slides.md`: Instructions for working with Slidev projects. (Added from intake)
+    -   `gemini-comprehensive-software-engineering-guide.md`: Comprehensive software engineering best practices. (Added from intake)
+    -   `mcp-development-protocol.md`: Protocol for developing MCP servers. (Added from intake)
+    -   `next-js-supabase.md`: Guidelines for Next.js apps with Supabase Auth. (Added from intake)
+    -   `self-improving-cline.md`: Rule for Cline's self-improvement reflection process. (Added from intake)
 
 ## 6. Information Intake System
 -   **Purpose:** To provide a structured way for the user to pass information, articles, or prompts to Cline for processing.

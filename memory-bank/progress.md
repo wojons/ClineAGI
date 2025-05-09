@@ -7,16 +7,24 @@
 ## 2. What Works / What Is Built
 -   Core Memory Bank, project structure, Git repository, operational framework documentation, project templating system setup. (Completed & Pushed to `feature/setup-operational-framework`)
 -   `intake/` and `intake-archive/` directories created and gitignored. (Completed)
--   `.clinerules/` directory established with:
+-   `.clinerules/` directory established with the following files:
     -   `ClineAGI-ADMIN_rules.md` (initial version). (Created)
-    -   `writing-effective-clinerules.md` (from intake). (Added)
-    -   `community-clinerules-contributing-guide.md` (from intake). (Added)
+    -   `writing-effective-clinerules.md` (guidelines for writing rules). (Added from intake)
+    -   `community-clinerules-contributing-guide.md` (guide for community contributions). (Added from intake)
+    -   `cline-architecture.md` (Cline extension architecture). (Added from intake)
+    -   `cline-continuous-improvement-protocol.md` (Cline's self-reflection protocol). (Added from intake)
+    -   `cline-for-research.md` (Cline as research assistant). (Added from intake)
+    -   `cline-for-slides.md` (Slidev project instructions). (Added from intake)
+    -   `gemini-comprehensive-software-engineering-guide.md` (Software engineering best practices). (Added from intake)
+    -   `mcp-development-protocol.md` (MCP server development protocol). (Added from intake)
+    -   `next-js-supabase.md` (Next.js with Supabase Auth guidelines). (Added from intake)
+    -   `self-improving-cline.md` (Cline's self-improvement reflection rule). (Added from intake)
 -   `intake/prompts-main/` processed and archived. (Completed)
 -   Memory Bank files (`systemPatterns.md`, `techContext.md`, `activeContext.md`, and this file `progress.md`) are being updated for these `.clinerules` additions.
 
 ## 3. What's Left to Build (Immediate Scope)
 -   Finalize updates to this `progress.md` file. (In Progress)
--   Commit new `.clinerules` files and all recent Memory Bank updates to the `feature/setup-operational-framework` branch.
+-   Commit all new `.clinerules` files and recent Memory Bank updates to the `feature/setup-operational-framework` branch.
 -   Push the updated `feature/setup-operational-framework` branch to the remote repository.
 -   Continue discussions to define specifics for:
     -   Further `.clinerules` content and structure.

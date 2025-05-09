@@ -1,23 +1,21 @@
-# Active Context: ClineAGI - Integrating Community .clinerules & Finalizing Setup Phase
+# Active Context: ClineAGI - Integrating Additional .clinerules & Finalizing Setup Phase
 
 ## 1. Current Work Focus
-The current focus is on integrating community-provided `.clinerules` (guidelines for writing rules) and finalizing the documentation for the current setup phase. This involves:
--   Moving `writing-effective-clinerules.md` and `community-clinerules-contributing-guide.md` (renamed from README.md) from `intake/prompts-main/` to the project's `.clinerules/` directory. (Completed)
--   Archiving the processed `intake/prompts-main/` directory. (Completed)
+The current focus is on integrating additional community-provided `.clinerules` and finalizing the documentation for the current setup phase. This involves:
+-   Moving several `.clinerules` files from the archived `intake-archive/prompts-main/clinerules/` directory to the project's `.clinerules/` directory. (Completed)
 -   Updating the Memory Bank (`systemPatterns.md`, `techContext.md`, `activeContext.md`, `progress.md`) to reflect these new `.clinerules` additions and the overall state. (This document update is in progress)
 
 ## 2. Recent Changes & Decisions
--   **Decision (Previous):** Intake system and initial `ClineAGI-ADMIN_rules.md` created and documented.
--   **Action (Previous):** Memory Bank updated for intake system and `.clinerules` initialization.
--   **Decision (New):** Incorporate provided `.clinerules` (guidelines for writing rules and community contribution guide) into the project's `.clinerules/` directory.
--   **Action (New):** Moved `writing-effective-clinerules.md` and `community-clinerules-contributing-guide.md` to `.clinerules/`.
--   **Action (New):** Archived `intake/prompts-main/`.
--   **Action (New):** `systemPatterns.md` and `techContext.md` updated to list the new `.clinerules` files.
+-   **Decision (Previous):** Integrate initial community `.clinerules` (guidelines and contributing guide).
+-   **Action (Previous):** Moved `writing-effective-clinerules.md` and `community-clinerules-contributing-guide.md` to `.clinerules/`, archived `intake/prompts-main/`, updated Memory Bank, committed and pushed to `feature/setup-operational-framework`.
+-   **Decision (New):** Integrate additional `.clinerules` found in the archived `intake-archive/prompts-main/clinerules/`.
+-   **Action (New):** Moved `cline-architecture.md`, `cline-continuous-improvement-protocol.md`, `cline-for-research.md`, `cline-for-slides.md`, `gemini-comprehensive-software-engineering-guide.md`, `mcp-development-protocol.md`, `next-js-supabase.md`, and `self-improving-cline.md` to `.clinerules/`.
+-   **Action (New):** `systemPatterns.md` and `techContext.md` updated to list these new `.clinerules` files.
 
 ## 3. Immediate Next Steps
 1.  Complete the update of this file (`activeContext.md`).
-2.  Update `memory-bank/progress.md` to reflect the integration of these new `.clinerules` files.
-3.  Commit all new files (`.clinerules/writing-effective-clinerules.md`, `.clinerules/community-clinerules-contributing-guide.md`) and recent Memory Bank updates to the `feature/setup-operational-framework` branch.
+2.  Update `memory-bank/progress.md` to reflect the integration of these additional `.clinerules` files.
+3.  Commit all new `.clinerules` files and recent Memory Bank updates to the `feature/setup-operational-framework` branch.
 4.  Push the updated `feature/setup-operational-framework` branch to the remote repository.
 5.  Continue discussions to define the specifics of:
     -   Further content and structure for `.clinerules` (beyond the initial admin rules).
