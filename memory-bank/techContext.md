@@ -15,7 +15,10 @@
 -   **Project Template Source:**
     -   **Remote URL:** `https://github.com/wojons/ClineAGI-Project-Template.git`
     -   **Local Clone Path:** `/Users/lexykwaii/Code/ClineAGI/ClineAGI-Project-Template/` (This directory is gitignored).
--   **`.clinerules` Directory:** Located at `/Users/lexykwaii/Code/ClineAGI/.clinerules`. This project-specific directory stores role-based prompts and operational rules (e.g., `ClineAGI-ADMIN_rules.md`). This directory itself IS version-controlled with the main ClineAGI repo.
+-   **`.clinerules` Directory:** Located at `/Users/lexykwaii/Code/ClineAGI/.clinerules`. This project-specific directory stores role-based prompts, meta-rules, and operational rules. It IS version-controlled.
+    -   `ClineAGI-ADMIN_rules.md`: Rules for core system development.
+    -   `writing-effective-clinerules.md`: Guidelines for creating `.clinerules`.
+    -   `community-clinerules-contributing-guide.md`: Guide for community contributions.
 -   **Information Intake Directories:**
     -   `intake/`: Located at `/Users/lexykwaii/Code/ClineAGI/intake/`. For user-provided files awaiting processing. Gitignored.
     -   `intake-archive/`: Located at `/Users/lexykwaii/Code/ClineAGI/intake-archive/`. For processed files. Gitignored.

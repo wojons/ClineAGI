@@ -1,27 +1,23 @@
-# Active Context: ClineAGI - Intake System & .clinerules Initialization
+# Active Context: ClineAGI - Integrating Community .clinerules & Finalizing Setup Phase
 
 ## 1. Current Work Focus
-The current focus is on establishing the information intake system, initializing the project-specific `.clinerules` directory, and documenting these additions. This involves:
--   Creating `intake/` and `intake-archive/` directories. (Completed)
--   Updating `.gitignore` to exclude these directories. (Completed)
--   Confirming/creating the `.clinerules/` directory. (Completed, it existed)
--   Creating an initial `ClineAGI-ADMIN_rules.md` file within `.clinerules/`. (Completed)
--   Updating the Memory Bank (`systemPatterns.md`, `techContext.md`, `activeContext.md`, `progress.md`) to document these new systems. (This document update is in progress)
+The current focus is on integrating community-provided `.clinerules` (guidelines for writing rules) and finalizing the documentation for the current setup phase. This involves:
+-   Moving `writing-effective-clinerules.md` and `community-clinerules-contributing-guide.md` (renamed from README.md) from `intake/prompts-main/` to the project's `.clinerules/` directory. (Completed)
+-   Archiving the processed `intake/prompts-main/` directory. (Completed)
+-   Updating the Memory Bank (`systemPatterns.md`, `techContext.md`, `activeContext.md`, `progress.md`) to reflect these new `.clinerules` additions and the overall state. (This document update is in progress)
 
 ## 2. Recent Changes & Decisions
--   **Decision (Previous):** Project templating system using `wojons/ClineAGI-Project-Template` implemented (clone, .gitignore update, Memory Bank docs).
--   **Action (Previous):** Memory Bank updates for templating system committed and pushed to `feature/setup-operational-framework`.
--   **Decision (New):** Implement `intake/` and `intake-archive/` folders for information processing.
--   **Decision (New):** Initialize project-specific `.clinerules/` with a starting `ClineAGI-ADMIN_rules.md`.
--   **Action (New):** Created `intake/`, `intake-archive/` directories.
--   **Action (New):** Updated `.gitignore` for intake folders.
--   **Action (New):** Created `.clinerules/ClineAGI-ADMIN_rules.md`.
--   **Action (New):** `systemPatterns.md` and `techContext.md` updated for intake system and `.clinerules` initialization.
+-   **Decision (Previous):** Intake system and initial `ClineAGI-ADMIN_rules.md` created and documented.
+-   **Action (Previous):** Memory Bank updated for intake system and `.clinerules` initialization.
+-   **Decision (New):** Incorporate provided `.clinerules` (guidelines for writing rules and community contribution guide) into the project's `.clinerules/` directory.
+-   **Action (New):** Moved `writing-effective-clinerules.md` and `community-clinerules-contributing-guide.md` to `.clinerules/`.
+-   **Action (New):** Archived `intake/prompts-main/`.
+-   **Action (New):** `systemPatterns.md` and `techContext.md` updated to list the new `.clinerules` files.
 
 ## 3. Immediate Next Steps
 1.  Complete the update of this file (`activeContext.md`).
-2.  Update `memory-bank/progress.md` to reflect the creation of the intake system and `.clinerules` initialization.
-3.  Commit all new files (`.clinerules/ClineAGI-ADMIN_rules.md`) and recent changes (`.gitignore`, Memory Bank updates for intake and `.clinerules`) to the `feature/setup-operational-framework` branch.
+2.  Update `memory-bank/progress.md` to reflect the integration of these new `.clinerules` files.
+3.  Commit all new files (`.clinerules/writing-effective-clinerules.md`, `.clinerules/community-clinerules-contributing-guide.md`) and recent Memory Bank updates to the `feature/setup-operational-framework` branch.
 4.  Push the updated `feature/setup-operational-framework` branch to the remote repository.
 5.  Continue discussions to define the specifics of:
     -   Further content and structure for `.clinerules` (beyond the initial admin rules).

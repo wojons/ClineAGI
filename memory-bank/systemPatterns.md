@@ -40,9 +40,12 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 
 ## 5. Prompt and Rule Management (`.clinerules`)
 -   **Purpose:** To allow dynamic and context-aware management of Cline's guiding prompts and operational rules.
--   **Location:** A project-specific `.clinerules` directory at `/Users/lexykwaii/Code/ClineAGI/.clinerules` stores these configurations.
--   **Structure:** The directory is organized by role (e.g., `.clinerules/ClineAGI-ADMIN_rules.md`).
--   **Content:** Contains specific instructions, prompt segments, and rules that Cline will load based on the active role. Cline will collaboratively build and refine these rules. (Initial `ClineAGI-ADMIN_rules.md` created).
+-   **Location:** A project-specific `.clinerules` directory at `/Users/lexykwaii/Code/ClineAGI/.clinerules` stores these configurations. This directory IS version-controlled with the main ClineAGI repo.
+-   **Structure:** The directory is organized by role or topic (e.g., `.clinerules/ClineAGI-ADMIN_rules.md`, `.clinerules/writing-effective-clinerules.md`).
+-   **Content:** Contains specific instructions, prompt segments, meta-guidelines for writing rules, and rules that Cline will load based on the active role or task. Cline will collaboratively build and refine these rules.
+    -   `ClineAGI-ADMIN_rules.md`: Contains rules specific to core ClineAGI development. (Created)
+    -   `writing-effective-clinerules.md`: Meta-guidelines for creating effective `.clinerules`. (Added from intake)
+    -   `community-clinerules-contributing-guide.md`: Guide for community contributions to a broader ruleset. (Added from intake)
 
 ## 6. Information Intake System
 -   **Purpose:** To provide a structured way for the user to pass information, articles, or prompts to Cline for processing.
@@ -64,12 +67,12 @@ For the core `ClineAGI` repository, especially when operating under a role like 
     -   ClineAGI will assist in managing merge conflicts that may arise during these updates. The exact mechanism for conflict resolution (e.g., presenting conflicts to the user, attempting automated resolution for common cases) will be refined.
 -   **Template Management:** Updates to the `wojons/ClineAGI-Project-Template` itself will be managed collaboratively by the user and Cline, likely under a specific role or task context.
 
-## 7. Component Relationships
+## 8. Component Relationships
 -   The `ClineAGI` parent repository provides the foundational environment and potentially shared tools or APIs for the user projects.
 -   User projects within `projects/` are consumers or specializations of the core AGI capabilities, or entirely separate endeavors managed within the same overarching structure. They do not directly modify the core AGI code but interact with it or operate alongside it.
 -   The Memory Bank informs all development activities across both tiers.
 
-## 4. Critical Implementation Paths (Initial)
+## 9. Critical Implementation Paths (Initial)
 -   **Memory Bank Initialization:** (Completed)
 -   **`projects/` Directory Setup:** (Completed)
 -   **Git Repository Initialization & Remote Setup:** (Completed for `wojons/ClineAGI`)
@@ -80,7 +83,7 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 -   **Project Templating System Implementation:** (Documented, logic definition pending).
 -   **Information Intake System:** (Directories created, workflow defined).
 
-## 9. Future Considerations
+## 10. Future Considerations
 -   **Inter-Project Communication:** How will different user projects (or the core AGI and a user project) communicate if needed? (e.g., APIs, shared data formats).
 -   **Dependency Management:** How will dependencies be managed for the core AGI versus individual projects?
 -   **Standardization:** Will there be any enforced standards (e.g., for data formats, API contracts) for projects within the `projects/` directory to ensure interoperability with the core AGI, if desired?
