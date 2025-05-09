@@ -1,50 +1,43 @@
-# Progress: ClineAGI - Finalizing .clinerules Management Structure
+# Progress: ClineAGI - AGI Agent Prompting and Knowledge Organization
 
 ## 1. Current Status
--   **Phase:** Operational Framework Enhancement & Documentation.
--   **Overall Progress:** Project templating system and intake system established. All provided community `.clinerules` integrated. New `.clinerules` management structure (archive, naming convention) established and finalized. Memory Bank is being updated.
+-   **Phase:** AGI Agent Prompting and Knowledge Organization.
+-   **Overall Progress:** Analysis of external AI prompts and research documents completed. Core `.clinerules` updated and new tech-specific rules and patterns created. Agent knowledge base and initial prompts created and organized within `.clinerules/`. Memory Bank documentation is being updated.
 
 ## 2. What Works / What Is Built
--   Core Memory Bank, project structure, Git repository, operational framework documentation, project templating system setup. (Completed & Pushed to `feature/setup-operational-framework`)
--   `intake/` and `intake-archive/` directories created and gitignored. (Completed)
--   All provided community `.clinerules` moved to project's `.clinerules/`. (Completed)
--   `intake/prompts-main/` processed and archived. (Completed)
--   `/.clinerules_archive/` directory created and gitignored. (Completed)
--   Existing `.clinerules` files copied to archive. (Completed)
--   Active `.clinerules` files renamed according to `NNN-MM_descriptive-name.md` convention. (Completed)
--   `/.clinerules/writing-effective-clinerules.md` renamed to `001-03_reference-writing-effective-clinerules.md`. (Completed)
--   `intake-archive/prompts-main/clinerules/memory-bank.md` copied to `/.clinerules/000-00_core-memory-bank-structure.md`. (Completed)
--   `/.clinerules/000-00_core-agi-admin-gitflow.md` renamed to `000-10_core-agi-admin-gitflow.md`. (Completed)
--   Memory Bank files (`systemPatterns.md`, `techContext.md`, `activeContext.md`, and this file `progress.md`) are being updated for these structural changes.
+-   Analyzed CL4R1T4S prompts and research documents. (Completed)
+-   Updated core communication, tool usage, planning, and data security guidelines. (Completed)
+-   Created tech-specific rules for Next.js/Supabase, Tailwind CSS, and Shadcn UI. (Completed)
+-   Created planning patterns for structured research reports, working backwards, and fake CoT reasoning. (Completed)
+-   Created agent knowledge base summary file (`.clinerules/000_core/000_agent_prompts/agent_knowledge_base_summary.md`). (Completed)
+-   Created main agent loop prompt (`.clinerules/000_core/000_agent_prompts/agent_self_programming_main_loop_prompt.md`). (Completed)
+-   Created working backwards planning prompt (`.clinerules/000_core/000_agent_prompts/agent_planning_working_backwards_prompt.md`). (Completed)
+-   Created fake CoT reasoning prompt (`.clinerules/000_core/000_agent_prompts/agent_reasoning_fake_cot_prompt.md`). (Completed)
+-   Moved agent knowledge base and prompt files to `.clinerules/000_core/000_agent_prompts/`. (Completed)
+-   Updated `memory-bank/systemPatterns.md` to reflect the new agent prompting and knowledge organization section. (Completed)
+-   Updated `memory-bank/techContext.md` to include details about the advanced planning, reasoning, and verification techniques from the research. (Completed)
+-   Memory Bank files (`activeContext.md`, and this file `progress.md`) are being updated to reflect these changes.
 
 ## 3. What's Left to Build (Immediate Scope)
 -   Finalize updates to this `progress.md` file. (In Progress)
--   Commit the latest changes to the `.clinerules` directory (renaming and adding `000-00_core-memory-bank-structure.md`), along with the Memory Bank updates, to the `feature/setup-operational-framework` branch.
--   Push the updated `feature/setup-operational-framework` branch to the remote repository.
--   Continue discussions to define specifics for:
-    -   Further `.clinerules` content and structure.
-    -   Role definition and activation.
-    -   Gitflow conventions (integration branch, task branch naming, merge process).
-    -   Automated project creation workflow from template.
-    -   Template update merge conflict strategy.
-    -   `intake/` directory monitoring and processing logic.
--   Begin implementing the refined `.clinerules`, role management, and automation logic.
+-   Update `memory-bank/activeContext.md` to summarize the current work focus, recent changes, and immediate next steps.
+-   Commit the latest changes to the memory bank files.
+-   Continue developing prompts for specific agent tasks (e.g., code generation, self-verification).
+-   Integrate the agent prompts and knowledge base into the ClineAGI operational loop.
 
 ## 4. Known Issues & Challenges
--   **The "Chicken and the Egg" Problem:** Ongoing.
--   **Session-Based Memory:** Ongoing.
--   **New System Implementation:** All new systems (Gitflow, roles, `.clinerules`, templating, intake) require careful, iterative development.
--   **Template Content:** `wojons/ClineAGI-Project-Template` is empty.
--   **`.clinerules` Population:** Needs ongoing collaborative effort to build out comprehensive and effective rules for various roles and tasks.
--   **Intake Automation:** Logic for me to automatically monitor and process `intake/` files needs to be designed and implemented (guided by new `.clinerules`).
+-   **File Editing Issues:** Encountered difficulties updating `memory-bank/systemPatterns.md` using dedicated tools and command-line redirection. Used a fallback method to update the file.
+-   **Integrating Agent Prompts:** Need to determine the best way to inject relevant knowledge base sections into agent prompts during execution.
+-   **Managing Agent State:** Need to define how the agent's "CURRENT SELF-ASSESSMENT" state will be managed and updated iteratively.
 
 ## 5. Evolution of Project Decisions & Learnings
--   **Decisions (Previous):** Core structure, Git, operational framework, project templating, intake system, initial `.clinerules` for admin. (Established)
--   **Decision (New):** Integrate community-provided meta-rules (`writing-effective-clinerules.md` and contribution guide) into the project's `.clinerules` to guide our own rule development. (Implemented, documenting)
--   **Learning:** Leveraging existing best practices for rule creation (like those in `writing-effective-clinerules.md`) will be beneficial.
--   **Learning:** The `.clinerules` system is becoming a central piece for managing my behavior and knowledge application.
+-   **Decision:** Analyze external AI prompts and research to inform AGI agent prompting and `.clinerules` improvements. (Implemented)
+-   **Decision:** Organize agent knowledge base and prompts within `.clinerules/` as a prompt library. (Implemented)
+-   **Learning:** External prompts and research provide valuable insights into diverse AI approaches and technical challenges.
+-   **Learning:** Organizing knowledge and designing prompts are crucial for building a capable self-programming agent.
+-   **Learning:** Encountered and worked around file editing issues, highlighting the need for robust fallback strategies.
 
 ## 6. Future Milestones (High-Level)
--   First functional prototype of a core AGI capability.
--   Successful creation and management of a sample user project within the `projects/` directory.
--   Demonstration of the core AGI updating without disrupting a user project.
+-   First successful execution of the AGI agent's main loop using the created prompts and knowledge base.
+-   Implementation of agent self-verification mechanisms.
+-   Demonstration of the agent performing a simple self-modification.

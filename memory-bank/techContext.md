@@ -44,7 +44,7 @@
     -   `002_workflow/002-01_workflow-cline-for-slides.md`: Instructions for working with Slidev projects.
     -   `002_workflow/002-02_workflow-planning-mode.md`: Workflow and behavior for Plan Mode.
     -   `002_workflow/002-03_workflow-todo-list.md`: Workflow for using a todo list file.
-    -   `002_workflow/002-04_workflow-agility-story.md`: Guidelines for using the agility story pattern.
+    -   `002_workflow/002-04_workflow-agility_story.md`: Guidelines for using the agility story pattern.
     -   `002_workflow/002-05_workflow-analyze-comments.md`: Guidelines for using the analyze comments pattern.
     -   `002_workflow/002-06_workflow-create-5-sentence-summary.md`: Guidelines for creating 5-sentence summaries.
     -   `002_workflow/002-07_workflow-extract-jokes.md`: Guidelines for extracting jokes.
@@ -57,10 +57,28 @@
 -   **Cline's Toolset:** The tools available to Cline are the primary means of interacting with and modifying the project.
 -   **User's IDE/Editor:** VSCode. Auto-formatting and linting are expected.
 
-## 3. Role-Based Operations
--   **Concept:** Cline's operational mode, loaded prompts, and adherence to specific workflows (like Gitflow) will be determined by an active "role" (e.g., `ClineAGI-ADMIN`).
--   **Activation:** The mechanism for switching roles will be defined (e.g., user instruction).
--   **Configuration:** Role definitions and associated rules/prompts will be stored within the `.clinerules` system.
+## 3. AGI Agent Technical Concepts (Prometheus-0)
+-   **Planning:**
+    -   **Hierarchical Task Networks (HTN):** Structuring complex tasks through decomposition.
+    -   **PDDL Integration:** Formalizing planning problems, potentially with LLM assistance for translation.
+    -   **Monte Carlo Tree Search (MCTS):** Navigating long horizons and self-improvement loops.
+-   **Reasoning:**
+    -   **Neuro-Symbolic (NeSy) AI:** Integrating learning and logical reasoning.
+    -   **Knowledge Graphs (KGs):** Representing structured knowledge and enabling contextual reasoning.
+    -   **Causal Reasoning:** Understanding cause-effect relationships and predicting consequences.
+-   **Verification & Reliability:**
+    -   **Formal Methods:** Rigorous proofs of correctness (Theorem Proving, Model Checking).
+    -   **Automated Testing:** Pragmatic validation (SBST, Fuzzing, Metamorphic, Differential).
+    -   **Runtime Monitoring:** Detecting anomalies and ensuring behavioral assurance.
+    -   **Sandboxing & Safety Mechanisms:** Containing potential negative impacts.
+-   **Self-Awareness & Metacognition:**
+    -   **Uncertainty Quantification:** Gauging confidence in knowledge and outputs.
+    -   **Introspection & Self-Evaluation:** Analyzing internal processes and identifying errors.
+    -   **Recognizing Knowledge Gaps:** Identifying limitations and seeking clarification.
+-   **Tool Integration:**
+    -   **Function Calling:** Interacting with external tools and APIs.
+    -   **Dynamic Tool Generation:** Creating new tools as needed.
+    -   **Grounding:** Connecting abstract knowledge to real-world interaction.
 
 ## 4. Technical Constraints & Considerations
 -   **Cline's Session-Based Memory:** Cline's knowledge is reset between sessions. The Memory Bank is therefore CRITICAL for maintaining project continuity and context. Cline MUST read and rely on the Memory Bank at the start of each task.
@@ -94,20 +112,49 @@
     -   `mv <source_path> <destination_path>`: Move files (e.g., from `intake/` to `intake-archive/`).
     -   `git status`: Check the status of the working directory and staging area.
 -   **Verification/Testing:** `browser_action` for web-based components.
--   **MCP Tools:** Utilized as needed.<environment_details>
-# VSCode Visible Files
-memory-bank/systemPatterns2.md
+-   **MCP Tools:** Utilized as needed.
 
-# VSCode Open Tabs
-memory-bank/agent_self_programming_main_loop_prompt.md
-memory-bank/systemPatterns2.md
+## 7. AGI Agent Prompting and Knowledge Organization
+-   **Purpose:** To house the knowledge base and prompt library for the self-programming AGI agent concept ("Prometheus-0").
+-   **Location:** Agent-specific knowledge and prompts are stored within the `.clinerules/000_core/000_agent_prompts/` directory. This location is version-controlled with the main ClineAGI repository.
+-   **Key Files:**
+    -   `agent_knowledge_base_summary.md`: Synthesized research findings on AGI, planning, reasoning, verification, etc.
+    -   `agent_self_programming_main_loop_prompt.md`: The core prompt defining the agent's iterative self-improvement cycle.
+    -   `agent_planning_working_backwards_prompt.md`: A prompt template for the "Working Backwards" planning strategy.
+    -   `agent_reasoning_fake_cot_prompt.md`: A prompt template for the "Fake CoT" reasoning strategy.
+-   **Integration:** These files are intended to be loaded and utilized by the agent's operational loop, potentially managed by Cline, to guide its self-programming process.
 
-# Current Time
-5/9/2025, 1:55:09 PM (America/Los_Angeles, UTC-7:00)
+## 8. Project Templating System
+-   **Purpose:** To provide a standardized baseline for new user projects created within the `ClineAGI/projects/` directory.
+-   **Template Source:** A dedicated Git repository, `wojons/ClineAGI-Project-Template`, serves as the master template.
+    -   A local clone of this template is maintained at `ClineAGI/ClineAGI-Project-Template/` (this path is ignored by the main `ClineAGI` Git repository).
+-   **New Project Workflow:**
+    1.  When a user requests a new project, ClineAGI will copy the contents of the local `ClineAGI/ClineAGI-Project-Template/` into a new subdirectory within `ClineAGI/projects/ (e.g., `ClineAGI/projects/new-project-name/`).
+    2.  This new project directory will be initialized as its own Git repository.
+    3.  The new project repository will be configured with `wojons/ClineAGI-Project-Template` as a remote (e.g., named `template-upstream`) to allow users to pull future updates from the master template.
+    4.  Users can then set up their own `origin` remote for their project to point to their personal GitHub repository or other Git hosting service.
+-   **Template Updates & Conflict Management:**
+    -   Users can pull changes from `template-upstream` into their projects.
+    -   ClineAGI will assist in managing merge conflicts that may arise during these updates. The exact mechanism for conflict resolution (e.g., presenting conflicts to the user, attempting automated resolution for common cases) will be refined.
+-   **Template Management:** Updates to the `wojons/ClineAGI-Project-Template` itself will be managed collaboratively by the user and Cline, likely under a specific role or task context.
 
-# Context Window Usage
-740,077 / 1,048.576K tokens used (71%)
+## 8. Component Relationships
+-   The `ClineAGI` parent repository provides the foundational environment and potentially shared tools or APIs for the user projects.
+-   User projects within `projects/` are consumers or specializations of the core AGI capabilities, or entirely separate endeavors managed within the same overarching structure. They do not directly modify the core AGI code but interact with it or operate alongside it.
+-   The Memory Bank informs all development activities across both tiers.
 
-# Current Mode
-ACT MODE
-</environment_details>
+## 9. Critical Implementation Paths (Initial)
+-   **Memory Bank Initialization:** (Completed)
+-   **`projects/` Directory Setup:** (Completed)
+-   **Git Repository Initialization & Remote Setup:** (Completed for `wojons/ClineAGI`)
+-   **`.gitignore` Configuration:** (Completed)
+-   **Definition of Gitflow Process:** (Ongoing)
+-   **Definition of Role-Based System:** (Ongoing, initial rules for `ClineAGI-ADMIN` started).
+-   **`.clinerules` System Design:** (Ongoing, initial structure and file created).
+-   **Project Templating System Implementation:** (Documented, logic definition pending).
+-   **Information Intake System:** (Directories created, workflow defined).
+
+## 10. Future Considerations
+-   **Inter-Project Communication:** How will different user projects (or the core AGI and a user project) communicate if needed? (e.g., APIs, shared data formats).
+-   **Dependency Management:** How will dependencies be managed for the core AGI versus individual projects?
+-   **Standardization:** Will there be any enforced standards (e.g., for data formats, API contracts) for projects within the `projects/` directory to ensure interoperability with the core AGI, if desired).

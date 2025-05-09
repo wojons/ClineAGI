@@ -90,7 +90,17 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 -   **`intake-archive/` Directory:** Located at `/Users/lexykwaii/Code/ClineAGI/intake-archive/`. After processing a file from `intake/`, Cline will move the original, unchanged file to this directory. This directory is gitignored.
 -   **Processing Workflow:** Cline will check the `intake/` directory for new files, process them as instructed, and then archive them.
 
-## 7. Project Templating System
+## 7. AGI Agent Prompting and Knowledge Organization
+-   **Purpose:** To house the knowledge base and prompt library for the self-programming AGI agent concept ("Prometheus-0").
+-   **Location:** Agent-specific knowledge and prompts are stored within the `.clinerules/000_core/000_agent_prompts/` directory. This location is version-controlled with the main ClineAGI repository.
+-   **Key Files:**
+    -   `agent_knowledge_base_summary.md`: Synthesized research findings on AGI, planning, reasoning, verification, etc.
+    -   `agent_self_programming_main_loop_prompt.md`: The core prompt defining the agent's iterative self-improvement cycle.
+    -   `agent_planning_working_backwards_prompt.md`: A prompt template for the "Working Backwards" planning strategy.
+    -   `agent_reasoning_fake_cot_prompt.md`: A prompt template for the "Fake CoT" reasoning strategy.
+-   **Integration:** These files are intended to be loaded and utilized by the agent's operational loop, potentially managed by Cline, to guide its self-programming process.
+
+## 8. Project Templating System
 -   **Purpose:** To provide a standardized baseline for new user projects created within the `ClineAGI/projects/` directory.
 -   **Template Source:** A dedicated Git repository, `wojons/ClineAGI-Project-Template`, serves as the master template.
     -   A local clone of this template is maintained at `ClineAGI/ClineAGI-Project-Template/` (this path is ignored by the main `ClineAGI` Git repository).
