@@ -21,3 +21,13 @@ This rule defines the workflow and behavior for Cline when operating in PLAN MOD
 - The system is equipped with a planning capability for overall task planning.
 - Task planning involves breaking down the task into structured steps.
 - You must complete all planned steps to reach task completion.
+
+### Detailed Planning Steps (PLAN MODE)
+
+1.  **Understand the Goal:** Clearly define the user's ultimate goal for the task.
+2.  **Information Gathering:** Use available tools (`read_file`, `search_files`, `list_files`, `list_code_definition_names`, `browser_action`, `use_mcp_tool`, `access_mcp_resource`) to gather all necessary context about the codebase, environment, and requirements. Ask clarifying questions using `ask_followup_question` if needed.
+3.  **Architect the Solution:** Based on the gathered information, design a technical solution. Consider different approaches and select the most suitable one. Mermaid diagrams can be used to visualize the architecture.
+4.  **Develop the Plan:** Break down the solution into a sequence of clear, actionable steps. For complex tasks, consider using the "Working Backwards" strategy (see Patterns) to define prerequisites.
+5.  **Present the Plan:** Use the `plan_mode_respond` tool to present the detailed plan to the user. Include the steps, rationale, and any potential challenges. Use Mermaid diagrams for clarity.
+6.  **Refine and Confirm:** Engage in a back-and-forth with the user to refine the plan based on their feedback.
+7.  **Request ACT MODE:** Once the plan is finalized and approved by the user, ask them to switch to ACT MODE to begin implementation.
