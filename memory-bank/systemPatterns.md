@@ -11,7 +11,7 @@ ClineAGI employs a two-tiered architecture:
 
 -   **Tier 2: User Projects (`projects/` Directory)**
     -   A dedicated directory named `projects/` resides within the `ClineAGI` parent repository.
-    -   This directory is intended to contain multiple, independent Git repositories, each representing a specific user project, dataset, or AGI application.
+    -   This directory is intended to contain multiple, independent Git repositories, each representing a specific user project, dataset, or AGI-related sub-project.
     -   Each sub-repository within `projects/` can have its own version control history, dependencies, and development lifecycle, isolated from the core AGI and other user projects.
     -   The `ClineAGI` parent repository's `.gitignore` file should be configured to ignore the contents of these sub-repositories (except perhaps their initial empty directories or placeholder READMEs if they are not true submodules initially) to prevent accidental commits of project-specific data into the core AGI repo. *Initial thought: these will be separate repos, not git submodules, to allow maximum flexibility for the user to manage them, e.g., linking to their own private remotes.*
 
@@ -24,6 +24,7 @@ ClineAGI employs a two-tiered architecture:
 -   **Role-Based Operations:** Project interactions and workflows will be governed by defined roles (e.g., `ClineAGI-ADMIN`).
 -   **Dynamic Prompting (`.clinerules`):** My behavior and context will be dynamically managed through a `.clinerules` system.
 -   **AGI Agent Prompting and Knowledge Organization:** Developing prompts and organizing research findings to enhance capabilities towards a self-programming AGI agent.
+-   **Merged Patterns:** Consolidating individual pattern functionality into broader categories for improved usability and clarity.
 
 ## 3. Version Control Workflow (Gitflow Adaptation)
 For the core `ClineAGI` repository, especially when operating under a role like `ClineAGI-ADMIN`:
@@ -77,18 +78,75 @@ For the core `ClineAGI` repository, especially when operating under a role like 
     -   `002_workflow/002-01_workflow-cline-for-slides.md`: Instructions for working with Slidev projects.
     -   `002_workflow/002-02_workflow-planning-mode.md`: Workflow and behavior for Plan Mode.
     -   `002_workflow/02-03_workflow-todo-list.md`: Workflow for using a todo list file.
-    -   `002_workflow/002-04_workflow-agility-story.md`: Guidelines for using the agility story pattern.
+    -   `002_workflow/002-04_workflow-agility_story.md`: Guidelines for using the agility story pattern.
     -   `002_workflow/002-05_workflow-analyze-comments.md`: Guidelines for using the analyze comments pattern.
     -   `002_workflow/002-06_workflow-create-5-sentence-summary.md`: Guidelines for creating 5-sentence summaries.
     -   `002_workflow/002-07_workflow-extract-jokes.md`: Guidelines for extracting jokes.
     -   `003_protocol/003-00_protocol-mcp-development.md`: Protocol for developing MCP servers.
     -   `004_tech-specific/004-00_tech-specific-next-js-supabase.md`: Guidelines for Next.js apps with Supabase Auth.
+-   **`.clinerules_archive/` Directory:** Located at `/Users/lexykwaii/Code/ClineAGI/.clinerules_archive/`. Stores copies of all `.clinerules` that have been used or developed, serving as a historical reference and source for future rule development. This directory is gitignored.
+-   **Information Intake Directories:**
+    -   `intake/`: Located at `/Users/lexykwaii/Code/ClineAGI/intake/`. For user-provided files awaiting processing. Gitignored.
+    -   `intake-archive/`: Located at `/Users/lexykwaii/Code/ClineAGI/intake-archive/`. For processed files. Gitignored.
+-   **Cline's Toolset:** The tools available to Cline are the primary means of interacting with and modifying the project.
+-   **User's IDE/Editor:** VSCode. Auto-formatting and linting are expected.
 
-## 6. Information Intake System
--   **Purpose:** To provide a structured way for the user to pass information, articles, or prompts to Cline for processing.
--   **`intake/` Directory:** Located at `/Users/lexykwaii/Code/ClineAGI/intake/`. Users place files here for Cline to process. This directory is gitignored.
--   **`intake-archive/` Directory:** Located at `/Users/lexykwaii/Code/ClineAGI/intake-archive/`. After processing a file from `intake/`, Cline will move the original, unchanged file to this directory. This directory is gitignored.
--   **Processing Workflow:** Cline will check the `intake/` directory for new files, process them as instructed, and then archive them.
+## 3. AGI Agent Technical Concepts (Prometheus-0)
+-   **Planning:**
+    -   **Hierarchical Task Networks (HTN):** Structuring complex tasks through decomposition.
+    -   **PDDL Integration:** Formalizing planning problems, potentially with LLM assistance for translation.
+    -   **Monte Carlo Tree Search (MCTS):** Navigating long horizons and self-improvement loops.
+-   **Reasoning:**
+    -   **Neuro-Symbolic (NeSy) AI:** Integrating learning and logical reasoning.
+    -   **Knowledge Graphs (KGs):** Representing structured knowledge and enabling contextual reasoning.
+    -   **Causal Reasoning:** Understanding cause-effect relationships and predicting consequences.
+-   **Verification & Reliability:**
+    -   **Formal Methods:** Rigorous proofs of correctness (Theorem Proving, Model Checking).
+    -   **Automated Testing:** Pragmatic validation (SBST, Fuzzing, Metamorphic, Differential).
+    -   **Runtime Monitoring:** Detecting anomalies and ensuring behavioral assurance.
+    -   **Sandboxing & Safety Mechanisms:** Containing potential negative impacts.
+-   **Self-Awareness & Metacognition:**
+    -   **Uncertainty Quantification:** Gauging confidence in knowledge and outputs.
+    -   **Introspection & Self-Evaluation:** Analyzing internal processes and identifying errors.
+    -   **Recognizing Knowledge Gaps:** Identifying limitations and seeking clarification.
+-   **Tool Integration:**
+    -   **Function Calling:** Interacting with external tools and APIs.
+    -   **Dynamic Tool Generation:** Creating new tools as needed.
+    -   **Grounding:** Connecting abstract knowledge to real-world interaction.
+
+## 4. Technical Constraints & Considerations
+-   **Cline's Session-Based Memory:** Cline's knowledge is reset between sessions. The Memory Bank is therefore CRITICAL for maintaining project continuity and context. Cline MUST read and rely on the Memory Bank at the start of each task.
+-   **Tool Limitations:** Cline operates within the capabilities and limitations of its provided tools. For example, `cd` is not a standalone persistent command; path context must be managed per tool use.
+-   **File System Access:** Cline's file operations are based on paths relative to the current working directory (`/Users/lexykwaii/Code/ClineAGI`) or absolute paths.
+-   **Command Execution:** CLI commands are executed in new terminal instances. Long-running processes are possible, and their status will be reported.
+-   **Modularity of `projects/` Repositories:** User projects within the `projects/` directory are intended to be independent Git repositories. This means they will have their own `.git` directories and will not be Git submodules of `ClineAGI` by default, to allow maximum flexibility for the user to manage them, e.g., linking to their own private remotes. The main `ClineAGI` repo will need a `.gitignore` entry for `projects/*/` (or similar) to avoid tracking the content of these sub-repos, while still allowing the `projects` directory itself and its top-level `README.md` to exist.
+
+## 5. Dependencies (Initial)
+-   The core `ClineAGI` project itself has no external software dependencies at this initial stage, beyond the user's development environment (Git, shell, etc.) and Cline's operational environment.
+-   Individual user projects within `projects/` may introduce their own dependencies as they are developed.
+
+## 6. Tool Usage Patterns
+-   **File Creation/Overwriting:** `write_to_file` for new files or substantial rewrites.
+-   **Targeted File Edits:** `replace_in_file` for specific, localized changes.
+-   **Information Gathering:** `list_files`, `read_file`, `search_files`, `list_code_definition_names`.
+-   **Execution (`execute_command`):** For running scripts, build processes, or other CLI tasks, including:
+    -   `git init`: Initialize a new Git repository.
+    -   `git remote add origin <url>`: Connect local repository to a remote.
+    -   `git remote add <name> <url>`: Add an additional remote repository (e.g., for template upstream).
+    -   `git add .` or `git add <file>`: Stage changes for commit.
+    -   `git commit -m "<message>"`: Commit staged changes.
+    -   `git push -u origin <branch>` or `git push`: Push commits to remote.
+    -   `git branch <branch-name>`: Create a new branch.
+    -   `git checkout <branch-name>`: Switch to a different branch.
+    -   `git checkout -b <branch-name>`: Create and switch to a new branch.
+    -   `git merge <branch-name>`: Merge changes from another branch into the current branch.
+    -   `git pull <remote> <branch>`: Fetch and integrate changes from a specific remote and branch.
+    -   `git clone <url> <directory>`: Clone a remote repository into a new directory.
+    -   `cp -R <source_directory>/. <destination_directory>/`: Copy contents of template to new project. (Note: Need a robust way to exclude the template's `.git` directory if the new project needs a fresh Git history, or to handle it if the template's history is desired as a starting point).
+    -   `mv <source_path> <destination_path>`: Move files (e.g., from `intake/` to `intake-archive/`).
+    -   `git status`: Check the status of the working directory and staging area.
+-   **Verification/Testing:** `browser_action` for web-based components.
+-   **MCP Tools:** Utilized as needed.
 
 ## 7. AGI Agent Prompting and Knowledge Organization
 -   **Purpose:** To house the knowledge base and prompt library for the self-programming AGI agent concept ("Prometheus-0").

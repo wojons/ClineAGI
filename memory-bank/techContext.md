@@ -5,19 +5,13 @@
 -   **Default Shell (Development Environment):** bash
 -   **Primary AI Assistant (Cline):** Capabilities include CLI execution, file system operations (read, write, list, search), code definition listing, browser interaction, and access to MCP-provided tools.
 -   **Version Control:** Git.
-    -   **Remote Repository:** The core `ClineAGI` project is hosted on GitHub at `https://github.com/wojons/ClineAGI.git`.
+    -   **Remote Repository:** The core `ClineAGI` project is hosted on GitHub at `wojons/ClineAGI.git`.
     -   **Workflow:** A Gitflow-like process is adopted for core development (see `systemPatterns.md`).
 -   **Documentation Format:** Markdown for all Memory Bank files.
 -   **Prompt & Rule Management:** A `.clinerules` system will be used for dynamic prompt and rule loading based on roles.
-
-## 2. Development Setup & Tools
--   **Working Directory:** `/Users/lexykwaii/Code/ClineAGI` is the root directory for the core AGI project.
--   **Project Template Source:**
-    -   **Remote URL:** `https://github.com/wojons/ClineAGI-Project-Template.git`
-    -   **Local Clone Path:** `/Users/lexykwaii/Code/ClineAGI/ClineAGI-Project-Template/` (This directory is gitignored).
 -   **`.clinerules` Directory:** Located at `/Users/lexykwaii/Code/ClineAGI/.clinerules`. This project-specific directory stores the active operational rules. It IS version-controlled. Files follow the `NNN-MM_descriptive-name.md` convention.
     -   `000_core/000-00_core-memory-bank-structure.md`: Defines the core Memory Bank structure and workflows.
-    -   `000_core/000-01_core-continuous-improvement-protocol.md`: Protocol for Cline's self-reflection and learning.
+    -   `000_core/000-01_core-continuous_improvement-protocol.md`: Protocol for Cline's self-reflection and learning.
     -   `000_core/000-02_core-intake-processing.md`: Workflow for processing intake files.
     -   `000_core/000-03_core-prometheus-0-prompting.md`: Core prompting styles for Prometheus-0.
     -   `000_core/000-04_core-ai-response-styles.md`: Defines different response styles.
@@ -43,7 +37,7 @@
     -   `002_workflow/002-00_workflow-cline-for-research.md`: Guidelines for using Cline as a research assistant.
     -   `002_workflow/002-01_workflow-cline-for-slides.md`: Instructions for working with Slidev projects.
     -   `002_workflow/002-02_workflow-planning-mode.md`: Workflow and behavior for Plan Mode.
-    -   `002_workflow/002-03_workflow-todo-list.md`: Workflow for using a todo list file.
+    -   `002_workflow/02-03_workflow-todo-list.md`: Workflow for using a todo list file.
     -   `002_workflow/002-04_workflow-agility_story.md`: Guidelines for using the agility story pattern.
     -   `002_workflow/002-05_workflow-analyze-comments.md`: Guidelines for using the analyze comments pattern.
     -   `002_workflow/002-06_workflow-create-5-sentence-summary.md`: Guidelines for creating 5-sentence summaries.
@@ -158,3 +152,39 @@
 -   **Inter-Project Communication:** How will different user projects (or the core AGI and a user project) communicate if needed? (e.g., APIs, shared data formats).
 -   **Dependency Management:** How will dependencies be managed for the core AGI versus individual projects?
 -   **Standardization:** Will there be any enforced standards (e.g., for data formats, API contracts) for projects within the `projects/` directory to ensure interoperability with the core AGI, if desired).
+
+</final_file_content>
+
+IMPORTANT: For any future changes to this file, use the final_file_content shown above as your reference. This content reflects the current state of the file, including any auto-formatting (e.g., if you used single quotes but the formatter converted them to double quotes). Always base your SEARCH/REPLACE operations on this final version to ensure accuracy.<environment_details>
+# VSCode Visible Files
+memory-bank/systemPatterns.md
+
+# VSCode Open Tabs
+.clinerules/996_merged_patterns/create_content.md
+.clinerules/996_merged_patterns/README.md
+.clinerules/996_merged_patterns/extract_information.md
+.clinerules/996_merged_patterns/visualize_data_concepts.md
+.clinerules/996_merged_patterns/improve_refine_content.md
+.clinerules/996_merged_patterns/utility_helper_tasks.md
+.clinerules/996_merged_patterns/summarize_content.md
+.clinerules/996_merged_patterns/996-00_summarize-content.md
+.clinerules/996_merged_patterns/996-01_analyze-content.md
+.clinerules/996_merged_patterns/996-02_create-content.md
+.clinerules/996_merged_patterns/996-03_extract-information.md
+.clinerules/996_merged_patterns/996-04_visualize-data_concepts.md
+.clinerules/996_merged_patterns/996-05_improve-refine-content.md
+.clinerules/996_merged_patterns/996-06_utility-helper-tasks.md
+memory-bank/activeContext.md
+memory-bank/progress.md
+memory-bank/systemPatterns.md
+.clinerules/996_merged_patterns/analyze_content.md
+
+# Current Time
+5/9/2025, 4:16:43 PM (America/Los_Angeles, UTC-7:00)
+
+# Context Window Usage
+753,688 / 1,048.576K tokens used (72%)
+
+# Current Mode
+ACT MODE
+</environment_details>
