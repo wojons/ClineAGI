@@ -1,33 +1,35 @@
-# Active Context: ClineAGI - Project Templating & Framework Refinement
+# Active Context: ClineAGI - Intake System & .clinerules Initialization
 
 ## 1. Current Work Focus
-The current focus is on integrating the project templating system and continuing to refine and document the operational framework. This involves:
--   Cloning the `wojons/ClineAGI-Project-Template` repository locally. (Completed)
--   Updating the root `.gitignore` to exclude the template source directory. (Completed)
--   Updating the Memory Bank (`systemPatterns.md`, `techContext.md`, `activeContext.md`, `progress.md`) to document:
-    -   The new project templating system.
-    -   Refinements to Gitflow, roles, and `.clinerules` documentation.
-    (This document update is in progress)
+The current focus is on establishing the information intake system, initializing the project-specific `.clinerules` directory, and documenting these additions. This involves:
+-   Creating `intake/` and `intake-archive/` directories. (Completed)
+-   Updating `.gitignore` to exclude these directories. (Completed)
+-   Confirming/creating the `.clinerules/` directory. (Completed, it existed)
+-   Creating an initial `ClineAGI-ADMIN_rules.md` file within `.clinerules/`. (Completed)
+-   Updating the Memory Bank (`systemPatterns.md`, `techContext.md`, `activeContext.md`, `progress.md`) to document these new systems. (This document update is in progress)
 
 ## 2. Recent Changes & Decisions
--   **Decision (Previous):** `ClineAGI` project version-controlled on GitHub (`wojons/ClineAGI`), Gitflow adopted, roles and `.clinerules` to be implemented.
--   **Action (Previous):** Local Git repo initialized, remote added, initial commit pushed to `main`. Memory Bank updated for operational framework and pushed to `feature/setup-operational-framework` branch.
--   **Decision (New):** A project templating system using `wojons/ClineAGI-Project-Template` will be implemented.
--   **Action (New):** Cloned `wojons/ClineAGI-Project-Template` to `ClineAGI/ClineAGI-Project-Template/`.
--   **Action (New):** Updated `.gitignore` to exclude `ClineAGI-Project-Template/`.
--   **Action (New):** `systemPatterns.md` and `techContext.md` updated to include the project templating system.
+-   **Decision (Previous):** Project templating system using `wojons/ClineAGI-Project-Template` implemented (clone, .gitignore update, Memory Bank docs).
+-   **Action (Previous):** Memory Bank updates for templating system committed and pushed to `feature/setup-operational-framework`.
+-   **Decision (New):** Implement `intake/` and `intake-archive/` folders for information processing.
+-   **Decision (New):** Initialize project-specific `.clinerules/` with a starting `ClineAGI-ADMIN_rules.md`.
+-   **Action (New):** Created `intake/`, `intake-archive/` directories.
+-   **Action (New):** Updated `.gitignore` for intake folders.
+-   **Action (New):** Created `.clinerules/ClineAGI-ADMIN_rules.md`.
+-   **Action (New):** `systemPatterns.md` and `techContext.md` updated for intake system and `.clinerules` initialization.
 
 ## 3. Immediate Next Steps
 1.  Complete the update of this file (`activeContext.md`).
-2.  Update `memory-bank/progress.md` to reflect the introduction of the project templating system.
-3.  Commit the `.gitignore` update and these Memory Bank updates (for templating system) to the `feature/setup-operational-framework` branch.
+2.  Update `memory-bank/progress.md` to reflect the creation of the intake system and `.clinerules` initialization.
+3.  Commit all new files (`.clinerules/ClineAGI-ADMIN_rules.md`) and recent changes (`.gitignore`, Memory Bank updates for intake and `.clinerules`) to the `feature/setup-operational-framework` branch.
 4.  Push the updated `feature/setup-operational-framework` branch to the remote repository.
 5.  Continue discussions to define the specifics of:
-    -   `.clinerules` directory location and structure.
-    -   Role definition and activation.
+    -   Further content and structure for `.clinerules` (beyond the initial admin rules).
+    -   Role definition and activation mechanisms.
     -   Gitflow primary integration branch, task branch naming, and merge/review process.
-    -   The precise workflow for creating a new user project from the template, including how ClineAGI will automate this.
+    -   The precise workflow for creating a new user project from the template.
     -   Merge conflict resolution strategy when updating projects from the template.
+    -   How Cline will monitor and process files from the `intake/` directory.
 
 ## 4. Active Considerations & Questions
 -   **`.clinerules` Location & Structure:** Clarification needed on whether `.clinerules` is project-specific (`/Users/lexykwaii/Code/ClineAGI/.clinerules`) or global (`/Users/lexykwaii/Documents/Cline/Rules`), and its internal organization.

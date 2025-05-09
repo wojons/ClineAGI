@@ -41,3 +41,7 @@ projects/*/
 
 # Ignore the locally cloned project template source directory
 ClineAGI-Project-Template/
+
+# Ignore intake and archive folders
+intake/
+intake-archive/

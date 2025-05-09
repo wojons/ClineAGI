@@ -14,8 +14,11 @@
 -   **Working Directory:** `/Users/lexykwaii/Code/ClineAGI` is the root directory for the core AGI project.
 -   **Project Template Source:**
     -   **Remote URL:** `https://github.com/wojons/ClineAGI-Project-Template.git`
-    -   **Local Clone Path:** `/Users/lexykwaii/Code/ClineAGI/ClineAGI-Project-Template/` (This directory is gitignored by the main `ClineAGI` repo).
--   **`.clinerules` Directory:** A directory (likely `/Users/lexykwaii/Code/ClineAGI/.clinerules` or the global `/Users/lexykwaii/Documents/Cline/Rules` - to be confirmed based on user's setup) will store role-specific prompts and operational rules. Cline will assist in populating and maintaining this.
+    -   **Local Clone Path:** `/Users/lexykwaii/Code/ClineAGI/ClineAGI-Project-Template/` (This directory is gitignored).
+-   **`.clinerules` Directory:** Located at `/Users/lexykwaii/Code/ClineAGI/.clinerules`. This project-specific directory stores role-based prompts and operational rules (e.g., `ClineAGI-ADMIN_rules.md`). This directory itself IS version-controlled with the main ClineAGI repo.
+-   **Information Intake Directories:**
+    -   `intake/`: Located at `/Users/lexykwaii/Code/ClineAGI/intake/`. For user-provided files awaiting processing. Gitignored.
+    -   `intake-archive/`: Located at `/Users/lexykwaii/Code/ClineAGI/intake-archive/`. For processed files. Gitignored.
 -   **Cline's Toolset:** The tools available to Cline are the primary means of interacting with and modifying the project.
 -   **User's IDE/Editor:** VSCode. Auto-formatting and linting are expected.
 
@@ -52,7 +55,8 @@
     -   `git merge <branch-name>`: Merge changes from another branch into the current branch.
     -   `git pull <remote> <branch>`: Fetch and integrate changes from a specific remote and branch.
     -   `git clone <url> <directory>`: Clone a remote repository into a new directory.
-    -   `cp -R <source_directory>/. <destination_directory>/`: Copy contents of template to new project (ensuring hidden files like .git from template are not copied initially if new project needs fresh .git). A more robust method for copying template contents while excluding the template's .git directory might be needed.
+    -   `cp -R <source_directory>/. <destination_directory>/`: Copy contents of template to new project. (Note: Need a robust way to exclude the template's `.git` directory if the new project needs a fresh Git history, or to handle it if the template's history is desired as a starting point).
+    -   `mv <source_path> <destination_path>`: Move files (e.g., from `intake/` to `intake-archive/`).
     -   `git status`: Check the status of the working directory and staging area.
 -   **Verification/Testing:** `browser_action` for web-based components.
 -   **MCP Tools:** Utilized as needed.

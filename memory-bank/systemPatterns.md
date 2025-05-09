@@ -40,11 +40,17 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 
 ## 5. Prompt and Rule Management (`.clinerules`)
 -   **Purpose:** To allow dynamic and context-aware management of Cline's guiding prompts and operational rules.
--   **Location:** A `.clinerules` directory (details of project-specific vs. global to be confirmed, but likely project-specific at `/Users/lexykwaii/Code/ClineAGI/.clinerules` for this context) will store these configurations.
--   **Structure:** The directory will likely be organized by role (e.g., `ClineAGI-ADMIN/prompts.md`).
--   **Content:** Will contain specific instructions, prompt segments, and rules that Cline will load based on the active role. Cline will assist in writing and refining these rules.
+-   **Location:** A project-specific `.clinerules` directory at `/Users/lexykwaii/Code/ClineAGI/.clinerules` stores these configurations.
+-   **Structure:** The directory is organized by role (e.g., `.clinerules/ClineAGI-ADMIN_rules.md`).
+-   **Content:** Contains specific instructions, prompt segments, and rules that Cline will load based on the active role. Cline will collaboratively build and refine these rules. (Initial `ClineAGI-ADMIN_rules.md` created).
 
-## 6. Project Templating System
+## 6. Information Intake System
+-   **Purpose:** To provide a structured way for the user to pass information, articles, or prompts to Cline for processing.
+-   **`intake/` Directory:** Located at `/Users/lexykwaii/Code/ClineAGI/intake/`. Users place files here for Cline to process. This directory is gitignored.
+-   **`intake-archive/` Directory:** Located at `/Users/lexykwaii/Code/ClineAGI/intake-archive/`. After processing a file from `intake/`, Cline will move the original, unchanged file to this directory. This directory is gitignored.
+-   **Processing Workflow:** Cline will check the `intake/` directory for new files, process them as instructed, and then archive them.
+
+## 7. Project Templating System
 -   **Purpose:** To provide a standardized baseline for new user projects created within the `ClineAGI/projects/` directory.
 -   **Template Source:** A dedicated Git repository, `wojons/ClineAGI-Project-Template`, serves as the master template.
     -   A local clone of this template is maintained at `ClineAGI/ClineAGI-Project-Template/` (this path is ignored by the main `ClineAGI` Git repository).
@@ -69,11 +75,12 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 -   **Git Repository Initialization & Remote Setup:** (Completed for `wojons/ClineAGI`)
 -   **`.gitignore` Configuration:** (Completed)
 -   **Definition of Gitflow Process:** (Ongoing)
--   **Definition of Role-Based System:** (Ongoing)
--   **`.clinerules` System Design:** (Ongoing)
--   **Project Templating System Implementation:** Documenting and beginning to define the logic for cloning and managing templates. (Current focus)
+-   **Definition of Role-Based System:** (Ongoing, initial rules for `ClineAGI-ADMIN` started).
+-   **`.clinerules` System Design:** (Ongoing, initial structure and file created).
+-   **Project Templating System Implementation:** (Documented, logic definition pending).
+-   **Information Intake System:** (Directories created, workflow defined).
 
-## 8. Future Considerations
+## 9. Future Considerations
 -   **Inter-Project Communication:** How will different user projects (or the core AGI and a user project) communicate if needed? (e.g., APIs, shared data formats).
 -   **Dependency Management:** How will dependencies be managed for the core AGI versus individual projects?
 -   **Standardization:** Will there be any enforced standards (e.g., for data formats, API contracts) for projects within the `projects/` directory to ensure interoperability with the core AGI, if desired?
