@@ -16,6 +16,7 @@ These guidelines define how Cline should use the available tools to accomplish t
 4.  **Use When Necessary:** Only call tools when they are necessary to accomplish the task. If the USER's task is general or you already know the answer, just respond without calling tools.
 5.  **Explain Before Calling:** Before calling each tool, first explain to the USER why you are calling it.
 6.  **Standard Format:** Only use the standard tool call format and the available tools. Never output tool calls as part of a regular assistant message of yours.
+7.  **Efficiency:** Output multiple commands at once, as long as they can be executed without seeing the output of another action in the same response first. The actions will be executed in the order that you output them and if one action errors, the actions after it will not be executed. Avoid redundant tool calls.
 
 ## Specific Tool Guidelines
 
@@ -41,6 +42,7 @@ These guidelines define how Cline should use the available tools to accomplish t
 - Use absolute paths when specifying file locations.
 - Verify command safety before execution.
 - Prepare backups or rollback plans when necessary.
+- **Safety Judgment:** When requesting a command to be run, you must judge if it is appropriate to run without the USER's permission. A command is unsafe if it may have destructive side-effects (e.g., deleting files, mutating state, installing system dependencies, making external requests). You must NEVER run an unsafe command automatically.
 
 ### `search_files`
 - This is best for finding exact text matches or regex patterns.
@@ -73,7 +75,7 @@ These guidelines define how Cline should use the available tools to accomplish t
 - The operation will fail gracefully if:
     - The file doesn't exist
     - The operation is rejected for security reasons
-    - The file cannot be deleted
+    - The file cannot be deleted.
 
 ### `browser_action`
 - Use this tool to interact with websites when you need up-to-date information or to verify current facts.
@@ -92,6 +94,7 @@ These guidelines define how Cline should use the available tools to accomplish t
 - Must use scrolling to view content when page markdown is not fully extracted.
 - Multiple scrolls may be needed to gather enough information.
 - Pay attention to dynamically loaded content triggered by scrolling.
+- **Granular Browser Control:** Use specific actions for navigation, clicking, typing, scrolling, moving the mouse, pressing keys, selecting dropdown options, executing/viewing console commands, and saving images when available through MCP tools.
 
 ### `write_to_file`
 - Use this tool to create a new file or completely overwrite an existing file with new content.
@@ -102,6 +105,7 @@ These guidelines define how Cline should use the available tools to accomplish t
 - Add leading newline before content when using append mode (Note: Cline's `write_to_file` does not support append mode, so this guideline is not directly applicable).
 - Prefer this tool over shell commands for file writing.
 - Avoid using list formats in any files except todo.md (Note: This seems specific to the Manus environment, but avoiding unnecessary lists is a good general practice).
+- **Precise File Writing:** When available through MCP tools, use parameters for `append`, `leading_newline`, and `trailing_newline` for more precise file manipulation.
 
 ### `ask_followup_question`
 - Use this tool to ask the user a question to gather additional information needed to complete the task.
@@ -112,13 +116,14 @@ These guidelines define how Cline should use the available tools to accomplish t
 - Must provide all relevant files as attachments since user may not have direct access to local filesystem (Note: Cline's `ask_followup_question` does not support attachments).
 - When necessary, suggest user to temporarily take over browser for sensitive operations or operations with side effects (e.g., account login, payment completion).
 - When suggesting takeover, also indicate that the user can choose to provide necessary information via messages.
+- **Non-Blocking Communication:** When available through MCP tools, use a non-blocking notification tool for progress updates or sharing information without requiring a user response.
 
 ## General Tool Usage Guidelines
 
-- Output multiple commands at once, as long as they can be executed without seeing the output of another action in the same response first. The actions will be executed in the order that you output them and if one action errors, the actions after it will not be executed.
 - Avoid use shell commands like `cat`, `sed`, `echo`, `vim`, `grep`, or `find` to view, edit, create, or search files. Use the dedicated editor and search tools instead.
 - To achieve your task as fast as possible, you must try to make as many edits as possible at the same time by outputting multiple editor commands (using `replace_in_file` or `write_to_file`).
 - If you want to make the same change across multiple files in the codebase, for example for refactoring tasks, consider if `search_files` can help identify locations, then use `replace_in_file` for targeted edits.
+- **Prefer Dedicated Tools:** If there exists a dedicated tool for something you want to do, you should use that tool rather than some shell command.
 
 ### Shell Command Guidelines (`execute_command`)
 - Reuse shell instances if possible – you should just use your existing shells for new commands if they don't have commands running on them. (Note: Cline's `execute_command` runs in a new terminal instance each time, so this guideline is not directly applicable but the principle of efficiency is).
@@ -128,6 +133,7 @@ These guidelines define how Cline should use the available tools to accomplish t
 - Use pipe operator to pass command outputs, simplifying operations.
 - Use non-interactive `bc` for simple calculations, Python for complex math; never calculate mentally.
 - Use `uptime` command when users explicitly request sandbox status check or wake-up.
+- **Granular Shell Control:** When available through MCP tools, use specific actions for viewing output, waiting for completion, writing input, and killing processes.
 
 ### Editor Command Guidelines (`read_file`, `write_to_file`, `replace_in_file`, `delete_file`)
 - Never leave any comments that simply restate what the code does. Default to not adding comments at all. Only add comments if they're absolutely necessary or requested by the user.
@@ -136,6 +142,7 @@ These guidelines define how Cline should use the available tools to accomplish t
 - When merging text files, must use append mode of file writing tool to concatenate content to target file (Note: Cline's `write_to_file` does not support append mode, so this guideline is not directly applicable, but the principle of handling large documents in sections is relevant).
 - Strictly follow requirements in <writing_rules> (Note: This refers to Manus-specific rules, but the principle of following writing rules is relevant).
 - Avoid using list formats in any files except todo.md (Note: This seems specific to the Manus environment, but avoiding unnecessary lists is a good general practice).
+- **Explicit LSP Interaction:** When available through MCP tools, use explicit actions for going to definition, finding references, and hovering over symbols to understand code structure and dependencies.
 
 ### Search Command Guidelines (`search_files`, `list_files`)
 - Output multiple search commands at the same time for efficient, parallel search.
@@ -144,6 +151,7 @@ These guidelines define how Cline should use the available tools to accomplish t
 - Snippets in search results are not valid sources; must access original pages via browser.
 - Access multiple URLs from search results for comprehensive information or cross-validation.
 - Conduct searches step by step: search multiple attributes of single entity separately, process multiple entities one by one.
+- **Fuzzy File Search:** When available through MCP tools, use a fuzzy file search tool for finding files by path when the exact location is unknown.
 
 ### Browser Command Guidelines (`browser_action`)
 - After each turn, you will receive a screenshot and HTML of the page for your most recent browser command.
@@ -159,15 +167,3 @@ These guidelines define how Cline should use the available tools to accomplish t
 - Extracted Markdown includes text beyond viewport but omits links and images; completeness not guaranteed (Note: Cline's browser tool provides HTML and a screenshot).
 - If extracted Markdown is complete and sufficient for the task, no scrolling is needed; otherwise, must actively scroll to view the page (Note: Cline's browser tool provides scrolling actions).
 - Use message tools to suggest user to take over the browser for sensitive operations or actions with side effects when necessary (Note: Cline uses `ask_followup_question` for this).
-
-### Communication Tool Guidelines (`ask_followup_question`)
-- Communicate with users via message tools instead of direct text responses.
-- Reply immediately to new user messages before other operations.
-- First reply must be brief, only confirming receipt without specific solutions.
-- Events from Planner, Knowledge, and Datasource modules are system-generated, no reply needed (Note: This is specific to Manus environment).
-- Notify users with brief explanation when changing methods or strategies.
-- Message tools are divided into notify (non-blocking, no reply needed from users) and ask (blocking, reply required) (Note: Cline has `ask_followup_question` for blocking questions).
-- Actively use notify for progress updates, but reserve ask for only essential needs to minimize user disruption and avoid blocking progress (Note: Cline uses general responses for progress updates and `ask_followup_question` for essential needs).
-- Provide all relevant files as attachments, as users may not have direct access to local filesystem (Note: Cline's `ask_followup_question` does not support attachments).
-- Must message users with results and deliverables before entering idle state upon task completion (Note: Cline uses `attempt_completion` for this).
-

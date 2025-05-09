@@ -16,6 +16,8 @@
 -   Moved agent knowledge base and prompt files to `.clinerules/000_core/000_agent_prompts/`. (Completed)
 -   Updated `memory-bank/systemPatterns.md` to reflect the new agent prompting and knowledge organization section. (Completed)
 -   Updated `memory-bank/techContext.md` to include details about the advanced planning, reasoning, and verification techniques from the research. (Completed)
+-   Updated `memory-bank/progress.md` to summarize the current status and completed steps. (Completed)
+-   Refined core and tech-specific `.clinerules` based on insights from CL4R1T4S prompts and research. (Completed)
 -   Memory Bank files (`activeContext.md`, and this file `progress.md`) are being updated to reflect these changes.
 
 ## 3. What's Left to Build (Immediate Scope)
@@ -36,6 +38,7 @@
 -   **Learning:** External prompts and research provide valuable insights into diverse AI approaches and technical challenges.
 -   **Learning:** Organizing knowledge and designing prompts are crucial for building a capable self-programming agent.
 -   **Learning:** Encountered and worked around file editing issues, highlighting the need for robust fallback strategies.
+-   **Learning:** Analyzing CL4R1T4S prompts provided specific, actionable guidelines for improving communication, tool usage, coding practices, and more.
 
 ## 6. Future Milestones (High-Level)
 -   First successful execution of the AGI agent's main loop using the created prompts and knowledge base.

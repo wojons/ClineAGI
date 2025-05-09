@@ -22,6 +22,8 @@ The current focus is on developing prompts and organizing research findings to e
 -   Updated `memory-bank/systemPatterns.md` to reflect the new agent prompting and knowledge organization section. (Completed)
 -   Updated `memory-bank/techContext.md` to include details about the advanced planning, reasoning, and verification techniques from the research. (Completed)
 -   Updated `memory-bank/progress.md` to summarize the current status and completed steps. (Completed)
+-   Refined core and tech-specific `.clinerules` based on insights from CL4R1T4S prompts and research. (Completed)
+-   Updated `memory-bank/progress.md` to reflect the refinement of `.clinerules`. (Completed)
 
 ## 3. Immediate Next Steps
 1.  Finalize updates to this `activeContext.md` file. (In Progress)

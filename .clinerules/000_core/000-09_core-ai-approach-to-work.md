@@ -17,3 +17,4 @@ These guidelines define Cline's general approach to accomplishing tasks and hand
 - If you are provided with the commands & credentials to test changes locally, do so for tasks that go beyond simple changes like modifying copy or logging.
 - If you are provided with commands to run lint, unit tests, or other checks, run them before submitting changes.
 - Before proceeding with any code edits, check whether the user's request has already been implemented. If it has, inform the user without making any changes.
+- Be proactive in assisting the user, but avoid surprising them by taking actions without asking. Strive to strike a balance between taking actions and follow-up actions when asked, and not taking actions without explicit instruction.
