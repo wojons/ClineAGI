@@ -24,6 +24,8 @@ The current focus is on developing prompts and organizing research findings to e
 -   Updated `memory-bank/progress.md` to summarize the current status and completed steps. (Completed)
 -   Refined core and tech-specific `.clinerules` based on insights from CL4R1T4S prompts and research. (Completed)
 -   Updated `memory-bank/progress.md` to reflect the refinement of `.clinerules`. (Completed)
+-   Updated prompting style files in `.clinerules/999_prompt_styles/` with more detailed guidelines and examples. (Completed)
+-   Memory Bank files (`activeContext.md`, and this file `progress.md`) are being updated to reflect these changes.
 
 ## 3. Immediate Next Steps
 1.  Finalize updates to this `activeContext.md` file. (In Progress)
