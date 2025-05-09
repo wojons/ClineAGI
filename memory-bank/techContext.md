@@ -12,6 +12,9 @@
 
 ## 2. Development Setup & Tools
 -   **Working Directory:** `/Users/lexykwaii/Code/ClineAGI` is the root directory for the core AGI project.
+-   **Project Template Source:**
+    -   **Remote URL:** `https://github.com/wojons/ClineAGI-Project-Template.git`
+    -   **Local Clone Path:** `/Users/lexykwaii/Code/ClineAGI/ClineAGI-Project-Template/` (This directory is gitignored by the main `ClineAGI` repo).
 -   **`.clinerules` Directory:** A directory (likely `/Users/lexykwaii/Code/ClineAGI/.clinerules` or the global `/Users/lexykwaii/Documents/Cline/Rules` - to be confirmed based on user's setup) will store role-specific prompts and operational rules. Cline will assist in populating and maintaining this.
 -   **Cline's Toolset:** The tools available to Cline are the primary means of interacting with and modifying the project.
 -   **User's IDE/Editor:** VSCode. Auto-formatting and linting are expected.
@@ -39,6 +42,7 @@
 -   **Execution (`execute_command`):** For running scripts, build processes, or other CLI tasks, including:
     -   `git init`: Initialize a new Git repository.
     -   `git remote add origin <url>`: Connect local repository to a remote.
+    -   `git remote add <name> <url>`: Add an additional remote repository (e.g., for template upstream).
     -   `git add .` or `git add <file>`: Stage changes for commit.
     -   `git commit -m "<message>"`: Commit staged changes.
     -   `git push -u origin <branch>` or `git push`: Push commits to remote.
@@ -46,7 +50,9 @@
     -   `git checkout <branch-name>`: Switch to a different branch.
     -   `git checkout -b <branch-name>`: Create and switch to a new branch.
     -   `git merge <branch-name>`: Merge changes from another branch into the current branch.
-    -   `git pull`: Fetch and integrate changes from the remote.
+    -   `git pull <remote> <branch>`: Fetch and integrate changes from a specific remote and branch.
+    -   `git clone <url> <directory>`: Clone a remote repository into a new directory.
+    -   `cp -R <source_directory>/. <destination_directory>/`: Copy contents of template to new project (ensuring hidden files like .git from template are not copied initially if new project needs fresh .git). A more robust method for copying template contents while excluding the template's .git directory might be needed.
     -   `git status`: Check the status of the working directory and staging area.
 -   **Verification/Testing:** `browser_action` for web-based components.
 -   **MCP Tools:** Utilized as needed.

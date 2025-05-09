@@ -38,3 +38,6 @@ ehthumbs.db
 # but allow the projects/README.md to be tracked.
 projects/*/
 !projects/README.md
+
+# Ignore the locally cloned project template source directory
+ClineAGI-Project-Template/

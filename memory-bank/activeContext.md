@@ -1,49 +1,48 @@
-# Active Context: ClineAGI - Operational Framework Setup
+# Active Context: ClineAGI - Project Templating & Framework Refinement
 
 ## 1. Current Work Focus
-The primary focus is on establishing and documenting the new operational framework for ClineAGI. This includes:
--   Initializing the local Git repository for `ClineAGI`. (Completed)
--   Connecting the local repository to the GitHub remote `wojons/ClineAGI`. (Completed)
--   Making the initial commit of the project structure and Memory Bank. (Completed)
--   Pushing the initial commit to the remote `main` branch. (Completed)
--   Updating the Memory Bank (`systemPatterns.md`, `techContext.md`, `activeContext.md`, `progress.md`) to reflect:
-    -   The Gitflow-like version control workflow.
-    -   The concept of role-based operations (e.g., `ClineAGI-ADMIN`).
-    -   The introduction of a `.clinerules` system for dynamic prompt management.
-    -   The GitHub repository as the central source of truth.
+The current focus is on integrating the project templating system and continuing to refine and document the operational framework. This involves:
+-   Cloning the `wojons/ClineAGI-Project-Template` repository locally. (Completed)
+-   Updating the root `.gitignore` to exclude the template source directory. (Completed)
+-   Updating the Memory Bank (`systemPatterns.md`, `techContext.md`, `activeContext.md`, `progress.md`) to document:
+    -   The new project templating system.
+    -   Refinements to Gitflow, roles, and `.clinerules` documentation.
     (This document update is in progress)
 
 ## 2. Recent Changes & Decisions
--   **Decision:** The `ClineAGI` project will be version-controlled on GitHub at `wojons/ClineAGI`.
--   **Decision:** A Gitflow-like workflow will be adopted for core system changes.
--   **Decision:** Role-based operations and a `.clinerules` system will be implemented to manage Cline's context and behavior.
--   **Action:** Local Git repository initialized, remote added, initial files committed and pushed.
--   **Action:** `systemPatterns.md` and `techContext.md` updated to reflect these new systems.
+-   **Decision (Previous):** `ClineAGI` project version-controlled on GitHub (`wojons/ClineAGI`), Gitflow adopted, roles and `.clinerules` to be implemented.
+-   **Action (Previous):** Local Git repo initialized, remote added, initial commit pushed to `main`. Memory Bank updated for operational framework and pushed to `feature/setup-operational-framework` branch.
+-   **Decision (New):** A project templating system using `wojons/ClineAGI-Project-Template` will be implemented.
+-   **Action (New):** Cloned `wojons/ClineAGI-Project-Template` to `ClineAGI/ClineAGI-Project-Template/`.
+-   **Action (New):** Updated `.gitignore` to exclude `ClineAGI-Project-Template/`.
+-   **Action (New):** `systemPatterns.md` and `techContext.md` updated to include the project templating system.
 
 ## 3. Immediate Next Steps
 1.  Complete the update of this file (`activeContext.md`).
-2.  Update `memory-bank/progress.md` to reflect the establishment of the Git repository and the new operational framework.
-3.  Discuss and define the specifics of:
-    -   The `.clinerules` directory location (project-specific vs. global) and its internal structure (e.g., subdirectories per role).
-    -   The definition and activation mechanism for roles.
-    -   The primary development integration branch for Gitflow (e.g., `main` or `develop`).
-    -   Naming conventions for task branches.
-    -   The preferred process for reviewing and merging task branches.
-4.  Create an initial task branch for these Memory Bank updates.
-5.  Commit and push the Memory Bank updates to the new task branch.
+2.  Update `memory-bank/progress.md` to reflect the introduction of the project templating system.
+3.  Commit the `.gitignore` update and these Memory Bank updates (for templating system) to the `feature/setup-operational-framework` branch.
+4.  Push the updated `feature/setup-operational-framework` branch to the remote repository.
+5.  Continue discussions to define the specifics of:
+    -   `.clinerules` directory location and structure.
+    -   Role definition and activation.
+    -   Gitflow primary integration branch, task branch naming, and merge/review process.
+    -   The precise workflow for creating a new user project from the template, including how ClineAGI will automate this.
+    -   Merge conflict resolution strategy when updating projects from the template.
 
 ## 4. Active Considerations & Questions
 -   **`.clinerules` Location & Structure:** Clarification needed on whether `.clinerules` is project-specific (`/Users/lexykwaii/Code/ClineAGI/.clinerules`) or global (`/Users/lexykwaii/Documents/Cline/Rules`), and its internal organization.
 -   **Role Definition & Switching:** How will roles be formally defined and how will I be instructed to switch between them?
 -   **Gitflow Branching Strategy:** Confirm main integration branch (`main` vs. `develop`), task branch naming, and merge/review preferences.
--   **User Git Configuration:** The `git commit` output indicated that the user's Git name/email might not be configured globally. This is for the user to address if desired.
+-   **User Git Configuration:** (Noted previously, for user to address if desired).
+-   **Robust Template Copying:** The `cp -R` command noted in `techContext.md` is basic. A more robust method for copying template contents (e.g., using `rsync` with excludes for `.git` or a script) will be needed for the actual project creation logic.
 
 ## 5. Important Patterns & Preferences (Emerging)
--   **Version Controlled Development:** All core changes will now follow a structured Git workflow.
+-   **Version Controlled Development:** All core changes follow a structured Git workflow.
 -   **Explicit Operational Modes:** Roles will make operational contexts explicit.
 -   **Document-Driven Development:** Memory Bank updates are integral to implementing new systems.
+-   **Templating for Consistency:** Using a project template will ensure a consistent starting point for user projects.
 
 ## 6. Learnings & Project Insights
--   Establishing a remote Git repository early provides a safety net and a central point for collaboration.
--   Formalizing workflows like Gitflow and concepts like roles adds necessary structure for a complex project like AGI development.
--   The `.clinerules` concept offers a powerful way to make my operations more adaptable and context-aware.
+-   (Previous learnings about Git and operational structures remain valid).
+-   Introducing a project template system adds another layer of structured process, beneficial for scalability and user experience.
+-   The interaction between the core AGI, the template, and user projects will require careful design of Git remote configurations and update workflows.

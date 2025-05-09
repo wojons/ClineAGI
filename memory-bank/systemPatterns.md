@@ -44,7 +44,21 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 -   **Structure:** The directory will likely be organized by role (e.g., `ClineAGI-ADMIN/prompts.md`).
 -   **Content:** Will contain specific instructions, prompt segments, and rules that Cline will load based on the active role. Cline will assist in writing and refining these rules.
 
-## 6. Component Relationships
+## 6. Project Templating System
+-   **Purpose:** To provide a standardized baseline for new user projects created within the `ClineAGI/projects/` directory.
+-   **Template Source:** A dedicated Git repository, `wojons/ClineAGI-Project-Template`, serves as the master template.
+    -   A local clone of this template is maintained at `ClineAGI/ClineAGI-Project-Template/` (this path is ignored by the main `ClineAGI` Git repository).
+-   **New Project Workflow:**
+    1.  When a user requests a new project, ClineAGI will copy the contents of the local `ClineAGI/ClineAGI-Project-Template/` into a new subdirectory within `ClineAGI/projects/ (e.g., `ClineAGI/projects/new-project-name/`).
+    2.  This new project directory will be initialized as its own Git repository.
+    3.  The new project repository will be configured with `wojons/ClineAGI-Project-Template` as a remote (e.g., named `template-upstream`) to allow users to pull future updates from the master template.
+    4.  Users can then set up their own `origin` remote for their project to point to their personal GitHub repository or other Git hosting service.
+-   **Template Updates & Conflict Management:**
+    -   Users can pull changes from `template-upstream` into their projects.
+    -   ClineAGI will assist in managing merge conflicts that may arise during these updates. The exact mechanism for conflict resolution (e.g., presenting conflicts to the user, attempting automated resolution for common cases) will be refined.
+-   **Template Management:** Updates to the `wojons/ClineAGI-Project-Template` itself will be managed collaboratively by the user and Cline, likely under a specific role or task context.
+
+## 7. Component Relationships
 -   The `ClineAGI` parent repository provides the foundational environment and potentially shared tools or APIs for the user projects.
 -   User projects within `projects/` are consumers or specializations of the core AGI capabilities, or entirely separate endeavors managed within the same overarching structure. They do not directly modify the core AGI code but interact with it or operate alongside it.
 -   The Memory Bank informs all development activities across both tiers.
@@ -54,11 +68,12 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 -   **`projects/` Directory Setup:** (Completed)
 -   **Git Repository Initialization & Remote Setup:** (Completed for `wojons/ClineAGI`)
 -   **`.gitignore` Configuration:** (Completed)
--   **Definition of Gitflow Process:** Documenting and refining the Gitflow adaptation. (Current focus)
--   **Definition of Role-Based System:** Detailing roles and activation mechanisms. (Current focus)
--   **`.clinerules` System Design:** Structuring the `.clinerules` directory and defining how rules are loaded/written. (Current focus)
+-   **Definition of Gitflow Process:** (Ongoing)
+-   **Definition of Role-Based System:** (Ongoing)
+-   **`.clinerules` System Design:** (Ongoing)
+-   **Project Templating System Implementation:** Documenting and beginning to define the logic for cloning and managing templates. (Current focus)
 
-## 7. Future Considerations
+## 8. Future Considerations
 -   **Inter-Project Communication:** How will different user projects (or the core AGI and a user project) communicate if needed? (e.g., APIs, shared data formats).
 -   **Dependency Management:** How will dependencies be managed for the core AGI versus individual projects?
 -   **Standardization:** Will there be any enforced standards (e.g., for data formats, API contracts) for projects within the `projects/` directory to ensure interoperability with the core AGI, if desired?
