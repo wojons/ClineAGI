@@ -46,13 +46,42 @@ For the core `ClineAGI` repository, especially when operating under a role like 
     -   `NNN`: 3-digit prefix for grouping by function/project area (e.g., `000` for Core AGI rules).
     -   `MM`: 2-digit number for the rule within the group.
     -   `descriptive-name`: Kebab-case description.
--   **Structure:** The active `.clinerules/` directory contains files organized by this naming convention. Initial groupings:
-    -   `000-MM_core-agi-*.md`: Core operational rules, self-improvement, core prompting styles, intake processing.
-    -   `001-MM_reference-*.md`: General reference/documentation rules.
-    -   `002-MM_workflow-*.md`: Specific workflow rules.
-    -   `003-MM_protocol-*.md`: Protocol rules.
-    -   `004-MM_tech-specific-*.md`: Tech-specific guides.
--   **Content:** Contains specific instructions, prompt segments, meta-guidelines, and rules that Cline will load based on the active role or task. Cline will collaboratively build and refine these rules. (Existing files renamed and categorized).
+-   **Structure:** The active `.clinerules/` directory contains files organized by this naming convention within subdirectories corresponding to the `NNN` prefix (e.g., `000_core/`, `001_reference/`).
+-   **Content:** Contains specific instructions, prompt segments, meta-guidelines, and rules that Cline will load based on the active role or task. Cline will collaboratively build and refine these rules.
+    -   `000_core/000-00_core-memory-bank-structure.md`: Defines the core Memory Bank structure and workflows.
+    -   `000_core/000-01_core-continuous-improvement-protocol.md`: Protocol for Cline's self-reflection and learning.
+    -   `000_core/000-02_core-intake-processing.md`: Workflow for processing intake files.
+    -   `000_core/000-03_core-prometheus-0-prompting.md`: Core prompting styles for Prometheus-0.
+    -   `000_core/000-04_core-ai-response-styles.md`: Defines different response styles.
+    -   `000_core/000-05_core-ai-response-requirements.md`: Critical response format and behavior rules.
+    -   `000_core/000-06_core-ai-communication-guidelines.md`: Guidelines for communication with the user.
+    -   `000_core/000-07_core-ai-tool-usage-guidelines.md`: Guidelines for using available tools.
+    -   `000_core/000-09_core-ai-approach-to-work.md`: General approach to work and handling difficulties.
+    -   `000_core/000-10_core-agi-admin-gitflow.md`: Gitflow workflow rules for ClineAGI-ADMIN.
+    -   `000_core/000-13_core-ai-information-handling.md`: Guidelines for handling information.
+    -   `000_core/000-14_core-ai-data-security.md`: Guidelines for data security.
+    -   `000_core/000-15_core-ai-pop-quiz-handling.md`: Guidelines for handling "Pop Quizzes".
+    -   `000_core/000-16_core-ai-agent-loop.md`: Defines Cline's agent loop and information processing.
+    -   `000_core/000-17_core-ai-knowledge-management.md`: Guidelines for knowledge management and Memory Bank usage.
+    -   `000_core/000-18_core-ai-visual-information.md`: Guidelines for handling visual information.
+    -   `000_core/000-19_core-ai-writing-style.md`: Guidelines for writing style and documentation.
+    -   `000_core/000-20_core-ai-error-handling.md`: Guidelines for error handling.
+    -   `000_core/000-21_core-ai-response-modes.md`: Defines different response modes.
+    -   `000_core/000-22_core-shell-command-preference.md`: Preference for using bash and shell commands.
+    -   `001_reference/001-00_reference-cline-extension-architecture.md`: Documentation on the Cline extension architecture.
+    -   `001_reference/001-01_reference-community-contributing-guide.md`: Guide for community contributions to a broader ruleset.
+    -   `001_reference/001-02_reference-gemini-comprehensive-software-engineering-guide.md`: Comprehensive software engineering best practices.
+    -   `001_reference/001-03_reference-writing-effective-clinerules.md`: Meta-guidelines for creating effective `.clinerules`.
+    -   `002_workflow/002-00_workflow-cline-for-research.md`: Guidelines for using Cline as a research assistant.
+    -   `002_workflow/002-01_workflow-cline-for-slides.md`: Instructions for working with Slidev projects.
+    -   `002_workflow/002-02_workflow-planning-mode.md`: Workflow and behavior for Plan Mode.
+    -   `002_workflow/002-03_workflow-todo-list.md`: Workflow for using a todo list file.
+    -   `002_workflow/002-04_workflow-agility-story.md`: Guidelines for using the agility story pattern.
+    -   `002_workflow/002-05_workflow-analyze-comments.md`: Guidelines for using the analyze comments pattern.
+    -   `002_workflow/002-06_workflow-create-5-sentence-summary.md`: Guidelines for creating 5-sentence summaries.
+    -   `002_workflow/002-07_workflow-extract-jokes.md`: Guidelines for extracting jokes.
+    -   `003_protocol/003-00_protocol-mcp-development.md`: Protocol for developing MCP servers.
+    -   `004_tech-specific/004-00_tech-specific-next-js-supabase.md`: Guidelines for Next.js apps with Supabase Auth.
 
 ## 6. Information Intake System
 -   **Purpose:** To provide a structured way for the user to pass information, articles, or prompts to Cline for processing.
