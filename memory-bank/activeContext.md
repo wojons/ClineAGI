@@ -1,21 +1,25 @@
-# Active Context: ClineAGI - Integrating Additional .clinerules & Finalizing Setup Phase
+# Active Context: ClineAGI - Finalizing .clinerules Management Structure
 
 ## 1. Current Work Focus
-The current focus is on integrating additional community-provided `.clinerules` and finalizing the documentation for the current setup phase. This involves:
--   Moving several `.clinerules` files from the archived `intake-archive/prompts-main/clinerules/` directory to the project's `.clinerules/` directory. (Completed)
--   Updating the Memory Bank (`systemPatterns.md`, `techContext.md`, `activeContext.md`, `progress.md`) to reflect these new `.clinerules` additions and the overall state. (This document update is in progress)
+The current focus is on finalizing the setup of the `.clinerules` management structure, including ensuring all relevant files are in the active directory with the correct naming convention and updating the Memory Bank documentation. This involves:
+-   Renaming `writing-effective-clinerules.md` to follow the naming convention. (Completed)
+-   Copying `memory-bank.md` from the archive to the active `.clinerules/` directory with the correct naming. (Completed)
+-   Renaming the original `000-00_core-agi-admin-gitflow.md` to accommodate the new `000-00` file. (Completed)
+-   Updating the Memory Bank (`systemPatterns.md`, `techContext.md`, `activeContext.md`, `progress.md`) to reflect these latest changes to the `.clinerules` directory. (This document update is in progress)
 
 ## 2. Recent Changes & Decisions
--   **Decision (Previous):** Integrate initial community `.clinerules` (guidelines and contributing guide).
--   **Action (Previous):** Moved `writing-effective-clinerules.md` and `community-clinerules-contributing-guide.md` to `.clinerules/`, archived `intake/prompts-main/`, updated Memory Bank, committed and pushed to `feature/setup-operational-framework`.
--   **Decision (New):** Integrate additional `.clinerules` found in the archived `intake-archive/prompts-main/clinerules/`.
--   **Action (New):** Moved `cline-architecture.md`, `cline-continuous-improvement-protocol.md`, `cline-for-research.md`, `cline-for-slides.md`, `gemini-comprehensive-software-engineering-guide.md`, `mcp-development-protocol.md`, `next-js-supabase.md`, and `self-improving-cline.md` to `.clinerules/`.
--   **Action (New):** `systemPatterns.md` and `techContext.md` updated to list these new `.clinerules` files.
+-   **Decision (Previous):** Implement a structured `.clinerules` management system with an archive and naming convention.
+-   **Action (Previous):** Created `/.clinerules_archive/`, copied existing rules, renamed active rules, updated Memory Bank, committed and pushed to `feature/setup-operational-framework`.
+-   **Decision (New):** Ensure `writing-effective-clinerules.md` and `memory-bank.md` from archive are correctly named and located in the active `.clinerules/` directory.
+-   **Action (New):** Renamed `/.clinerules/writing-effective-clinerules.md` to `001-03_reference-writing-effective-clinerules.md`.
+-   **Action (New):** Copied `intake-archive/prompts-main/clinerules/memory-bank.md` to `/.clinerules/000-00_core-memory-bank-structure.md`.
+-   **Action (New):** Renamed `/.clinerules/000-00_core-agi-admin-gitflow.md` to `000-10_core-agi-admin-gitflow.md`.
+-   **Action (New):** `systemPatterns.md` and `techContext.md` updated to reflect these latest changes.
 
 ## 3. Immediate Next Steps
 1.  Complete the update of this file (`activeContext.md`).
-2.  Update `memory-bank/progress.md` to reflect the integration of these additional `.clinerules` files.
-3.  Commit all new `.clinerules` files and recent Memory Bank updates to the `feature/setup-operational-framework` branch.
+2.  Update `memory-bank/progress.md` to reflect these latest changes to the `.clinerules` directory.
+3.  Commit the renaming of `writing-effective-clinerules.md`, the addition of `000-00_core-memory-bank-structure.md`, the renaming of `000-10_core-agi-admin-gitflow.md`, and the Memory Bank updates to the `feature/setup-operational-framework` branch.
 4.  Push the updated `feature/setup-operational-framework` branch to the remote repository.
 5.  Continue discussions to define the specifics of:
     -   Further content and structure for `.clinerules` (beyond the initial admin rules).

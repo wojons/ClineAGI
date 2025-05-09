@@ -15,18 +15,20 @@
 -   **Project Template Source:**
     -   **Remote URL:** `https://github.com/wojons/ClineAGI-Project-Template.git`
     -   **Local Clone Path:** `/Users/lexykwaii/Code/ClineAGI/ClineAGI-Project-Template/` (This directory is gitignored).
--   **`.clinerules` Directory:** Located at `/Users/lexykwaii/Code/ClineAGI/.clinerules`. This project-specific directory stores role-based prompts, meta-rules, and operational rules. It IS version-controlled.
-    -   `ClineAGI-ADMIN_rules.md`: Rules for core system development.
-    -   `writing-effective-clinerules.md`: Guidelines for creating `.clinerules`.
-    -   `community-clinerules-contributing-guide.md`: Guide for community contributions.
-    -   `cline-architecture.md`: Documentation on the Cline extension architecture.
-    -   `cline-continuous-improvement-protocol.md`: Protocol for Cline's self-reflection and learning.
-    -   `cline-for-research.md`: Guidelines for using Cline as a research assistant.
-    -   `cline-for-slides.md`: Instructions for working with Slidev projects.
-    -   `gemini-comprehensive-software-engineering-guide.md`: Comprehensive software engineering best practices.
-    -   `mcp-development-protocol.md`: Protocol for developing MCP servers.
-    -   `next-js-supabase.md`: Guidelines for Next.js apps with Supabase Auth.
-    -   `self-improving-cline.md`: Rule for Cline's self-improvement reflection process.
+-   **`.clinerules` Directory:** Located at `/Users/lexykwaii/Code/ClineAGI/.clinerules`. This project-specific directory stores the active operational rules. It IS version-controlled. Files follow the `NNN-MM_descriptive-name.md` convention.
+    -   `000-00_core-memory-bank-structure.md`: Defines the core Memory Bank structure and workflows. (Added from archive)
+    -   `000-01_core-continuous-improvement-protocol.md`: Protocol for Cline's self-reflection and learning. (Renamed)
+    -   `000-06_core-self-improvement-protocol.md`: Rule for Cline's self-improvement reflection process. (Renamed)
+    -   `000-10_core-agi-admin-gitflow.md`: Rules specific to core ClineAGI development and Gitflow. (Renamed)
+    -   `001-00_reference-cline-extension-architecture.md`: Documentation on the Cline extension architecture. (Renamed)
+    -   `001-01_reference-community-contributing-guide.md`: Guide for community contributions to a broader ruleset. (Renamed)
+    -   `001-02_reference-gemini-comprehensive-software-engineering-guide.md`: Comprehensive software engineering best practices. (Renamed)
+    -   `001-03_reference-writing-effective-clinerules.md`: Guidelines for creating `.clinerules`. (Renamed)
+    -   `002-00_workflow-cline-for-research.md`: Guidelines for using Cline as a research assistant. (Renamed)
+    -   `002-01_workflow-cline-for-slides.md`: Instructions for working with Slidev projects. (Renamed)
+    -   `003-00_protocol-mcp-development.md`: Protocol for developing MCP servers. (Renamed)
+    -   `004-00_tech-specific-next-js-supabase.md`: Guidelines for Next.js apps with Supabase Auth. (Renamed)
+-   **`.clinerules_archive/` Directory:** Located at `/Users/lexykwaii/Code/ClineAGI/.clinerules_archive/`. Stores copies of all `.clinerules` that have been used or developed, serving as a historical reference and source for future rule development. This directory is gitignored.
 -   **Information Intake Directories:**
     -   `intake/`: Located at `/Users/lexykwaii/Code/ClineAGI/intake/`. For user-provided files awaiting processing. Gitignored.
     -   `intake-archive/`: Located at `/Users/lexykwaii/Code/ClineAGI/intake-archive/`. For processed files. Gitignored.

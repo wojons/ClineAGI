@@ -1,30 +1,25 @@
-# Progress: ClineAGI - Integrating Community .clinerules & Finalizing Setup
+# Progress: ClineAGI - Finalizing .clinerules Management Structure
 
 ## 1. Current Status
 -   **Phase:** Operational Framework Enhancement & Documentation.
--   **Overall Progress:** Intake system and initial project-specific `.clinerules` established. Community-provided `.clinerules` (guidelines for writing rules) integrated. Memory Bank is being updated to reflect all recent additions.
+-   **Overall Progress:** Project templating system and intake system established. All provided community `.clinerules` integrated. New `.clinerules` management structure (archive, naming convention) established and finalized. Memory Bank is being updated.
 
 ## 2. What Works / What Is Built
 -   Core Memory Bank, project structure, Git repository, operational framework documentation, project templating system setup. (Completed & Pushed to `feature/setup-operational-framework`)
 -   `intake/` and `intake-archive/` directories created and gitignored. (Completed)
--   `.clinerules/` directory established with the following files:
-    -   `ClineAGI-ADMIN_rules.md` (initial version). (Created)
-    -   `writing-effective-clinerules.md` (guidelines for writing rules). (Added from intake)
-    -   `community-clinerules-contributing-guide.md` (guide for community contributions). (Added from intake)
-    -   `cline-architecture.md` (Cline extension architecture). (Added from intake)
-    -   `cline-continuous-improvement-protocol.md` (Cline's self-reflection protocol). (Added from intake)
-    -   `cline-for-research.md` (Cline as research assistant). (Added from intake)
-    -   `cline-for-slides.md` (Slidev project instructions). (Added from intake)
-    -   `gemini-comprehensive-software-engineering-guide.md` (Software engineering best practices). (Added from intake)
-    -   `mcp-development-protocol.md` (MCP server development protocol). (Added from intake)
-    -   `next-js-supabase.md` (Next.js with Supabase Auth guidelines). (Added from intake)
-    -   `self-improving-cline.md` (Cline's self-improvement reflection rule). (Added from intake)
+-   All provided community `.clinerules` moved to project's `.clinerules/`. (Completed)
 -   `intake/prompts-main/` processed and archived. (Completed)
--   Memory Bank files (`systemPatterns.md`, `techContext.md`, `activeContext.md`, and this file `progress.md`) are being updated for these `.clinerules` additions.
+-   `/.clinerules_archive/` directory created and gitignored. (Completed)
+-   Existing `.clinerules` files copied to archive. (Completed)
+-   Active `.clinerules` files renamed according to `NNN-MM_descriptive-name.md` convention. (Completed)
+-   `/.clinerules/writing-effective-clinerules.md` renamed to `001-03_reference-writing-effective-clinerules.md`. (Completed)
+-   `intake-archive/prompts-main/clinerules/memory-bank.md` copied to `/.clinerules/000-00_core-memory-bank-structure.md`. (Completed)
+-   `/.clinerules/000-00_core-agi-admin-gitflow.md` renamed to `000-10_core-agi-admin-gitflow.md`. (Completed)
+-   Memory Bank files (`systemPatterns.md`, `techContext.md`, `activeContext.md`, and this file `progress.md`) are being updated for these structural changes.
 
 ## 3. What's Left to Build (Immediate Scope)
 -   Finalize updates to this `progress.md` file. (In Progress)
--   Commit all new `.clinerules` files and recent Memory Bank updates to the `feature/setup-operational-framework` branch.
+-   Commit the latest changes to the `.clinerules` directory (renaming and adding `000-00_core-memory-bank-structure.md`), along with the Memory Bank updates, to the `feature/setup-operational-framework` branch.
 -   Push the updated `feature/setup-operational-framework` branch to the remote repository.
 -   Continue discussions to define specifics for:
     -   Further `.clinerules` content and structure.

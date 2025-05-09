@@ -40,20 +40,19 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 
 ## 5. Prompt and Rule Management (`.clinerules`)
 -   **Purpose:** To allow dynamic and context-aware management of Cline's guiding prompts and operational rules.
--   **Location:** A project-specific `.clinerules` directory at `/Users/lexykwaii/Code/ClineAGI/.clinerules` stores these configurations. This directory IS version-controlled with the main ClineAGI repo.
--   **Structure:** The directory is organized by role or topic (e.g., `.clinerules/ClineAGI-ADMIN_rules.md`, `.clinerules/writing-effective-clinerules.md`).
--   **Content:** Contains specific instructions, prompt segments, meta-guidelines for writing rules, and rules that Cline will load based on the active role or task. Cline will collaboratively build and refine these rules.
-    -   `ClineAGI-ADMIN_rules.md`: Rules specific to core ClineAGI development. (Created)
-    -   `writing-effective-clinerules.md`: Meta-guidelines for creating effective `.clinerules`. (Added from intake)
-    -   `community-clinerules-contributing-guide.md`: Guide for community contributions to a broader ruleset. (Added from intake)
-    -   `cline-architecture.md`: Documentation on the Cline extension architecture. (Added from intake)
-    -   `cline-continuous-improvement-protocol.md`: Protocol for Cline's self-reflection and learning. (Added from intake)
-    -   `cline-for-research.md`: Guidelines for using Cline as a research assistant. (Added from intake)
-    -   `cline-for-slides.md`: Instructions for working with Slidev projects. (Added from intake)
-    -   `gemini-comprehensive-software-engineering-guide.md`: Comprehensive software engineering best practices. (Added from intake)
-    -   `mcp-development-protocol.md`: Protocol for developing MCP servers. (Added from intake)
-    -   `next-js-supabase.md`: Guidelines for Next.js apps with Supabase Auth. (Added from intake)
-    -   `self-improving-cline.md`: Rule for Cline's self-improvement reflection process. (Added from intake)
+-   **Location:** A project-specific `.clinerules` directory at `/Users/lexykwaii/Code/ClineAGI/.clinerules` stores the active operational rules. This directory IS version-controlled with the main ClineAGI repo.
+-   **Archive:** A `/.clinerules_archive/` directory stores copies of all `.clinerules` that have been used or developed, serving as a historical reference and source for future rule development. This directory is gitignored.
+-   **Naming Convention:** `.clinerules` files follow the `NNN-MM_descriptive-name.md` format:
+    -   `NNN`: 3-digit prefix for grouping by function/project area (e.g., `000` for Core AGI rules).
+    -   `MM`: 2-digit number for the rule within the group.
+    -   `descriptive-name`: Kebab-case description.
+-   **Structure:** The active `.clinerules/` directory contains files organized by this naming convention. Initial groupings:
+    -   `000-MM_core-agi-*.md`: Core operational rules, self-improvement, core prompting styles, intake processing.
+    -   `001-MM_reference-*.md`: General reference/documentation rules.
+    -   `002-MM_workflow-*.md`: Specific workflow rules.
+    -   `003-MM_protocol-*.md`: Protocol rules.
+    -   `004-MM_tech-specific-*.md`: Tech-specific guides.
+-   **Content:** Contains specific instructions, prompt segments, meta-guidelines, and rules that Cline will load based on the active role or task. Cline will collaboratively build and refine these rules. (Existing files renamed and categorized).
 
 ## 6. Information Intake System
 -   **Purpose:** To provide a structured way for the user to pass information, articles, or prompts to Cline for processing.
