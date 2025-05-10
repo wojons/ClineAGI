@@ -35,6 +35,7 @@ The current focus is on the systematic review, enhancement, and deduplication of
 -   Deleted active `.clinerules/000_core/000-04_core-ai-response-styles.md`. (Completed)
 -   Renamed `.clinerules/000_core/000-06_core-self-improvement-protocol.md` to `000-08_core-continuous-improvement-protocol.md`. (Completed)
 -   Reviewed `.clinerules/000_core/000-15_core-ai-pop-quiz-handling.md`, `000-16_core-ai-agent-loop.md`, and `000-18_core-ai-visual-information.md`. No changes needed. (Completed)
+-   Reviewed `.clinerules/000_core/000-19_core-ai-writing-style.md`, `000-20_core-ai-error-handling.md`, `000-21_core-ai-response-modes.md`, and `000-22_core-shell-command-preference.md`. No changes needed. (Completed)
 -   This `activeContext.md` file is currently being updated.
 
 ## 3. Immediate Next Steps

@@ -32,7 +32,8 @@
 -   Deleted active `.clinerules/000_core/000-04_core-ai-response-styles.md`. (Completed)
 -   Renamed `.clinerules/000_core/000-06_core-self-improvement-protocol.md` to `000-08_core-continuous-improvement-protocol.md`. (Completed)
 -   Updated `memory-bank/activeContext.md` to reflect these changes. (Completed)
--   Reviewed `.clinerules/000_core/000-15_core-ai-pop-quiz-handling.md`, `000-16_core-ai-agent-loop.md`, and `000-18_core-ai-visual-information.md`. No changes needed. (Completed)
+-   Reviewed `.clinerules/000_core/000-15_core-ai-pop-quiz-handling.md`, `000-16_core-ai-agent-loop.md`, and `000-18_core-ai-visual_information.md`. No changes needed. (Completed)
+-   Reviewed `.clinerules/000_core/000-19_core-ai-writing-style.md`, `000-20_core-ai-error-handling.md`, `000-21_core-ai-response-modes.md`, and `000-22_core-shell-command-preference.md`. No changes needed. (Completed)
 -   This `progress.md` file is currently being updated.
 
 ## 3. What's Left to Build (Immediate Scope)
