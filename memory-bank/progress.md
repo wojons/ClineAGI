@@ -38,6 +38,7 @@
 -   Reviewed `.clinerules/003_protocol/003-00_protocol-mcp-development.md`. No changes needed. (Completed)
 -   Reviewed `.clinerules/004_tech-specific/004-00_tech-specific-next-js-supabase.md`, `004-01_tech-specific-tailwind-css.md`, `004-02_tech-specific-shadcn-ui.md`, `004-03_tech-specific-supabase-edge-functions.md`, and `004-04_tech-specific-stripe-integration.md`. No changes needed. (Completed)
 -   Reviewed `.clinerules/005_coding-guidelines/005-00_coding-best-practices.md`. No changes needed. (Completed)
+-   Reviewed `.clinerules/996_merged_patterns/996-00_analyze-patterns.md`, `996-00_summarize-content.md`, and `996-01_analyze-content.md`. Archived `996-00_analyze-patterns.md` as redundant. (Completed)
 -   This `progress.md` file is currently being updated.
 
 ## 3. What's Left to Build (Immediate Scope)
