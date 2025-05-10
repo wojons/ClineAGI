@@ -30,6 +30,7 @@
 -   Modified `.clinerules/000_core/000-07_core-ai-tool-usage-guidelines.md` for alignment with Cline docs. (Completed)
 -   Archived `.clinerules/000_core/000-04_core-ai-response-styles.md`. (Completed)
 -   Deleted active `.clinerules/000_core/000-04_core-ai-response-styles.md`. (Completed)
+-   Renamed `.clinerules/000_core/000-06_core-self-improvement-protocol.md` to `000-08_core-continuous-improvement-protocol.md`. (Completed)
 -   Updated `memory-bank/activeContext.md` to reflect these changes. (Completed)
 -   This `progress.md` file is currently being updated.
 
