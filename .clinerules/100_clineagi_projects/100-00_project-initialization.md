@@ -22,24 +22,21 @@ This workflow is triggered when the user requests to create a new project.
     *   Ask the user for the desired name of the new project.
     *   Ask the user to select a project template structure (e.g., General Development, Data Science/Research, Content/Knowledge Base, Web Server) from the options defined in `memory-bank/project_template_structures.md`. If no type is specified, default to "General Development Project".
 2.  **Create Project Directory:**
-    *   Use the `execute_command` tool to create a new directory for the project within the `projects/` directory (e.g., `mkdir projects/<project_name>`).
-3.  **Copy Template Contents:**
-    *   Use the `execute_command` tool to copy the contents of the local project template (`ClineAGI-Project-Template/`) into the new project directory. Ensure the `.git` directory from the template is NOT copied, as the new project will have its own Git repository.
-    *   Command example: `cp -R ClineAGI-Project-Template/. projects/<project_name>/ && rm -rf projects/<project_name>/.git`
-4.  **Initialize Git Repository:**
-    *   Use the `execute_command` tool to initialize a new Git repository within the new project directory.
-    *   Command example: `cd projects/<project_name> && git init`
-5.  **Configure Template Remote:**
-    *   Use the `execute_command` tool to add the `wojons/ClineAGI-Project-Template` repository as a remote named `template-upstream`.
-    *   Command example: `cd projects/<project_name> && git remote add template-upstream https://github.com/wojons/ClineAGI-Project-Template.git`
-6.  **Create Project-Specific `.clinerules` Directory:**
+    *   Use the `execute_command` tool to create a new directory for the project within the `projects/` directory (e.g., `mkdir projects/{{PROJECT_NAME}}`).
+3.  **Clone Project Template:**
+    *   Use the `execute_command` tool to clone the project template repository into the new project directory.
+    *   Command example: `git clone https://github.com/wojons/ClineAGI-Project-Template.git projects/{{PROJECT_NAME}}`
+4.  **Rename Template Remote:**
+    *   Use the `execute_command` tool to rename the default `origin` remote to `template-upstream` in the cloned repository.
+    *   Command example: `cd projects/{{PROJECT_NAME}} && git remote rename origin template-upstream`
+5.  **Create Project-Specific `.clinerules` Directory:**
     *   Use the `execute_command` tool to create the `.clinerules` directory within the new project.
-    *   Command example: `mkdir projects/<project_name>/.clinerules`
-7.  **Create Placeholder Project Rule:**
-    *   Use the `write_to_file` tool to create a basic `README.md` or a placeholder rule file within the project's `.clinerules/` directory. This ensures the directory is tracked by Git and provides a starting point for project-specific rules.
-    *   Content example:
-        ```markdown
-        # Project-Specific Rules for <Project Name>
+    *   Command example: `mkdir projects/{{PROJECT_NAME}}/.clinerules`
+6.  **Create Placeholder Project Rule:**
+        *   Use the `write_to_file` tool to create a basic `README.md` or a placeholder rule file within the project's `.clinerules/` directory. This ensures the directory is tracked by Git and provides a starting point for project-specific rules.
+        *   Content example:
+            ```markdown
+            # Project-Specific Rules for {{PROJECT_NAME}}
 
         This directory contains rules and guidelines specific to the <Project Name> project.
 
@@ -52,14 +49,119 @@ This workflow is triggered when the user requests to create a new project.
         ## 3. Project-Specific Workflows
         [Document any workflows unique to this project]
         ```
-8.  **Inform User:**
-    *   Notify the user that the project has been initialized, the template copied, Git set up, and the project-specific `.clinerules` directory created.
-    *   Explain that they can now add their own project-specific rules in `projects/<project_name>/.clinerules/`.
+7.  **Initialize Project Memory Bank:**
+        *   Use the `execute_command` tool to create the project-specific `memory-bank` directory.
+        *   Command example: `mkdir projects/{{PROJECT_NAME}}/memory-bank`
+        *   Use the `write_to_file` tool to create the initial `projectbrief.md` in the project's memory bank.
+        *   Content example:
+            ```markdown
+            # Project Brief for {{PROJECT_NAME}}
+
+This document provides the foundational context for the {{PROJECT_NAME}} project.
+
+## 1. Core Requirements and Goals
+- [Initial core requirements and goals based on user input]
+
+## 2. Project Scope
+- [Initial scope definition]
+
+## 3. Key Stakeholders
+- [Initial list of key stakeholders, e.g., the user]
+
+## 4. Definition of Done
+- [Initial definition of what constitutes completion]
+            ```
+        *   Use the `write_to_file` tool to create the initial `activeContext.md` in the project's memory bank.
+        *   Content example:
+            ```markdown
+            # Active Context for {{PROJECT_NAME}}
+
+This document tracks the current focus, recent changes, and next steps for the {{PROJECT_NAME}} project.
+
+## 1. Current Work Focus
+- [Brief description of the current task or feature being worked on]
+
+## 2. Recent Changes
+- [Summary of the most recent significant changes]
+
+## 3. Next Steps
+- [Clear outline of the immediate next steps]
+
+## 4. Active Decisions and Considerations
+- [Any important decisions made or considerations for the current work]
+
+## 5. Important Patterns and Preferences
+- [Project-specific patterns or user preferences noted during development]
+
+## 6. Learnings and Project Insights
+- [Key learnings or insights gained during the current phase]
+            ```
+        *   Use the `write_to_file` tool to create the initial `progress.md` in the project's memory bank.
+        *   Content example:
+            ```markdown
+            # Progress for {{PROJECT_NAME}}
+
+This document tracks the overall progress, completed work, and remaining tasks for the {{PROJECT_NAME}} project.
+
+## 1. What Works
+- [Summary of implemented and verified functionality]
+
+## 2. What's Left to Build
+- [Outline of remaining features or tasks]
+
+## 3. Current Status
+- [Overall status of the project (e.g., Planning, Development, Testing)]
+
+## 4. Known Issues
+- [Any identified bugs or issues]
+
+## 5. Evolution of Project Decisions
+- [Notes on how key project decisions have evolved]
+            ```
+        *   Use the `write_to_file` tool to create the initial `raw_reflection_log.md` in the project's memory bank.
+        *   Content example:
+            ```markdown
+            # Raw Reflection Log for {{PROJECT_NAME}}
+
+This file contains detailed, timestamped entries of learnings, difficulties, and successes during tasks for the {{PROJECT_NAME}} project. Entries are candidates for consolidation into `consolidated_learnings.md`.
+            ```
+        *   Use the `write_to_file` tool to create the initial `consolidated_learnings.md` in the project's memory bank.
+        *   Content example:
+            ```markdown
+            # Consolidated Learnings for {{PROJECT_NAME}}
+
+This file contains curated, summarized, and actionable insights distilled from the raw reflection log for the {{PROJECT_NAME}} project.
+            ```
+        *   Use the `write_to_file` tool to create the initial `feedback.md` in the project's memory bank.
+        *   Content example:
+            ```markdown
+            # Project Feedback for {{PROJECT_NAME}}
+
+This file captures user feedback specific to the {{PROJECT_NAME}} project.
+
+---
+```
+        *   Use the `write_to_file` tool to create the initial `user_preferences.md` in the project's memory bank.
+        *   Content example:
+            ```markdown
+            # Project-Specific User Preferences for {{PROJECT_NAME}}
+
+This file tracks user preferences that override global settings for the {{PROJECT_NAME}} project.
+
+- `proactive_assistance_enabled`: `true`, `false`, or `inherit` (Default: `inherit` from global)
+  - Overrides the global proactive assistance setting for this project.
+
+---
+```
+8.  **Update Main Projects List:**
+        *   Use the `write_to_file` tool to append an entry for the new project to the main `memory-bank/projects.md` file. The content should be a new row in the Markdown table, using the format `| {{PROJECT_NAME}} | {{CURRENT_DATE_YYYY_MM_DD}} | {{PROJECT_TYPE}} | projects/{{PROJECT_NAME}}/ | [Brief description of the project] |`. Ensure the table formatting is maintained.
+9.  **Inform User:**
+        *   Notify the user that the project has been initialized by cloning the template, Git remote set up, and the project-specific `.clinerules` directory and memory bank (including feedback and preferences files) have been created, and an entry added to `memory-bank/projects.md`.
+        *   Explain that they can now add their own project-specific rules in `projects/{{PROJECT_NAME}}/.clinerules/` and update the descriptions in the project's memory bank files and the main `memory-bank/projects.md`.
 
 ## Dependencies
 
 *   Existence of the `projects/` directory in the ClineAGI root.
-*   Existence of the local `ClineAGI-Project-Template/` directory.
 *   Availability of `execute_command` and `write_to_file` tools.
 *   User input for project name and type.
 

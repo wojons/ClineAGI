@@ -45,3 +45,7 @@ ClineAGI-Project-Template/
 # Ignore intake and archive folders
 intake/
 intake-archive/
+
+# Ignore personalized memory bank and template source
+memory-bank/
+memory-bank-template-source/

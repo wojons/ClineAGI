@@ -255,5 +255,70 @@ This document lists core concepts related to Artificial General Intelligence (AG
     -   Control Strategies (Capability-Based Security, IFC, Policy Zones, AI Nanny, RBAC, Secure Agent-to-Agent Comm)
     -   Proactive Risk Mitigation (Tripwires, Security-First Design, Human Oversight/Control, Goal Alignment, Ethical Frameworks/Audits)
     -   Verifier's Dilemma
-    -   Meta-Verification Problem
+    -   Meta-Verification Problem<environment_details>
+# VSCode Visible Files
+temp_memory_bank_template_clone/techContext.md
 
+# VSCode Open Tabs
+.clinerules_archive/archived_000-17_core-ai-knowledge-management_v1.md
+.clinerules_archive/archived_000-04_core-ai-response-styles_v1.md
+.clinerules_archive/archived_000-06_core-self-improvement-protocol_v1.md
+.clinerules/000_core/000-08_core-continuous-improvement-protocol.md
+memory-bank/progress.md.tmp
+intake/ClineAGI_contextpack.txt
+.clinerules/000_core/000-06_core-ai-communication-and-style.md
+.clinerules/000_core/000-07_core-ai-tool-usage-guidelines.md
+memory-bank/activeContext.md
+memory-bank/progress.md
+memory-bank/project_template_structures.md
+.clinerules/100_clineagi_projects/100-01_project-context-switching.md
+.clinerules/100_clineagi_projects/100-02_project-clinerules-management.md
+.clinerules/100_clineagi_projects/100-03_project-version-control.md
+.clinerules/100_clineagi_projects/100-04_project-container-interaction.md
+.clinerules/200_containers/200-00_container-technology-selection.md
+.clinerules/200_containers/200-01_dockerfile-management.md
+.clinerules/200_containers/200-02_container-image-management.md
+.clinerules/200_containers/200-03_container-runtime-operations.md
+.clinerules/200_containers/200-04_container-networking.md
+.clinerules/200_containers/200-05_container-dependency-management.md
+.clinerules/200_containers/200-06_containerized-project-workflow.md
+.clinerules/200_containers/200-07_base-image-selection-guidance.md
+.clinerules/000_core/000-00_core-memory-bank-structure.md
+projects/happy-friends/.clinerules/README.md
+projects/happy-friends/style.css
+projects/happy-friends/Dockerfile
+projects/happy-friends/index.html
+memory-bank/projects.md
+.clinerules/000_core/000-02_core-intake-processing.md
+.clinerules/100_clineagi_projects/100-00_project-initialization.md
+.clinerules/100_clineagi_projects/100-0Z_project-type-specific-guidance.md
+prompts/prompt_inventory.md
+.clinerules/000_core/000-14_core-yolo-mode-protocol.md
+temp_memory_bank_template_readme/README.md
+temp_memory_bank_master_readme/README.md
+.gitignore
+README.md
+ClineAGI-Project-Template/README.md
+temp_memory_bank_template_clone/projectbrief.md
+temp_memory_bank_template_clone/productContext.md
+temp_memory_bank_template_clone/systemPatterns.md
+temp_memory_bank_template_clone/techContext.md
+temp_memory_bank_template_clone/AGI_Core_Concepts.md
+.clinerules/100_clineagi_projects/100-05_project-deletion.md
+.clinerules/000_core/000-11_core-user-feedback-protocol.md
+.clinerules/001_reference/001-03_reference-writing-effective-clinerules.md
+.clinerules/006_integrated_tooling/006-00_integrated-tooling-concepts.md
+.clinerules/000_core/000-12_core-adaptive-problem-solving.md
+.clinerules/000_core/000-13_core-task-thread-logging.md
+memory-bank/user_interaction_philosophy.md
+memory-bank/user_preferences.md
+
+# Current Time
+5/10/2025, 11:05:38 AM (America/Los_Angeles, UTC-7:00)
+
+# Context Window Usage
+486,613 / 1,048.576K tokens used (46%)
+
+# Current Mode
+ACT MODE
+</environment_details>

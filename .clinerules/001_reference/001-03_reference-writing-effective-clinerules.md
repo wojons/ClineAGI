@@ -58,6 +58,14 @@ tags: ["coding-guideline", "documentation", "workflow", "supabase"]
 
 ClineRules can serve various purposes. Tailor the structure and content to the type of rule you're writing.
 
+## 5. Using Relative Paths
+
+When specifying file paths in rules (e.g., in examples, commands, or instructions for me), prioritize relative paths. Paths should typically be relative to the project root (e.g., `projects/<project_name>/src/file.js`) or, if within a project's `.clinerules`, relative to that project's root (e.g., `memory-bank/projectbrief.md`). Avoid absolute paths like `/Users/username/...` to ensure portability.
+
+## 6. Types of ClineRules and Their Structure
+
+ClineRules can serve various purposes. Tailor the structure and content to the type of rule you're writing.
+
 ### a. Informational / Documentation Rules
 Provide comprehensive information about a system, architecture, or technology. This document is an example of an informational rule.
 * **Key Elements:**

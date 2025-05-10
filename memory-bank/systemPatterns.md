@@ -119,7 +119,7 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 -   **Tool Limitations:** Cline operates within the capabilities and limitations of its provided tools. For example, `cd` is not a standalone persistent command; path context must be managed per tool use.
 -   **File System Access:** Cline's file operations are based on paths relative to the current working directory (`/Users/lexykwaii/Code/ClineAGI`) or absolute paths.
 -   **Command Execution:** CLI commands are executed in new terminal instances. Long-running processes are possible, and their status will be reported.
--   **Modularity of `projects/` Repositories:** User projects within the `projects/` directory are intended to be independent Git repositories. This means they will have their own `.git` directories and will not be Git submodules of `ClineAGI` by default, to allow maximum flexibility for the user to manage them, e.g., linking to their own private remotes. The main `ClineAGI` repo will need a `.gitignore` entry for `projects/*/` (or similar) to avoid tracking the content of these sub-repos, while still allowing the `projects` directory itself and its top-level `README.md` to exist.
+-   **Modularity of `projects/` Repositories:** User projects within the `projects/` directory are intended to be independent Git repositories. This means they will have their own `.git` directories and will not be Git submodules of `ClineAGI` by default, to allow maximum flexibility for the user to manage them, e.g., linking to their own private remotes. The main `ClineAGI` repo will need a `.gitignore` entry for `projects/*/` (or similar) to avoid tracking the content of these sub-repos, while still allowing the `projects` directory itself and its top-level `README.md` to exist. *Initial thought: these will be separate repos, not git submodules, to allow maximum flexibility for the user to manage them, e.g., linking to their own private remotes.*
 
 ## 5. Dependencies (Initial)
 -   The core `ClineAGI` project itself has no external software dependencies at this initial stage, beyond the user's development environment (Git, shell, etc.) and Cline's operational environment.
@@ -191,4 +191,58 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 ## 10. Future Considerations
 -   **Inter-Project Communication:** How will different user projects (or the core AGI and a user project) communicate if needed? (e.g., APIs, shared data formats).
 -   **Dependency Management:** How will dependencies be managed for the core AGI versus individual projects?
--   **Standardization:** Will there be any enforced standards (e.g., for data formats, API contracts) for projects within the `projects/` directory to ensure interoperability with the core AGI, if desired).
+-   **Standardization:** Will there be any enforced standards (e.g., for data formats, API contracts) for projects within the `projects/` directory to ensure interoperability with the core AGI, if desired).<environment_details>
+# VSCode Visible Files
+.clinerules/100_clineagi_projects/100-00_project-initialization.md
+
+# VSCode Open Tabs
+.clinerules_archive/archived_000-17_core-ai-knowledge-management_v1.md
+.clinerules_archive/archived_000-04_core-ai-response-styles_v1.md
+.clinerules_archive/archived_000-06_core-self-improvement-protocol_v1.md
+.clinerules/000_core/000-08_core-continuous-improvement-protocol.md
+memory-bank/progress.md.tmp
+intake/ClineAGI_contextpack.txt
+.clinerules/000_core/000-06_core-ai-communication-and-style.md
+.clinerules/000_core/000-07_core-ai-tool-usage-guidelines.md
+memory-bank/activeContext.md
+memory-bank/progress.md
+memory-bank/project_template_structures.md
+.clinerules/100_clineagi_projects/100-01_project-context-switching.md
+.clinerules/100_clineagi_projects/100-02_project-clinerules-management.md
+.clinerules/100_clineagi_projects/100-03_project-version-control.md
+.clinerules/100_clineagi_projects/100-04_project-container-interaction.md
+.clinerules/200_containers/200-00_container-technology-selection.md
+.clinerules/200_containers/200-01_dockerfile-management.md
+.clinerules/200_containers/200-02_container-image-management.md
+.clinerules/200_containers/200-03_container-runtime-operations.md
+.clinerules/200_containers/200-04_container-networking.md
+.clinerules/200_containers/200-05_container-dependency-management.md
+.clinerules/200_containers/200-06_containerized-project-workflow.md
+.clinerules/200_containers/200-07_base-image-selection-guidance.md
+.clinerules/000_core/000-00_core-memory-bank-structure.md
+projects/happy-friends/.clinerules/README.md
+projects/happy-friends/style.css
+projects/happy-friends/Dockerfile
+projects/happy-friends/index.html
+memory-bank/projects.md
+.clinerules/000_core/000-02_core-intake-processing.md
+.clinerules/100_clineagi_projects/100-00_project-initialization.md
+.clinerules/100_clineagi_projects/100-05_project-deletion.md
+.clinerules/000_core/000-11_core-user-feedback-protocol.md
+.clinerules/001_reference/001-03_reference-writing-effective-clinerules.md
+.clinerules/006_integrated_tooling/006-00_integrated-tooling-concepts.md
+.clinerules/000_core/000-12_core-adaptive-problem-solving.md
+.clinerules/000_core/000-13_core-task-thread-logging.md
+memory-bank/user_interaction_philosophy.md
+memory-bank/user_preferences.md
+.clinerules/100_clineagi_projects/100-0Z_project-type-specific-guidance.md
+
+# Current Time
+5/10/2025, 10:05:50 AM (America/Los_Angeles, UTC-7:00)
+
+# Context Window Usage
+407,026 / 1,048.576K tokens used (39%)
+
+# Current Mode
+ACT MODE
+</environment_details>
