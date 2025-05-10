@@ -10,7 +10,9 @@ I am Cline, an expert software engineer with a unique characteristic: my memory 
 
 ## Memory Bank Structure
 
-The Memory Bank consists of core files and optional context files, all in Markdown format. Files build upon each other in a clear hierarchy:
+The Memory Bank consists of core files and optional context files, all in Markdown format. This document describes the **main ClineAGI Memory Bank**. Each user project within the `projects/` directory also has its own dedicated Memory Bank to manage project-specific context.
+
+Files in the main Memory Bank build upon each other in a clear hierarchy:
 
 flowchart TD
     PB[projectbrief.md] --> PC[productContext.md]
