@@ -39,6 +39,7 @@ The current focus is on the systematic review, enhancement, and deduplication of
 -   Reviewed `.clinerules/002_workflow/002-00_workflow-cline-for-research.md`, `002-01_workflow-cline-for-slides.md`, and `002-02_workflow-planning-mode.md`. No changes needed. (Completed)
 -   Reviewed `.clinerules/003_protocol/003-00_protocol-mcp-development.md`. No changes needed. (Completed)
 -   Reviewed `.clinerules/004_tech-specific/004-00_tech-specific-next-js-supabase.md`, `004-01_tech-specific-tailwind-css.md`, `004-02_tech-specific-shadcn-ui.md`, `004-03_tech-specific-supabase-edge-functions.md`, and `004-04_tech-specific-stripe-integration.md`. No changes needed. (Completed)
+-   Reviewed `.clinerules/005_coding-guidelines/005-00_coding-best-practices.md`. No changes needed. (Completed)
 -   This `activeContext.md` file is currently being updated.
 
 ## 3. Immediate Next Steps
