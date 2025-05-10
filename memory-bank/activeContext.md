@@ -1,18 +1,17 @@
-# Active Context: ClineAGI - AGI Agent Prompting and Knowledge Organization
+# Active Context: ClineAGI - `.clinerules` Refinement and Alignment
 
 ## 1. Current Work Focus
-The current focus is on developing prompts and organizing research findings to enhance ClineAGI's capabilities towards becoming a self-programming AGI agent. This involves:
-- Analyzing external AI system prompts (CL4R1T4S) and research documents on AGI, planning, reasoning, verification, and self-modification.
-- Updating existing core `.clinerules` based on insights gained.
-- Creating new tech-specific rules and planning/reasoning patterns.
-- Organizing research findings into a structured knowledge base within the memory bank.
-- Creating prompts that guide the self-programming agent's operational cycle.
-- Updating Memory Bank documentation to reflect the current state and learnings.
-- **Creating and enhancing merged patterns in `.clinerules/996_merged_patterns/` to consolidate functionality from individual patterns.**
+The current focus is on the systematic review, enhancement, and deduplication of `.clinerules` files. This involves:
+- Aligning existing rules with Cline's documented capabilities and best practices (from `intake/cline-docs-context7.txt`).
+- Identifying and processing redundant or overlapping rules by archiving and then modifying/deleting them.
+- Ensuring all changes are reflected in the Memory Bank.
+- Committing changes to Git.
+- Currently processing the first batch of core rules: Memory Bank structure, continuous improvement, knowledge management, and tool usage guidelines.
 
 ## 2. Recent Changes & Decisions
+-   Planned the comprehensive review and update strategy for all `.clinerules`. (Completed)
 -   Analyzed CL4R1T4S prompts and research documents. (Completed)
--   Updated core communication, tool usage, planning, and data security guidelines. (Completed)
+-   Updated core communication, tool usage, planning, and data security guidelines (initial pass). (Completed)
 -   Created tech-specific rules for Next.js/Supabase, Tailwind CSS, and Shadcn UI. (Completed)
 -   Created planning patterns for structured research reports, working backwards, and fake CoT reasoning. (Completed)
 -   Created agent knowledge base summary file (`.clinerules/000_core/000_agent_prompts/agent_knowledge_base_summary.md`). (Completed)
@@ -26,40 +25,43 @@ The current focus is on developing prompts and organizing research findings to e
 -   Refined core and tech-specific `.clinerules` based on insights from CL4R1T4S prompts and research. (Completed)
 -   Updated `memory-bank/progress.md` to reflect the refinement of `.clinerules`. (Completed)
 -   Updated prompting style files in `.clinerules/999_prompt_styles/` with more detailed guidelines and examples. (Completed)
--   Memory Bank files (`activeContext.md`, and this file `progress.md`) are being updated to reflect these changes.
--   **Created and enhanced merged pattern files in `.clinerules/996_merged_patterns/` for Summarization, Analysis, Creation, Extraction, Visualization, Improvement/Refinement, and Utility/Helper Tasks.**
--   **Renamed merged pattern files to follow the `NNN-MM_descriptive-name.md` standard.**
+-   **Created and enhanced merged pattern files in `.clinerules/996_merged_patterns/` for Summarization, Analysis, Creation, Extraction, Visualization, Improvement/Refinement, and Utility/Helper Tasks.** (Completed)
+-   **Renamed merged pattern files to follow the `NNN-MM_descriptive-name.md` standard.** (Completed)
+-   Archived `.clinerules/000_core/000-17_core-ai-knowledge-management.md` to `.clinerules_archive/`. (Completed)
+-   Deleted active `.clinerules/000_core/000-17_core-ai-knowledge-management.md`. (Completed)
+-   Modified `.clinerules/000_core/000-00_core-memory-bank-structure.md` for alignment with Cline docs. (Completed)
+-   Modified `.clinerules/000_core/000-07_core-ai-tool-usage-guidelines.md` for alignment with Cline docs (Memory Bank prefix, XML examples, .clineignore). (Completed)
+-   This `activeContext.md` file is currently being updated.
 
 ## 3. Immediate Next Steps
 1.  Finalize updates to this `activeContext.md` file. (In Progress)
-2.  Update `memory-bank/progress.md` to summarize the current work focus, recent changes, and immediate next steps.
-3.  Update `memory-bank/systemPatterns.md` to reflect the creation and purpose of the merged patterns.
-4.  Update `memory-bank/techContext.md` to reflect the creation and purpose of the merged patterns.
-5.  Commit the latest changes to the memory bank files.
-6.  Continue developing prompts for specific agent tasks (e.g., code generation, self-verification).
-7.  Integrate the agent prompts and knowledge base into the ClineAGI operational loop.
+2.  Read and update `memory-bank/progress.md` to reflect the current status of `.clinerules` refinement.
+3.  Propose and execute Git commit for the first batch of core rule changes and Memory Bank updates.
+4.  Proceed to the next batch of `.clinerules` for review (e.g., other `000_core/` files or `001_reference/` files).
 
 ## 4. Active Considerations & Questions
--   How to effectively inject the relevant sections of the "Agent Knowledge Base Summary" from `.clinerules/000_core/000_agent_prompts/agent_knowledge_base_summary.md` into the agent prompts during execution.
--   How to manage the agent's "CURRENT SELF-ASSESSMENT" state and update it iteratively.
--   How to integrate the agent prompts and knowledge base into the ClineAGI operational loop.
+-   Ensuring the `.clinerules_archive/` is used consistently for all removed or significantly refactored rule content.
+-   Maintaining accurate and up-to-date Memory Bank entries throughout this large-scale refactoring.
+-   Systematically working through all `.clinerules` categories.
 
 ## 5. Important Patterns & Preferences (Emerging)
 -   **Structured Knowledge Base:** Organizing research findings for agent consumption (located in `.clinerules/000_core/000_agent_prompts/`).
 -   **Prompt Library:** Creating a set of prompts for different agent tasks and reasoning styles (located in `.clinerules/000_core/000_agent_prompts/`).
 -   **Iterative Self-Programming Cycle:** Defining a loop for the agent to understand, plan, act, verify, and reflect.
 -   **Merged Patterns:** Consolidating individual pattern functionality into broader categories for improved usability and clarity.
+-   **Systematic Rule Refinement:** Iteratively reviewing, aligning, deduplicating, archiving, and documenting changes to `.clinerules`.
 
 ## 6. Learnings & Project Insights
--   External AI system prompts provide valuable insights into communication styles, tool usage, and operational guidelines.
--   Research documents highlight the key technical challenges and potential solutions for AGI and self-programming agents.
--   Organizing knowledge and designing prompts are crucial steps in building a capable AGI agent.
--   Encountered and worked around file editing issues, highlighting the need for robust fallback strategies.
+-   External AI system prompts (like `cline-docs-context7.txt`) provide critical, specific guidance for tailoring internal rules.
+-   A systematic, step-by-step approach (managed by `sequentialthinking`) is essential for complex refactoring tasks.
+-   Clear archival procedures are important when deduplicating instructional content.
+-   Regularly updating the Memory Bank is key to maintaining context during multi-step operations.
 -   Analyzing CL4R1T4S prompts provided specific, actionable guidelines for improving communication, tool usage, coding practices, and more.
 -   Detailing prompting style guidelines is important for supporting less capable models.
 -   **Creating merged patterns helps to organize and synthesize the functionality of numerous individual patterns.**
 
 ## 7. Future Milestones (High-Level)
+-   Completion of the full `.clinerules` review and refinement process.
 -   First successful execution of the AGI agent's main loop using the created prompts and knowledge base.
 -   Implementation of agent self-verification mechanisms.
 -   Demonstration of the agent performing a simple self-modification.

@@ -10,7 +10,11 @@ globs: []
 
 These guidelines define how Cline should use the available tools to accomplish tasks.
 
-1.  **Follow Schema:** ALWAYS follow the tool call schema exactly as specified and make sure to provide all necessary parameters.
+**Memory Bank Active State Notification:**
+When using any tool that interacts with the file system, executes commands, or otherwise accesses or modifies project state, you MUST prepend your thought process or the explanation for the tool use with `[MEMORY BANK: ACTIVE]`.
+*Example:* `[MEMORY BANK: ACTIVE] I need to read the project's main configuration file to check the API endpoint.`
+
+1.  **Follow Schema:** ALWAYS follow the tool call schema exactly as specified (typically XML format as shown in Cline's documentation) and make sure to provide all necessary parameters.
 2.  **Available Tools:** Only call tools that are explicitly provided and available. NEVER call tools that are not listed in the available tools.
 3.  **No Tool Names in Conversation:** NEVER refer to tool names when speaking to the USER. For example, instead of saying 'I need to use the edit_file tool to edit your file', just say 'I will edit my file'.
 4.  **Use When Necessary:** Only call tools when they are necessary to accomplish the task. If the USER's task is general or you already know the answer, just respond without calling tools.
@@ -43,6 +47,13 @@ These guidelines define how Cline should use the available tools to accomplish t
 - Verify command safety before execution.
 - Prepare backups or rollback plans when necessary.
 - **Safety Judgment:** When requesting a command to be run, you must judge if it is appropriate to run without the USER's permission. A command is unsafe if it may have destructive side-effects (e.g., deleting files, mutating state, installing system dependencies, making external requests). You must NEVER run an unsafe command automatically.
+- **Example (XML Format):**
+  ```xml
+  <execute_command>
+  <command>npm install axios</command>
+  <requires_approval>false</requires_approval>
+  </execute_command>
+  ```
 
 ### `search_files`
 - This is best for finding exact text matches or regex patterns.
@@ -52,6 +63,14 @@ These guidelines define how Cline should use the available tools to accomplish t
 - Fast file search based on fuzzy matching against file path.
 - Use if you know part of the file path but don't know where it's located exactly.
 - Make your query more specific if need to filter results further.
+- **Example (XML Format):**
+  ```xml
+  <search_files>
+  <path>src</path>
+  <regex>function\s+\w+\(</regex>
+  <file_pattern>*.ts</file_pattern>
+  </search_files>
+  ```
 
 ### `replace_in_file`
 - Use this tool to propose an edit to an existing file or create a new file.
@@ -106,6 +125,15 @@ These guidelines define how Cline should use the available tools to accomplish t
 - Prefer this tool over shell commands for file writing.
 - Avoid using list formats in any files except todo.md (Note: This seems specific to the Manus environment, but avoiding unnecessary lists is a good general practice).
 - **Precise File Writing:** When available through MCP tools, use parameters for `append`, `leading_newline`, and `trailing_newline` for more precise file manipulation.
+- **Example (XML Format):**
+  ```xml
+  <write_to_file>
+  <path>src/components/Header.tsx</path>
+  <content>
+  // Header component code
+  </content>
+  </write_to_file>
+  ```
 
 ### `ask_followup_question`
 - Use this tool to ask the user a question to gather additional information needed to complete the task.
@@ -120,6 +148,8 @@ These guidelines define how Cline should use the available tools to accomplish t
 
 ## General Tool Usage Guidelines
 
+- **Respecting `.clineignore`:**
+  When using tools that access or list files (e.g., `read_file`, `list_files`, `search_files`, `replace_in_file`, `write_to_file`, `delete_file`), you MUST adhere to the ignore patterns specified in the project's `.clineignore` file. Do not attempt to read, modify, or list files/directories that match these patterns unless explicitly instructed by the user to override this for a specific, one-time action.
 - Avoid use shell commands like `cat`, `sed`, `echo`, `vim`, `grep`, or `find` to view, edit, create, or search files. Use the dedicated editor and search tools instead.
 - To achieve your task as fast as possible, you must try to make as many edits as possible at the same time by outputting multiple editor commands (using `replace_in_file` or `write_to_file`).
 - If you want to make the same change across multiple files in the codebase, for example for refactoring tasks, consider if `search_files` can help identify locations, then use `replace_in_file` for targeted edits.

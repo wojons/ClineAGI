@@ -2,7 +2,7 @@
 description: Defines the workflow and behavior for Cline in Planning Mode.
 author: Cline (AI Assistant)
 version: 1.0
-tags: ["workflow", "planning-mode"]
+tags: ["workflow", "planning-mode", "plan-act-mode"]
 globs: []
 ---
 
