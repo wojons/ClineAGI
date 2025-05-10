@@ -31,6 +31,8 @@ The current focus is on the systematic review, enhancement, and deduplication of
 -   Deleted active `.clinerules/000_core/000-17_core-ai-knowledge-management.md`. (Completed)
 -   Modified `.clinerules/000_core/000-00_core-memory-bank-structure.md` for alignment with Cline docs. (Completed)
 -   Modified `.clinerules/000_core/000-07_core-ai-tool-usage-guidelines.md` for alignment with Cline docs (Memory Bank prefix, XML examples, .clineignore). (Completed)
+-   Archived `.clinerules/000_core/000-04_core-ai-response-styles.md` to `.clinerules_archive/`. (Completed)
+-   Deleted active `.clinerules/000_core/000-04_core-ai-response-styles.md`. (Completed)
 -   This `activeContext.md` file is currently being updated.
 
 ## 3. Immediate Next Steps

@@ -28,6 +28,8 @@
 -   Deleted active `.clinerules/000_core/000-17_core-ai-knowledge-management.md`. (Completed)
 -   Modified `.clinerules/000_core/000-00_core-memory-bank-structure.md` for alignment with Cline docs. (Completed)
 -   Modified `.clinerules/000_core/000-07_core-ai-tool-usage-guidelines.md` for alignment with Cline docs. (Completed)
+-   Archived `.clinerules/000_core/000-04_core-ai-response-styles.md`. (Completed)
+-   Deleted active `.clinerules/000_core/000-04_core-ai-response-styles.md`. (Completed)
 -   Updated `memory-bank/activeContext.md` to reflect these changes. (Completed)
 -   This `progress.md` file is currently being updated.
 
