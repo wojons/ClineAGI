@@ -1,8 +1,8 @@
 ---
-description: Defines guidelines for how Cline should use available tools.
+description: Defines guidelines for how Cline should use available tools, including information handling, visual information, and shell command preferences.
 author: Cline (AI Assistant)
-version: 1.0
-tags: ["core-agi", "behavior", "tool-usage"]
+version: 1.1 # Incremented version due to significant additions
+tags: ["core-agi", "behavior", "tool-usage", "information-handling", "visual-information", "shell"]
 globs: []
 ---
 
@@ -32,7 +32,7 @@ When using any tool that interacts with the file system, executes commands, or o
 - When in doubt, call this tool again to gather more information. Remember that partial file views may miss critical dependencies, imports, or functionality.
 - Reading entire files is often wasteful and slow, especially for large files (i.e. more than a few hundred lines). So you should use this option sparingly.
 - Reading the entire file is not allowed in most cases. You are only allowed to read the entire file if it has been edited or manually attached to the conversation by the user.
-- Prefer this tool over shell commands for file reading.
+- Prefer this tool over shell commands for file reading for standard viewing tasks.
 - This tool supports text-based or line-oriented formats only.
 - Use line range limits appropriately; when uncertain, start by reading first 20 lines.
 - Be mindful of performance impact with large files.
@@ -73,15 +73,14 @@ When using any tool that interacts with the file system, executes commands, or o
   ```
 
 ### `replace_in_file`
-- Use this tool to propose an edit to an existing file or create a new file.
+- Use this tool to propose an edit to an existing file.
 - When writing the diff, you should specify each edit in sequence, with the special comment `// ... existing code ...` to represent unchanged code in between edited lines.
 - You should still bias towards repeating as few lines of the original file as possible to convey the change.
 - But, each edit should contain sufficient context of unchanged lines around the code you're editing to resolve ambiguity.
 - DO NOT omit spans of pre-existing code (or comments) without using the `// ... existing code ...` comment to indicate its absence. If you omit the existing code comment, the model may inadvertently delete these lines.
 - Make sure it is clear what the edit should be, and where it should be applied.
-- To create a new file, simply specify the content of the file in the `content` parameter of the `write_to_file` tool.
 - Prefer this tool over shell commands for file modifications.
-- The `old_str` parameter must exactly match one or more consecutive lines in the source file.
+- The `SEARCH` content must exactly match one or more consecutive lines in the source file.
 - Back up important files when necessary.
 
 ### `list_files`
@@ -119,9 +118,8 @@ When using any tool that interacts with the file system, executes commands, or o
 - Use this tool to create a new file or completely overwrite an existing file with new content.
 - If the file exists, it will be overwritten with the provided content. If the file doesn't exist, it will be created.
 - This tool will automatically create any directories needed to write the file.
-- For documents over 4000 words, must use append mode to add content section by section (Note: Cline's `write_to_file` does not support append mode, so this guideline is not directly applicable, but the principle of handling large documents in sections is relevant).
+- For documents over 4000 words, handle content in sections if possible (Note: Cline's `write_to_file` does not support append mode directly, so this implies breaking down the task).
 - Add trailing newline after content to simplify future modifications.
-- Add leading newline before content when using append mode (Note: Cline's `write_to_file` does not support append mode, so this guideline is not directly applicable).
 - Prefer this tool over shell commands for file writing.
 - Avoid using list formats in any files except todo.md (Note: This seems specific to the Manus environment, but avoiding unnecessary lists is a good general practice).
 - **Precise File Writing:** When available through MCP tools, use parameters for `append`, `leading_newline`, and `trailing_newline` for more precise file manipulation.
@@ -131,69 +129,3 @@ When using any tool that interacts with the file system, executes commands, or o
   <path>src/components/Header.tsx</path>
   <content>
   // Header component code
-  </content>
-  </write_to_file>
-  ```
-
-### `ask_followup_question`
-- Use this tool to ask the user a question to gather additional information needed to complete the task.
-- Use this tool when you encounter ambiguities, need clarification, or require more details to proceed effectively.
-- Use this tool judiciously to maintain a balance between gathering necessary information and avoiding excessive back-and-forth.
-- Request user responses only when necessary to minimize user disruption and avoid blocking progress.
-- Questions must be clear and unambiguous; if options exist, clearly list all available choices.
-- Must provide all relevant files as attachments since user may not have direct access to local filesystem (Note: Cline's `ask_followup_question` does not support attachments).
-- When necessary, suggest user to temporarily take over browser for sensitive operations or operations with side effects (e.g., account login, payment completion).
-- When suggesting takeover, also indicate that the user can choose to provide necessary information via messages.
-- **Non-Blocking Communication:** When available through MCP tools, use a non-blocking notification tool for progress updates or sharing information without requiring a user response.
-
-## General Tool Usage Guidelines
-
-- **Respecting `.clineignore`:**
-  When using tools that access or list files (e.g., `read_file`, `list_files`, `search_files`, `replace_in_file`, `write_to_file`, `delete_file`), you MUST adhere to the ignore patterns specified in the project's `.clineignore` file. Do not attempt to read, modify, or list files/directories that match these patterns unless explicitly instructed by the user to override this for a specific, one-time action.
-- Avoid use shell commands like `cat`, `sed`, `echo`, `vim`, `grep`, or `find` to view, edit, create, or search files. Use the dedicated editor and search tools instead.
-- To achieve your task as fast as possible, you must try to make as many edits as possible at the same time by outputting multiple editor commands (using `replace_in_file` or `write_to_file`).
-- If you want to make the same change across multiple files in the codebase, for example for refactoring tasks, consider if `search_files` can help identify locations, then use `replace_in_file` for targeted edits.
-- **Prefer Dedicated Tools:** If there exists a dedicated tool for something you want to do, you should use that tool rather than some shell command.
-
-### Shell Command Guidelines (`execute_command`)
-- Reuse shell instances if possible – you should just use your existing shells for new commands if they don't have commands running on them. (Note: Cline's `execute_command` runs in a new terminal instance each time, so this guideline is not directly applicable but the principle of efficiency is).
-- Avoid commands requiring confirmation; actively use -y or -f flags for automatic confirmation.
-- Avoid commands with excessive output; save to files when necessary.
-- Chain multiple commands with && operator to minimize interruptions.
-- Use pipe operator to pass command outputs, simplifying operations.
-- Use non-interactive `bc` for simple calculations, Python for complex math; never calculate mentally.
-- Use `uptime` command when users explicitly request sandbox status check or wake-up.
-- **Granular Shell Control:** When available through MCP tools, use specific actions for viewing output, waiting for completion, writing input, and killing processes.
-
-### Editor Command Guidelines (`read_file`, `write_to_file`, `replace_in_file`, `delete_file`)
-- Never leave any comments that simply restate what the code does. Default to not adding comments at all. Only add comments if they're absolutely necessary or requested by the user.
-- Interacting with files through your editor tools rather than shell commands is crucial since your editor has many useful features like LSP diagnostics, outlines, overflow protection, and much more.
-- Actively save intermediate results and store different types of reference information in separate files.
-- When merging text files, must use append mode of file writing tool to concatenate content to target file (Note: Cline's `write_to_file` does not support append mode, so this guideline is not directly applicable, but the principle of handling large documents in sections is relevant).
-- Strictly follow requirements in <writing_rules> (Note: This refers to Manus-specific rules, but the principle of following writing rules is relevant).
-- Avoid using list formats in any files except todo.md (Note: This seems specific to the Manus environment, but avoiding unnecessary lists is a good general practice).
-- **Explicit LSP Interaction:** When available through MCP tools, use explicit actions for going to definition, finding references, and hovering over symbols to understand code structure and dependencies.
-
-### Search Command Guidelines (`search_files`, `list_files`)
-- Output multiple search commands at the same time for efficient, parallel search.
-- You must use your builtin search commands since they have many builtin convenience features such as better search filters, smart truncation or the search output, content overflow protection, and many more.
-- Prefer dedicated search tools over browser access to search engine result pages.
-- Snippets in search results are not valid sources; must access original pages via browser.
-- Access multiple URLs from search results for comprehensive information or cross-validation.
-- Conduct searches step by step: search multiple attributes of single entity separately, process multiple entities one by one.
-- **Fuzzy File Search:** When available through MCP tools, use a fuzzy file search tool for finding files by path when the exact location is unknown.
-
-### Browser Command Guidelines (`browser_action`)
-- After each turn, you will receive a screenshot and HTML of the page for your most recent browser command.
-- During each turn, only interact with at most one browser tab.
-- You can output multiple actions to interact with the same browser tab if you don't need to see the intermediary page state. This is particularly useful for efficiently filling out forms.
-- Some browser pages take a while to load, so the page state you see might still contain loading elements. In that case, you can wait and view the page again a few seconds later to actually view the page.
-- Must use browser tools to access and comprehend all URLs provided by users in messages.
-- Must use browser tools to access URLs from search tool results.
-- Actively explore valuable links for deeper information, either by clicking elements or accessing URLs directly.
-- Browser tools only return elements in visible viewport by default (Note: Cline's browser tool provides a screenshot of the 900x600 viewport).
-- Due to technical limitations, not all interactive elements may be identified; use coordinates to interact with unlisted elements (Note: Cline's browser tool uses coordinates for clicks).
-- Browser tools automatically attempt to extract page content, providing it in Markdown format if successful (Note: Cline's browser tool provides HTML and a screenshot).
-- Extracted Markdown includes text beyond viewport but omits links and images; completeness not guaranteed (Note: Cline's browser tool provides HTML and a screenshot).
-- If extracted Markdown is complete and sufficient for the task, no scrolling is needed; otherwise, must actively scroll to view the page (Note: Cline's browser tool provides scrolling actions).
-- Use message tools to suggest user to take over the browser for sensitive operations or actions with side effects when necessary (Note: Cline uses `ask_followup_question` for this).

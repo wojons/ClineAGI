@@ -41,14 +41,21 @@
 -   Reviewed `.clinerules/996_merged_patterns/996-00_analyze-patterns.md`, `996-00_summarize-content.md`, and `996-01_analyze-content.md`. Archived `996-00_analyze-patterns.md` as redundant. (Completed)
 -   Reviewed `.clinerules/998_patterns/998-00_pattern-structured-research-report.md`, `998-01_pattern-planning-working-backwards.md`, and `998-02_pattern-fake-cot.md`. No changes needed. (Completed)
 -   Reviewed and corrected all files in `.clinerules/999_prompt_styles/`. No corrections were needed. (Completed)
+-   Archived `.clinerules/000_core/000-06_core-ai-communication-guidelines.md` to `.clinerules_archive/` and deleted the active file. (Completed)
+-   Archived `.clinerules/000_core/000-19_core-ai-writing-style.md` to `.clinerules_archive/` and deleted the active file. (Completed)
+-   Archived `.clinerules/000_core/000-21_core-ai-response-modes.md` to `.clinerules_archive/` and deleted the active file. (Completed)
+-   Created and wrote the merged file `.clinerules/000_core/000-06_core-ai-communication-and-style.md`. (Completed)
+-   Archived `.clinerules/000_core/000-13_core-ai-information-handling.md` to `.clinerules_archive/` and deleted the active file. (Completed)
+-   Archived `.clinerules/000_core/000-18_core-ai-visual-information.md` to `.clinerules_archive/` and deleted the active file. (Completed)
+-   Archived `.clinerules/000_core/000-22_core-shell-command-preference.md` to `.clinerules_archive/` and deleted the active file. (Completed)
+-   Updated and wrote the merged file `.clinerules/000_core/000-07_core-ai-tool-usage-guidelines.md`. (Completed)
 -   This `progress.md` file is currently being updated.
 
 ## 3. What's Left to Build (Immediate Scope)
--   Finalize updates to this `progress.md` file. (In Progress)
--   Propose and execute Git commit for the first batch of core rule changes and Memory Bank updates.
--   Proceed to the next batch of `.clinerules` for review (e.g., other `000_core/` files or `001_reference/` files).
--   Continue developing prompts for specific agent tasks (e.g., code generation, self-verification).
--   Integrate the agent prompts and knowledge base into the ClineAGI operational loop.
+1.  Finalize updates to this `progress.md` file. (In Progress)
+2.  Propose and execute Git commit for the first batch of core rule changes and Memory Bank updates.
+3.  Continue developing prompts for specific agent tasks (e.g., code generation, self-verification).
+4.  Integrate the agent prompts and knowledge base into the ClineAGI operational loop.
 
 ## 4. Known Issues & Challenges
 -   **File Editing Issues:** Encountered difficulties updating `memory-bank/systemPatterns.md` previously. Will monitor tool performance.
@@ -58,7 +65,7 @@
 ## 5. Evolution of Project Decisions & Learnings
 -   **Decision:** Analyze external AI prompts and research to inform AGI agent prompting and `.clinerules` improvements. (Implemented)
 -   **Decision:** Organize agent knowledge base and prompts within `.clinerules/` as a prompt library. (Implemented)
--   **Decision:** Systematically review and align all `.clinerules` with `cline-docs-context7.txt`, deduplicating and archiving as necessary. (In Progress)
+-   **Decision:** Systematically review and align all `.clinerules` with `cline-docs-context7.txt`, deduplicating and archiving as necessary. (Completed for all directories)
 -   **Learning:** External AI system prompts (like `cline-docs-context7.txt`) provide critical, specific guidance for tailoring internal rules.
 -   **Learning:** A systematic, step-by-step approach (managed by `sequentialthinking`) is essential for complex refactoring tasks.
 -   **Learning:** Clear archival procedures are important when deduplicating instructional content.
@@ -67,6 +74,9 @@
 -   **Learning:** Analyzing CL4R1T4S prompts provided specific, actionable guidelines for improving communication, tool usage, coding practices, and more.
 -   Detailing prompting style guidelines is important for supporting less capable models.
 -   **Creating merged patterns helps to organize and synthesize the functionality of numerous individual patterns.**
+-   Completed review of all `.clinerules` directories: `000_core`, `001_reference`, `002_workflow`, `003_protocol`, `004_tech-specific`, `005_coding_guidelines`, `996_merged_patterns`, `998_patterns`, and `999_prompt_styles`.
+-   Identified and merged duplicate rules related to continuous improvement.
+-   Consolidated communication, style, and tool usage guidelines into fewer, more comprehensive files.
 
 ## 6. Future Milestones (High-Level)
 -   Completion of the full `.clinerules` review and refinement process.

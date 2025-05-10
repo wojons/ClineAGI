@@ -44,6 +44,14 @@ The current focus is on the systematic review, enhancement, and deduplication of
 -   Reorganized agent prompt files from `.clinerules/000_core/000_agent_prompts/` to `.clinerules/001_reference/` and `.clinerules/000_core/` with new naming convention. (Completed)
 -   Reviewed `.clinerules/998_patterns/998-00_pattern-structured-research-report.md`, `998-01_pattern-planning-working-backwards.md`, and `998-02_pattern-fake-cot.md`. No changes needed. (Completed)
 -   Reviewed and corrected all files in `.clinerules/999_prompt_styles/`. No corrections were needed. (Completed)
+-   Archived `.clinerules/000_core/000-06_core-ai-communication-guidelines.md` to `.clinerules_archive/` and deleted the active file. (Completed)
+-   Archived `.clinerules/000_core/000-19_core-ai-writing-style.md` to `.clinerules_archive/` and deleted the active file. (Completed)
+-   Archived `.clinerules/000_core/000-21_core-ai-response-modes.md` to `.clinerules_archive/` and deleted the active file. (Completed)
+-   Created and wrote the merged file `.clinerules/000_core/000-06_core-ai-communication-and-style.md`. (Completed)
+-   Archived `.clinerules/000_core/000-13_core-ai-information-handling.md` to `.clinerules_archive/` and deleted the active file. (Completed)
+-   Archived `.clinerules/000_core/000-18_core-ai-visual-information.md` to `.clinerules_archive/` and deleted the active file. (Completed)
+-   Archived `.clinerules/000_core/000-22_core-shell-command-preference.md` to `.clinerules_archive/` and deleted the active file. (Completed)
+-   Updated and wrote the merged file `.clinerules/000_core/000-07_core-ai-tool-usage-guidelines.md`. (Completed)
 -   This `activeContext.md` file is currently being updated.
 
 ## 3. Immediate Next Steps
@@ -72,6 +80,9 @@ The current focus is on the systematic review, enhancement, and deduplication of
 -   Analyzing CL4R1T4S prompts provided specific, actionable guidelines for improving communication, tool usage, coding practices, and more.
 -   Detailing prompting style guidelines is important for supporting less capable models.
 -   **Creating merged patterns helps to organize and synthesize the functionality of numerous individual patterns.**
+-   Completed review of all `.clinerules` directories: `000_core`, `001_reference`, `002_workflow`, `003_protocol`, `004_tech-specific`, `005_coding-guidelines`, `996_merged_patterns`, `998_patterns`, and `999_prompt_styles`.
+-   Identified and merged duplicate rules related to continuous improvement.
+-   Consolidated communication, style, and tool usage guidelines into fewer, more comprehensive files.
 
 ## 7. Future Milestones (High-Level)
 -   Completion of the full `.clinerules` review and refinement process.
