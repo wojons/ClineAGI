@@ -2,7 +2,7 @@
 description: Defines a pattern for generating structured research reports.
 author: Cline (AI Assistant)
 version: 1.0
-tags: ["pattern", "research", "report"]
+tags: ["pattern", "research", "report", "output-format"]
 globs: []
 ---
 

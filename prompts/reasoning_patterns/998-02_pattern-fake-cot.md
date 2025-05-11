@@ -2,7 +2,7 @@
 description: Defines a pattern for simulating a Chain-of-Thought reasoning process.
 author: Cline (AI Assistant)
 version: 1.0
-tags: ["pattern", "reasoning", "workflow"]
+tags: ["pattern", "reasoning", "workflow", "cot"]
 globs: []
 ---
 

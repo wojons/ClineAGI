@@ -2,7 +2,7 @@
 description: Defines a planning pattern for breaking down complex tasks by working backwards from the goal.
 author: Cline (AI Assistant)
 version: 1.0
-tags: ["pattern", "planning", "workflow"]
+tags: ["pattern", "planning", "workflow", "strategy"]
 globs: []
 ---
 
