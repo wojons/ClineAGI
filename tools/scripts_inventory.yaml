@@ -74,6 +74,108 @@ scripts:
     example_usage: "bash tools/scripts/extract-text-pattern.sh 'input.log' 'ERROR:' 's/.*ERROR: \\(.*\\)/\\1/p'"
     weight: 100
 
+  - name: "Read File Content"
+    path: "tools/scripts/read-file-content.sh"
+    description: "Reads content from a file, with optional start and end line numbers."
+    type: "shell_script"
+    triggers: ["read file script", "cat file script", "get file content script"]
+    arguments:
+      - name: "filepath"
+        description: "The path to the file."
+        required: true
+      - name: "line_start"
+        description: "Optional: The starting line number (1-indexed)."
+        required: false
+      - name: "line_end"
+        description: "Optional: The ending line number (inclusive)."
+        required: false
+    example_usage: "bash tools/scripts/read-file-content.sh 'src/app.js' 10 20"
+    weight: 100
+
+  - name: "Write to File"
+    path: "tools/scripts/write-to-file.sh"
+    description: "Writes content to a file, creating or overwriting it. Content can be a string or from stdin."
+    type: "shell_script"
+    triggers: ["write file script", "create file script", "save to file script"]
+    arguments:
+      - name: "filepath"
+        description: "The path to the file."
+        required: true
+      - name: "content_string"
+        description: "Optional: The content to write. If omitted, reads from stdin."
+        required: false
+    example_usage: "echo 'New content' | bash tools/scripts/write-to-file.sh 'output.txt'"
+    weight: 100
+
+  - name: "Replace in File (sed)"
+    path: "tools/scripts/replace-in-file-sed.sh"
+    description: "Performs search and replace in a file using sed. Creates a backup before modifying."
+    type: "shell_script"
+    triggers: ["replace in file script", "sed replace", "search and replace script"]
+    arguments:
+      - name: "filepath"
+        description: "The path to the file."
+        required: true
+      - name: "search_regex"
+        description: "The POSIX ERE regex to search for. Must be quoted."
+        required: true
+      - name: "replacement_string"
+        description: "The string to replace the matched regex with."
+        required: true
+      - name: "sed_flags"
+        description: "Optional: Additional flags for sed (e.g., 'g' for global). Defaults to 'g'."
+        required: false
+    example_usage: "bash tools/scripts/replace-in-file-sed.sh 'config.txt' 'old_value' 'new_value'"
+    weight: 100
+
+  - name: "List Directory Contents"
+    path: "tools/scripts/list-directory-contents.sh"
+    description: "Lists directory contents, with an option for recursive listing."
+    type: "shell_script"
+    triggers: ["list directory script", "ls script", "show directory contents"]
+    arguments:
+      - name: "dirpath"
+        description: "The path to the directory."
+        required: true
+      - name: "recursive_flag"
+        description: "Optional: '-R' for recursive listing. If omitted, lists top-level."
+        required: false
+    example_usage: "bash tools/scripts/list-directory-contents.sh './src' '-R'"
+    weight: 100
+
+  - name: "Search Files (Regex)"
+    path: "tools/scripts/search-files-regex.sh"
+    description: "Searches for a regex pattern in files within a directory, with optional file pattern filtering."
+    type: "shell_script"
+    triggers: ["search files regex script", "grep files script", "find regex in files"]
+    arguments:
+      - name: "dirpath"
+        description: "The path to the directory to search in."
+        required: true
+      - name: "search_regex"
+        description: "The POSIX ERE regex to search for. Must be quoted."
+        required: true
+      - name: "file_pattern"
+        description: "Optional: A glob pattern to filter files (e.g., '*.js'). If omitted, searches all files."
+        required: false
+    example_usage: "bash tools/scripts/search-files-regex.sh './src' 'myFunction' '*.ts'"
+    weight: 100
+
+  - name: "Get Code Definitions (Simple)"
+    path: "tools/scripts/get-code-definitions-simple.sh"
+    description: "Performs a simple regex-based extraction of common code definitions (functions, classes) from files."
+    type: "shell_script"
+    triggers: ["get code definitions script", "list functions classes script", "extract definitions script"]
+    arguments:
+      - name: "path"
+        description: "Path to a single file or a directory."
+        required: true
+      - name: "file_pattern"
+        description: "Optional: If path is a directory, a glob pattern to filter files (e.g., '*.py'). Defaults to '*'."
+        required: false
+    example_usage: "bash tools/scripts/get-code-definitions-simple.sh './src' '*.js'"
+    weight: 100
+
   # Add more scripts here as they are created.
   # - name: "Another Useful Script"
   #   path: "tools/scripts/another-script.sh"
