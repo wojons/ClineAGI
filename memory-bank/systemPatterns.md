@@ -42,8 +42,8 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 
 ## 5. Prompt and Rule Management (`.clinerules`)
 -   **Purpose:** To allow dynamic and context-aware management of Cline's guiding prompts and operational rules.
--   **Location:** A project-specific `.clinerules` directory at `/Users/lexykwaii/Code/ClineAGI/.clinerules` stores the active operational rules. This directory IS version-controlled with the main ClineAGI repo.
--   **Archive:** A `/.clinerules_archive/` directory stores copies of all `.clinerules` that have been used or developed, serving as a historical reference and source for future rule development. This directory is gitignored.
+-   **Location:** The active `.clinerules` directory is located at the root of the ClineAGI project (e.g., `<CLINEAGI_ROOT>/.clinerules`). This directory stores the active operational rules and IS version-controlled with the main ClineAGI repo.
+-   **Archive:** A `/.clinerules_archive/` directory (e.g., `<CLINEAGI_ROOT>/.clinerules_archive/`) stores copies of all `.clinerules` that have been used or developed, serving as a historical reference and source for future rule development. This directory is gitignored.
 -   **Naming Convention:** `.clinerules` files follow the `NNN-MM_descriptive-name.md` format:
     -   `NNN`: 3-digit prefix for grouping by function/project area (e.g., `000` for Core AGI rules).
     -   `MM`: 2-digit number for the rule within the group.
@@ -84,10 +84,9 @@ For the core `ClineAGI` repository, especially when operating under a role like 
     -   `002_workflow/002-07_workflow-extract-jokes.md`: Guidelines for extracting jokes.
     -   `003_protocol/003-00_protocol-mcp-development.md`: Protocol for developing MCP servers.
     -   `004_tech-specific/004-00_tech-specific-next-js-supabase.md`: Guidelines for Next.js apps with Supabase Auth.
--   **`.clinerules_archive/` Directory:** Located at `/Users/lexykwaii/Code/ClineAGI/.clinerules_archive/`. Stores copies of all `.clinerules` that have been used or developed, serving as a historical reference and source for future rule development. This directory is gitignored.
 -   **Information Intake Directories:**
-    -   `intake/`: Located at `/Users/lexykwaii/Code/ClineAGI/intake/`. For user-provided files awaiting processing. Gitignored.
-    -   `intake-archive/`: Located at `/Users/lexykwaii/Code/ClineAGI/intake-archive/`. For processed files. Gitignored.
+    -   `intake/`: Located at the root of the ClineAGI project (`<CLINEAGI_ROOT>/intake/`). For user-provided files awaiting processing. Gitignored.
+    -   `intake-archive/`: Located at the root of the ClineAGI project (`<CLINEAGI_ROOT>/intake-archive/`). For processed files. Gitignored.
 -   **Cline's Toolset:** The tools available to Cline are the primary means of interacting with and modifying the project.
 -   **User's IDE/Editor:** VSCode. Auto-formatting and linting are expected.
 
@@ -117,7 +116,7 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 ## 4. Technical Constraints & Considerations
 -   **Cline's Session-Based Memory:** Cline's knowledge is reset between sessions. The Memory Bank is therefore CRITICAL for maintaining project continuity and context. Cline MUST read and rely on the Memory Bank at the start of each task.
 -   **Tool Limitations:** Cline operates within the capabilities and limitations of its provided tools. For example, `cd` is not a standalone persistent command; path context must be managed per tool use.
--   **File System Access:** Cline's file operations are based on paths relative to the current working directory (`/Users/lexykwaii/Code/ClineAGI`) or absolute paths.
+-   **File System Access:** Cline's file operations are based on paths relative to the current working directory (assumed to be `<CLINEAGI_ROOT>`) or absolute paths (which should be used sparingly and with portability in mind).
 -   **Command Execution:** CLI commands are executed in new terminal instances. Long-running processes are possible, and their status will be reported.
 -   **Modularity of `projects/` Repositories:** User projects within the `projects/` directory are intended to be independent Git repositories. This means they will have their own `.git` directories and will not be Git submodules of `ClineAGI` by default, to allow maximum flexibility for the user to manage them, e.g., linking to their own private remotes. The main `ClineAGI` repo will need a `.gitignore` entry for `projects/*/` (or similar) to avoid tracking the content of these sub-repos, while still allowing the `projects` directory itself and its top-level `README.md` to exist. *Initial thought: these will be separate repos, not git submodules, to allow maximum flexibility for the user to manage them, e.g., linking to their own private remotes.*
 
@@ -150,7 +149,7 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 
 ## 7. AGI Agent Prompting and Knowledge Organization
 -   **Purpose:** To house the knowledge base and prompt library for the self-programming AGI agent concept ("Prometheus-0").
--   **Location:** Agent-specific knowledge and prompts are stored within the `.clinerules/000_core/000_agent_prompts/` directory. This location is version-controlled with the main ClineAGI repository.
+-   **Location:** Agent-specific knowledge and prompts are stored within the `<CLINEAGI_ROOT>/.clinerules/000_core/000_agent_prompts/` directory. This location is version-controlled with the main ClineAGI repository.
 -   **Key Files:**
     -   `agent_knowledge_base_summary.md`: Synthesized research findings on AGI, planning, reasoning, verification, etc.
     -   `agent_self_programming_main_loop_prompt.md`: The core prompt defining the agent's iterative self-improvement cycle.
@@ -172,12 +171,12 @@ For the core `ClineAGI` repository, especially when operating under a role like 
     -   ClineAGI will assist in managing merge conflicts that may arise during these updates. The exact mechanism for conflict resolution (e.g., presenting conflicts to the user, attempting automated resolution for common cases) will be refined.
 -   **Template Management:** Updates to the `wojons/ClineAGI-Project-Template` itself will be managed collaboratively by the user and Cline, likely under a specific role or task context.
 
-## 8. Component Relationships
+## 9. Component Relationships
 -   The `ClineAGI` parent repository provides the foundational environment and potentially shared tools or APIs for the user projects.
 -   User projects within `projects/` are consumers or specializations of the core AGI capabilities, or entirely separate endeavors managed within the same overarching structure. They do not directly modify the core AGI code but interact with it or operate alongside it.
 -   The Memory Bank informs all development activities across both tiers.
 
-## 9. Critical Implementation Paths (Initial)
+## 10. Critical Implementation Paths (Initial)
 -   **Memory Bank Initialization:** (Completed)
 -   **`projects/` Directory Setup:** (Completed)
 -   **Git Repository Initialization & Remote Setup:** (Completed for `wojons/ClineAGI`)
@@ -188,61 +187,37 @@ For the core `ClineAGI` repository, especially when operating under a role like 
 -   **Project Templating System Implementation:** (Documented, logic definition pending).
 -   **Information Intake System:** (Directories created, workflow defined).
 
-## 10. Future Considerations
+## 11. Key Features (Derived from PRD)
+-   **Memory Bank System:** Persistent, version-controlled knowledge base (Markdown files) for project goals, context, technical specifications, design decisions, and progress.
+-   **Modular Project Management:** Ability to initialize, manage, and switch between multiple independent projects within a `projects/` directory, each with its own Memory Bank and project-specific `.clinerules`.
+-   **Dynamic `.clinerules` System:** Cline's behavior, workflows, and knowledge are defined in human-readable Markdown files, dynamically loaded based on context.
+-   **AI Tool Integration & Orchestration:** Cline utilizes tools for file operations, CLI execution, web browsing, and MCP interactions.
+-   **Automated Intake Processing:** Workflow for processing user-submitted information and integrating it into the Memory Bank.
+-   **Continuous Improvement Protocol:** Mechanism for Cline to reflect on performance, log learnings, and suggest updates.
+-   **AGI Agent Simulation (Prometheus-0):** Specialized prompts and rules for simulating an AGI agent capable of planning and reasoning for self-programming tasks.
+-   **Extensive Use Case Library:** Pre-defined prompts and templates for common development and content creation tasks.
+-   **VSCode Integration:** Deep integration into VSCode with a chat interface and direct interaction capabilities.
+
+## 12. Deployment & Operations (from PRD)
+-   **ClineAGI Extension:** Deployed via the VSCode Marketplace (or manual VSIX installation).
+-   **User Projects:** Deployment is specific to the nature of the project (e.g., web apps to Netlify, backend services to cloud providers). ClineAGI can assist in generating deployment scripts or Dockerfiles.
+-   **Memory Bank:** Managed by the user, typically version-controlled with Git and potentially synced to a private remote repository.
+
+## 13. Scalability, Performance & Security Considerations (from PRD)
+-   **Scalability & Performance:**
+    -   UI should remain responsive during long-running AI tasks (asynchronous operations).
+    -   Efficient management and utilization of large contexts from the Memory Bank.
+    -   Efficient parsing and application of `.clinerules`.
+    -   Minimized CPU and memory footprint of the extension.
+-   **Security:**
+    -   Secure API key management (VSCode Secrets API or environment variables).
+    -   User approval for potentially destructive commands.
+    -   Sandboxing or careful validation of inputs to tools.
+    -   Data privacy for user's code and Memory Bank data (local processing prioritized).
+    -   Regular updates for dependencies to patch vulnerabilities.
+    -   Input sanitization to prevent injection attacks.
+
+## 14. Future Considerations
 -   **Inter-Project Communication:** How will different user projects (or the core AGI and a user project) communicate if needed? (e.g., APIs, shared data formats).
 -   **Dependency Management:** How will dependencies be managed for the core AGI versus individual projects?
--   **Standardization:** Will there be any enforced standards (e.g., for data formats, API contracts) for projects within the `projects/` directory to ensure interoperability with the core AGI, if desired).<environment_details>
-# VSCode Visible Files
-.clinerules/100_clineagi_projects/100-00_project-initialization.md
-
-# VSCode Open Tabs
-.clinerules_archive/archived_000-17_core-ai-knowledge-management_v1.md
-.clinerules_archive/archived_000-04_core-ai-response-styles_v1.md
-.clinerules_archive/archived_000-06_core-self-improvement-protocol_v1.md
-.clinerules/000_core/000-08_core-continuous-improvement-protocol.md
-memory-bank/progress.md.tmp
-intake/ClineAGI_contextpack.txt
-.clinerules/000_core/000-06_core-ai-communication-and-style.md
-.clinerules/000_core/000-07_core-ai-tool-usage-guidelines.md
-memory-bank/activeContext.md
-memory-bank/progress.md
-memory-bank/project_template_structures.md
-.clinerules/100_clineagi_projects/100-01_project-context-switching.md
-.clinerules/100_clineagi_projects/100-02_project-clinerules-management.md
-.clinerules/100_clineagi_projects/100-03_project-version-control.md
-.clinerules/100_clineagi_projects/100-04_project-container-interaction.md
-.clinerules/200_containers/200-00_container-technology-selection.md
-.clinerules/200_containers/200-01_dockerfile-management.md
-.clinerules/200_containers/200-02_container-image-management.md
-.clinerules/200_containers/200-03_container-runtime-operations.md
-.clinerules/200_containers/200-04_container-networking.md
-.clinerules/200_containers/200-05_container-dependency-management.md
-.clinerules/200_containers/200-06_containerized-project-workflow.md
-.clinerules/200_containers/200-07_base-image-selection-guidance.md
-.clinerules/000_core/000-00_core-memory-bank-structure.md
-projects/happy-friends/.clinerules/README.md
-projects/happy-friends/style.css
-projects/happy-friends/Dockerfile
-projects/happy-friends/index.html
-memory-bank/projects.md
-.clinerules/000_core/000-02_core-intake-processing.md
-.clinerules/100_clineagi_projects/100-00_project-initialization.md
-.clinerules/100_clineagi_projects/100-05_project-deletion.md
-.clinerules/000_core/000-11_core-user-feedback-protocol.md
-.clinerules/001_reference/001-03_reference-writing-effective-clinerules.md
-.clinerules/006_integrated_tooling/006-00_integrated-tooling-concepts.md
-.clinerules/000_core/000-12_core-adaptive-problem-solving.md
-.clinerules/000_core/000-13_core-task-thread-logging.md
-memory-bank/user_interaction_philosophy.md
-memory-bank/user_preferences.md
-.clinerules/100_clineagi_projects/100-0Z_project-type-specific-guidance.md
-
-# Current Time
-5/10/2025, 10:05:50 AM (America/Los_Angeles, UTC-7:00)
-
-# Context Window Usage
-407,026 / 1,048.576K tokens used (39%)
-
-# Current Mode
-ACT MODE
-</environment_details>
+-   **Standardization:** Will there be any enforced standards (e.g., for data formats, API contracts) for projects within the `projects/` directory to ensure interoperability with the core AGI, if desired).

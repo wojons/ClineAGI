@@ -1,0 +1,52 @@
+# Inventory of utility scripts available in the tools/scripts/ directory.
+# This file helps Cline discover and understand how to use available shell scripts.
+
+scripts:
+  - name: "List Files with Content"
+    path: "tools/scripts/list-files-with-content.sh"
+    description: "Lists all files matching a given pattern in a directory and outputs each filename followed by its content."
+    type: "shell_script"
+    triggers: ["list files and content", "cat multiple files with names", "show file contents in directory"]
+    arguments:
+      - name: "directory_path"
+        description: "The path to the directory to search in."
+        required: true
+      - name: "file_pattern"
+        description: "The glob pattern to match files (e.g., '*.md', '*.txt'). Should be quoted."
+        required: true
+    example_usage: "bash tools/scripts/list-files-with-content.sh './src' '*.js'"
+    weight: 100
+
+  - name: "Grep with Context and Filename"
+    path: "tools/scripts/grep-with-context-and-filename.sh"
+    description: "Searches for a pattern in files within a directory, showing filename, line number, and context lines."
+    type: "shell_script"
+    triggers: ["grep with context", "search files with context", "find pattern in files"]
+    arguments:
+      - name: "search_pattern"
+        description: "The regex pattern to search for. Should be quoted."
+        required: true
+      - name: "directory_path"
+        description: "The path to the directory to search in."
+        required: true
+      - name: "file_pattern"
+        description: "The glob pattern to match files (e.g., '*.md', '*.txt'). Should be quoted."
+        required: true
+      - name: "context_lines"
+        description: "Number of lines of context to show before and after the match (default: 2)."
+        required: false
+    example_usage: "bash tools/scripts/grep-with-context-and-filename.sh 'myFunction' './src' '*.ts' 3"
+    weight: 100
+
+  # Add more scripts here as they are created.
+  # - name: "Another Useful Script"
+  #   path: "tools/scripts/another-script.sh"
+  #   description: "Description of what this script does."
+  #   type: "shell_script"
+  #   triggers: ["keyword1", "keyword2"]
+  #   arguments:
+  #     - name: "arg1"
+  #       description: "Description of arg1."
+  #       required: true
+  #   example_usage: "bash tools/scripts/another-script.sh 'value1'"
+  #   weight: 100
