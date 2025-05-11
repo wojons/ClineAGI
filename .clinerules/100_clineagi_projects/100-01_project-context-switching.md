@@ -31,7 +31,8 @@ This workflow is triggered when:
     *   **If Project Exists:**
         *   Set the active project context to `<project_name>`.
         *   Load the `.clinerules` from the `projects/<project_name>/.clinerules/` directory. These rules will augment or override global rules for the duration of the task.
-        *   Inform the user that the project context has been set to `<project_name>` and that project-specific rules are active.
+        *   **Read Project Settings:** Use the `read_file` tool to read the content of `projects/<project_name>/memory-bank/settings.yml`. This content should be loaded into Cline's active memory for the task.
+        *   Inform the user that the project context has been set to `<project_name>`, project-specific rules are active, and project settings have been loaded.
     *   **If Project Does Not Exist:**
         *   Inform the user that the project `<project_name>` was not found in the `projects/` directory.
         *   Suggest creating a new project using the project initialization workflow (`100-00_project-initialization.md`).

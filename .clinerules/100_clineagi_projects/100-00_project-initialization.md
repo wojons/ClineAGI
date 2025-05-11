@@ -27,8 +27,8 @@ This workflow is triggered when the user requests to create a new project.
     *   Use the `execute_command` tool to clone the project template repository into the new project directory.
     *   Command example: `git clone https://github.com/wojons/ClineAGI-Project-Template.git projects/{{PROJECT_NAME}}`
 4.  **Rename Template Remote:**
-    *   Use the `execute_command` tool to rename the default `origin` remote to `template-upstream` in the cloned repository.
-    *   Command example: `cd projects/{{PROJECT_NAME}} && git remote rename origin template-upstream`
+    *   Use the `execute_command` tool to rename the default `origin` remote to `source` in the cloned repository.
+    *   Command example: `cd projects/{{PROJECT_NAME}} && git remote rename origin source`
 5.  **Create Project-Specific `.clinerules` Directory:**
     *   Use the `execute_command` tool to create the `.clinerules` directory within the new project.
     *   Command example: `mkdir projects/{{PROJECT_NAME}}/.clinerules`
@@ -152,7 +152,38 @@ This file tracks user preferences that override global settings for the {{PROJEC
   - Overrides the global proactive assistance setting for this project.
 
 ---
-```
+            ```
+        *   Use the `write_to_file` tool to create the initial `settings.yml` in the project's memory bank, populating it with basic project details.
+        *   Content example:
+            ```yaml
+            # Project-Specific Settings
+
+            # This file stores configurations specific to this project.
+            # It is intended to centralize project details like linked repositories,
+            # build commands, container settings, etc., for use by ClineAGI.
+
+            projectName: "{{PROJECT_NAME}}"
+            projectType: "{{PROJECT_TYPE}}" # e.g., "Web Server", "Data Science", "CLI Tool"
+
+            versionControl:
+              remoteRepositoryUrl: "" # URL of the project's primary remote Git repository
+              defaultBranch: "" # e.g., "main", "develop"
+
+            containerization:
+              enabled: false # Set to true if using containers
+              technology: "Docker" # e.g., "Docker", "Podman"
+              imageName: "" # Default image name
+              dockerfilePath: "Dockerfile" # Path relative to project root
+              defaultPorts: [] # e.g., ["8080:80", "5432:5432"]
+
+            buildCommands: # Common build/run/test scripts
+              build: ""
+              start: ""
+              test: ""
+
+            projectSpecific: # Flexible section for any other project-specific settings
+              # Add custom key-value pairs here
+            ```
 8.  **Update Main Projects List:**
         *   Use the `write_to_file` tool to append an entry for the new project to the main `memory-bank/projects.md` file. The content should be a new row in the Markdown table, using the format `| {{PROJECT_NAME}} | {{CURRENT_DATE_YYYY_MM_DD}} | {{PROJECT_TYPE}} | projects/{{PROJECT_NAME}}/ | [Brief description of the project] |`. Ensure the table formatting is maintained.
 9.  **Inform User:**
@@ -169,3 +200,4 @@ This file tracks user preferences that override global settings for the {{PROJEC
 
 *   Cline will need to remember the active project context to load project-specific `.clinerules` when working on a project. This will be handled by a separate rule (`100-01_project-context-switching.md`).
 *   The user will need to manually set up their own `origin` remote for their project if they wish to push it to their personal GitHub or other remote repository. Cline can guide them on this using the `100-03_project-version-control.md` rule.
+*   The new project repository will be configured with `wojons/ClineAGI-Project-Template` as a remote named `source` to allow users to pull future updates from the master template.

@@ -46,11 +46,11 @@ The `ClineAGI-Project-Template` includes a set of standard baseline commands in 
 -   `enter-project-context.md`: Prompt to guide Cline to switch to a specified project context.
 -   `exit-project-context.md`: Prompt to guide Cline to return to the global/core context.
 -   `update-memory-bank.md`: Prompt to initiate the memory bank update workflow for the current context.
--   `container-status.md`: Prompt to check the status of the active project's container.
--   `container-start.md`: Prompt to start the active project's container.
--   `container-stop.md`: Prompt to stop the active project's container.
--   `container-build.md`: Prompt to build/rebuild the active project's container image.
--   `container-remove.md`: Prompt to remove the active project's container (after stopping).
+-   `container-status.md`: Prompt to check the status of the active project's container (e.g., `projects/{{PROJECT_NAME}}`).
+-   `container-start.md`: Prompt to start the active project's container (e.g., `projects/{{PROJECT_NAME}}`).
+-   `container-stop.md`: Prompt to stop the active project's container (e.g., `projects/{{PROJECT_NAME}}`).
+-   `container-build.md`: Prompt to build/rebuild the active project's container image (e.g., `projects/{{PROJECT_NAME}}`).
+-   `container-remove.md`: Prompt to remove the active project's container (after stopping) (e.g., `projects/{{PROJECT_NAME}}`).
 
 ## Dependencies
 
