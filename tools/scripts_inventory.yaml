@@ -38,6 +38,42 @@ scripts:
     example_usage: "bash tools/scripts/grep-with-context-and-filename.sh 'myFunction' './src' '*.ts' 3"
     weight: 100
 
+  - name: "Fetch URL Content (wget/curl like)"
+    path: "tools/scripts/fetch-url-content.sh"
+    description: "Fetches content from a URL using curl. Can save to a file or output to stdout."
+    type: "shell_script"
+    triggers: ["fetch url", "download web page", "get web content", "wget", "curl page"]
+    arguments:
+      - name: "url"
+        description: "The URL to fetch."
+        required: true
+      - name: "output_file"
+        description: "Optional: File to save the content to. If omitted, content goes to stdout."
+        required: false
+    example_usage: "bash tools/scripts/fetch-url-content.sh 'https://example.com' 'example.html'"
+    weight: 100
+
+  - name: "Extract Text Pattern (grep & sed/awk)"
+    path: "tools/scripts/extract-text-pattern.sh"
+    description: "Extracts specific patterns from text using grep and optionally sed or awk for further processing."
+    type: "shell_script"
+    triggers: ["extract text", "parse text", "grep and sed", "grep and awk", "text processing"]
+    arguments:
+      - name: "input_file"
+        description: "The file to process."
+        required: true
+      - name: "search_regex"
+        description: "The POSIX ERE regex to identify lines or sections. Must be quoted."
+        required: true
+      - name: "extract_regex"
+        description: "Optional: A sed/awk regex to extract specific parts from matched lines. If omitted, prints the whole matched line."
+        required: false
+      - name: "interpreter"
+        description: "Optional: 'sed' or 'awk' for the extract_regex. Defaults to 'sed'."
+        required: false
+    example_usage: "bash tools/scripts/extract-text-pattern.sh 'input.log' 'ERROR:' 's/.*ERROR: \\(.*\\)/\\1/p'"
+    weight: 100
+
   # Add more scripts here as they are created.
   # - name: "Another Useful Script"
   #   path: "tools/scripts/another-script.sh"

@@ -17,22 +17,34 @@ This workflow is triggered when the user provides input in the format `@<path_to
 
 ## Workflow
 
-1.  **Identify Command Invocation:** Recognize user input starting with `@` followed immediately by a file path ending in `.md`.
-2.  **Validate Path:** Ensure the provided path points to a Markdown file within a project's `cmd/` directory (e.g., `projects/<project_name>/cmd/<command_name>.md`).
-3.  **Read Command File:** Use the `read_file` tool to read the content of the specified command Markdown file.
-4.  **Execute Command:** Treat the content read from the Markdown file as the user's prompt for the current turn and proceed with the agent loop (Analyze Events, Select Tools, etc.) based on the instructions in the command file.
+1.  **Identify Command Invocation:** Recognize user input starting with `@` followed immediately by a file path ending in `.md` or `.md.j2`.
+2.  **Validate Path:** Ensure the provided path points to a Markdown file (or Jinja2 template) within a project's `cmd/` directory (e.g., `projects/<project_name>/cmd/<command_name>.md` or `projects/<project_name>/cmd/<command_name>.md.j2`).
+3.  **Read Command File:** Use the `read_file` tool to read the content of the specified command file.
+4.  **Template Rendering (if .j2 file):**
+    *   If the file ends with `.md.j2`, it's a Jinja2 template.
+    *   **Check for `jinja2-cli`:** Execute `jinja2 --version` to check if the `jinja2-cli` tool is installed.
+    *   **If `jinja2-cli` is installed:**
+        *   Identify necessary context variables (e.g., `project_name` from the active project context).
+        *   Construct the `jinja2` command to render the template. Example: `jinja2 projects/<project_name>/cmd/<command_name>.md.j2 -D project_name=<active_project_name>`
+        *   Execute the command using `execute_command`. The output of this command will be the rendered prompt.
+    *   **If `jinja2-cli` is NOT installed (or rendering fails):**
+        *   The LLM (Cline) must manually perform placeholder replacement. For example, replace `{{ project_name }}` with the active project's name.
+        *   This manual replacement should be robust enough to handle common template variables.
+5.  **Execute Command:** Treat the (potentially rendered) content from the command file as the user's prompt for the current turn and proceed with the agent loop (Analyze Events, Select Tools, etc.).
 
 ## Command Structure and Storage
 
 -   **Location:** Command files are stored in the `cmd/` directory at the root of each project: `projects/<project_name>/cmd/`.
--   **Naming:** Files should be named descriptively using kebab-case (e.g., `container-build.md`).
--   **Format:** Command files are plain Markdown (`.md`) files. The entire content of the file is the prompt that Cline will execute when the command is invoked. No YAML frontmatter is required for command execution, although it may be included for human readability or documentation within the file itself.
+-   **Naming:**
+    *   Static command files: `command-name.md`
+    *   Jinja2 templated command files: `command-name.md.j2`
+-   **Format:** Command files are plain Markdown (`.md`) or Jinja2-templated Markdown (`.md.j2`). The (rendered) content of the file is the prompt that Cline will execute.
 
 ## Invocation
 
 -   Project commands are invoked using the `@` symbol followed immediately by the relative path to the command file from the ClineAGI root directory.
--   Syntax: `@<path_to_command_file.md>`
--   Example: `@/projects/my-web-app/cmd/run-tests.md`
+-   Syntax: `@<path_to_command_file>` (e.g., `@projects/my-project/cmd/status.md` or `@projects/my-project/cmd/status.md.j2`)
+-   Example: `@projects/my-web-app/cmd/run-tests.md.j2`
 
 ## Custom Commands
 
