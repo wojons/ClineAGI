@@ -91,3 +91,107 @@
 *   **Common to Both:**
     *   **Professionalism:** Is the writing high-quality, well-structured, and error-free?
     *   **Audience Appropriateness:** Is it tailored to the intended reader?
+
+## 6. Example Output Structure/Format
+
+**Scenario (Case Study):** User wants a case study about "Acme Corp" improving efficiency using "SolutionX."
+*   **User Input:**
+    *   Client: Acme Corp, a mid-sized logistics company.
+    *   Challenge: Manual route planning leading to inefficiencies and high fuel costs.
+    *   Solution: Implemented SolutionX, an AI-powered route optimization software.
+    *   Results: Reduced fuel costs by 15%, decreased delivery times by 20%, improved driver satisfaction.
+    *   Quote: "SolutionX revolutionized our logistics. We're saving money and our drivers are happier." - Jane Doe, COO Acme Corp.
+
+*   **Cline Generated Case Study (Excerpt):**
+
+    ---
+    **Case Study: Acme Corp Boosts Efficiency and Cuts Costs with SolutionX**
+
+    **Client:** Acme Corp
+    **Industry:** Logistics & Transportation
+    **Challenge:** Inefficient manual route planning, high fuel expenditure, and extended delivery times.
+
+    **The Challenge: Navigating a Complex Route Network**
+
+    Acme Corp, a leading mid-sized logistics provider, faced growing challenges with its manual route planning processes. As their operations expanded, dispatchers struggled to optimize routes for their fleet of 50 vehicles, leading to excessive mileage, high fuel consumption, and frequent delivery delays. This not only impacted their bottom line but also began to affect driver morale and customer satisfaction. "We knew we were leaving money on the table and burning unnecessary fuel," said Jane Doe, COO of Acme Corp.
+
+    **The Solution: Implementing SolutionX for AI-Powered Optimization**
+
+    Acme Corp turned to SolutionX, a state-of-the-art AI-powered route optimization platform. The implementation involved integrating SolutionX with Acme's existing order management system. SolutionX's algorithms analyzed historical traffic data, real-time conditions, vehicle capacities, and delivery windows to generate optimized routes automatically. Dispatchers were trained to use the intuitive SolutionX dashboard to manage and adjust routes as needed.
+
+    **The Results: Measurable Improvements Across the Board**
+
+    Within three months of implementing SolutionX, Acme Corp experienced significant improvements:
+    *   **15% Reduction in Fuel Costs:** Optimized routes led to less mileage and lower fuel consumption.
+    *   **20% Decrease in Average Delivery Times:** More efficient routing meant faster deliveries and improved customer satisfaction.
+    *   **Increased Driver Satisfaction:** Drivers reported less stress due to more predictable and efficient routes.
+    *   **Enhanced Operational Visibility:** Dispatchers gained better insight into fleet operations.
+
+    *"SolutionX revolutionized our logistics. We're saving money and our drivers are happier."* - Jane Doe, COO, Acme Corp.
+
+    **Conclusion**
+
+    By adopting SolutionX, Acme Corp successfully transformed its route planning from a manual, time-consuming task into an efficient, data-driven operation. The quantifiable savings and operational improvements demonstrate the power of AI in optimizing complex logistics.
+
+    ---
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "White Paper & Case Study Development"
+path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/whitepaper-case-study-development.md"
+type: "use_case_guide"
+description: "Develops authoritative white papers on complex issues or compelling case studies showcasing real-world success."
+triggers: ["write white paper", "develop case study", "thought leadership content", "customer success story", "in-depth report on"]
+weight: 100
+
+## 6. Example Output Structure/Format
+
+**Scenario (Case Study):** User wants a case study about "Acme Corp" improving efficiency using "SolutionX."
+*   **User Input:**
+    *   Client: Acme Corp, a mid-sized logistics company.
+    *   Challenge: Manual route planning leading to inefficiencies and high fuel costs.
+    *   Solution: Implemented SolutionX, an AI-powered route optimization software.
+    *   Results: Reduced fuel costs by 15%, decreased delivery times by 20%, improved driver satisfaction.
+    *   Quote: "SolutionX revolutionized our logistics. We're saving money and our drivers are happier." - Jane Doe, COO Acme Corp.
+
+*   **Cline Generated Case Study (Excerpt):**
+
+    ---
+    **Case Study: Acme Corp Boosts Efficiency and Cuts Costs with SolutionX**
+
+    **Client:** Acme Corp
+    **Industry:** Logistics & Transportation
+    **Challenge:** Inefficient manual route planning, high fuel expenditure, and extended delivery times.
+
+    **The Challenge: Navigating a Complex Route Network**
+
+    Acme Corp, a leading mid-sized logistics provider, faced growing challenges with its manual route planning processes. As their operations expanded, dispatchers struggled to optimize routes for their fleet of 50 vehicles, leading to excessive mileage, high fuel consumption, and frequent delivery delays. This not only impacted their bottom line but also began to affect driver morale and customer satisfaction. "We knew we were leaving money on the table and burning unnecessary fuel," said Jane Doe, COO of Acme Corp.
+
+    **The Solution: Implementing SolutionX for AI-Powered Optimization**
+
+    Acme Corp turned to SolutionX, a state-of-the-art AI-powered route optimization platform. The implementation involved integrating SolutionX with Acme's existing order management system. SolutionX's algorithms analyzed historical traffic data, real-time conditions, vehicle capacities, and delivery windows to generate optimized routes automatically. Dispatchers were trained to use the intuitive SolutionX dashboard to manage and adjust routes as needed.
+
+    **The Results: Measurable Improvements Across the Board**
+
+    Within three months of implementing SolutionX, Acme Corp experienced significant improvements:
+    *   **15% Reduction in Fuel Costs:** Optimized routes led to less mileage and lower fuel consumption.
+    *   **20% Decrease in Average Delivery Times:** More efficient routing meant faster deliveries and improved customer satisfaction.
+    *   **Increased Driver Satisfaction:** Drivers reported less stress due to more predictable and efficient routes.
+    *   **Enhanced Operational Visibility:** Dispatchers gained better insight into fleet operations.
+
+    *"SolutionX revolutionized our logistics. We're saving money and our drivers are happier."* - Jane Doe, COO, Acme Corp.
+
+    **Conclusion**
+
+    By adopting SolutionX, Acme Corp successfully transformed its route planning from a manual, time-consuming task into an efficient, data-driven operation. The quantifiable savings and operational improvements demonstrate the power of AI in optimizing complex logistics.
+
+    ---
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "White Paper & Case Study Development"
+path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/whitepaper-case-study-development.md"
+type: "use_case_guide"
+description: "Develops authoritative white papers on complex issues or compelling case studies showcasing real-world success."
+triggers: ["write white paper", "develop case study", "thought leadership content", "customer success story", "in-depth report on"]
+weight: 100

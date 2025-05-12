@@ -70,3 +70,52 @@
 *   **Insightfulness:** Does the analysis offer some valuable perspectives or highlight important considerations?
 *   **Usefulness for Strategic Planning:** Does it provide a solid foundation for further strategic discussion and decision-making?
 *   **Clear Structure:** Is the SWOT analysis presented in an organized and readable format?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants a SWOT analysis for a small independent coffee shop.
+*   **User Input:**
+    *   Subject: "The Cozy Corner Cafe" - a small, independent coffee shop.
+    *   Context: Located in a neighborhood with some foot traffic, known for good coffee and friendly service. Faces competition from a large chain nearby.
+    *   Focus: General business strategy.
+
+*   **Cline Generated SWOT Analysis:**
+
+    **SWOT Analysis: The Cozy Corner Cafe**
+
+    **Strengths (Internal, Positive):**
+    *   High-quality coffee and unique blends.
+    *   Friendly, personalized customer service.
+    *   Cozy and inviting atmosphere.
+    *   Loyal local customer base.
+    *   Flexibility to adapt menu and offerings quickly.
+
+    **Weaknesses (Internal, Negative):**
+    *   Limited marketing budget compared to chains.
+    *   Smaller purchasing power for supplies.
+    *   Dependence on owner/key staff for unique ambiance.
+    *   Limited seating capacity.
+    *   Potentially less brand recognition than larger competitors.
+
+    **Opportunities (External, Positive):**
+    *   Growing demand for specialty coffee and artisanal products.
+    *   Partner with local bakeries or artists to offer unique products.
+    *   Host community events (e.g., open mic nights, book clubs) to increase foot traffic.
+    *   Leverage social media for targeted local marketing.
+    *   Offer loyalty programs to retain customers.
+    *   Expand into online orders/delivery for local area.
+
+    **Threats (External, Negative):**
+    *   Intense competition from nearby chain coffee shops.
+    *   Rising costs of coffee beans and other supplies.
+    *   Changes in local economic conditions affecting discretionary spending.
+    *   Shifting consumer preferences (e.g., new drink trends).
+    *   Difficulty in attracting and retaining skilled baristas.
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "SWOT Analysis Generation"
+path: "prompts/use_cases/content-creation-and-management/brainstorming-idea-generation/swot-analysis-generation.md"
+type: "use_case_guide"
+description: "Generates a structured SWOT analysis (Strengths, Weaknesses, Opportunities, Threats) for a given subject."
+triggers: ["swot analysis", "generate swot", "strengths weaknesses opportunities threats", "strategic planning tool"]
+weight: 100

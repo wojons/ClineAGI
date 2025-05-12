@@ -70,3 +70,53 @@
 *   **Readability & Maintainability:** Is the configuration easy to understand and modify?
 *   **Customization:** Are user-specific requirements correctly incorporated?
 *   **Usefulness as a Starting Point:** Does it provide a solid foundation that a developer can build upon?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants a basic `.gitignore` file for a Node.js project.
+*   **User Input:**
+    *   Type: `.gitignore`
+    *   Project Technology: Node.js
+    *   Additional Ignores: `.env` files, `dist/` folder.
+
+*   **Cline Generated `.gitignore` Content:**
+    ```
+    # Node.js
+    node_modules/
+    npm-debug.log*
+    yarn-debug.log*
+    yarn-error.log*
+    package-lock.json # Optional, depending on team preference
+    # yarn.lock # Optional, depending on team preference
+
+    # IDEs and Editors
+    .idea/
+    .vscode/
+    *.swp
+    *.swo
+
+    # Operating System files
+    .DS_Store
+    Thumbs.db
+
+    # Environment variables
+    .env
+    .env.*
+    !.env.example
+
+    # Build output
+    dist/
+    build/
+
+    # Logs
+    logs/
+    *.log
+    ```
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Configuration File Generation"
+path: "prompts/use_cases/content-creation-and-management/code-generation-software-development/configuration-file-generation.md"
+type: "use_case_guide"
+description: "Generates content for various software configuration files (e.g., Dockerfile, .gitignore, CI/CD pipelines, linters)."
+triggers: ["generate config file", "create dockerfile", "setup gitignore", "github actions workflow", "eslint config", "prettier config"]
+weight: 100

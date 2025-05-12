@@ -1,112 +1,87 @@
 # ClineAGI Project Recovery and Refocus Plan
 
-**Date:** May 11, 2025
-**Analyst:** Cline (AI Assistant)
+**Date:** {{CURRENT_DATE_YYYY_MM_DD}}
 
-## 1. Current Project Understanding Summary
+## 1. Introduction
 
-Based on a review of core documentation (`README.md`, `.gitignore`), Memory Bank files (`projectbrief.md`, `productContext.md`, `activeContext.md`, `systemPatterns.md`, `techContext.md`, `progress.md`), key `.clinerules` (governing memory bank, tool usage, intake, response requirements, communication, continuous improvement), prompt inventories, use case inventories, and provided intake documents, the following understanding of the `clineagi-dev-project` has been established:
+This document outlines a plan to address the user's concerns that the ClineAGI project has "lost its focus" and that "too much info got lost," aiming to identify and rectify "broken, missing, and needs to be improved" elements. This plan is based on the initial findings from the `clineagi_project_analysis_report.md`.
 
-*   **Core Mission:** To collaboratively build an Artificial General Intelligence (AGI), with ClineAGI serving as a foundational "OS" and Cline (the AI) as the interactive development partner.
-*   **Key Architecture:** A two-tiered system with a core ClineAGI repository and separate user projects. Knowledge persistence is critically reliant on the Memory Bank, and AI behavior is guided by a `.clinerules` system.
-*   **Strengths:** A clear architectural vision and defined core processes for Memory Bank management, Gitflow, role-based operations, and information intake are documented.
-*   **Primary Challenge (User Highlighted):** The project has "lost its focus," and there are issues with prompt clarity and token efficiency (specifically GitHub Issue #7).
+## 2. Identified Areas of Concern (Preliminary)
 
-## 2. Key Identified Issues & Gaps
+Based on the project structure and the user's statements, the following areas warrant investigation:
 
-The detailed analysis (documented in `design/logs/clineagi_project_analysis_report.md`) has revealed several areas needing attention:
+1.  **Information Integrity and Focus:**
+    *   **Core Vision Alignment:** The primary goals and product definition in `memory-bank/projectbrief.md` and `memory-bank/productContext.md` may be outdated or unclear, leading to a diffuse project focus.
+    *   **Information Siloing/Redundancy:** Multiple `README.md` files and potentially overlapping content between `.clinerules` and `prompts` could lead to inconsistencies and outdated information. The dual `prompt_inventory.md` and `prompt_inventory.yaml` needs clarification.
+    *   **"Lost Information":** This could stem from incomplete Memory Bank updates, outdated rules/prompts, poor documentation linkage, or missing documentation for critical components.
+2.  **Rule and Prompt Management:**
+    *   **Clarity of Purpose:** The distinction between `.clinerules` (operational logic) and `prompts` (guidance for generation/interaction) needs to be consistently enforced.
+    *   **Inventory Accuracy:** The `prompt_inventory.yaml` and `tools/scripts_inventory.yaml` must accurately reflect the available resources.
+3.  **Core System Code (if applicable):**
+    *   The structure and health of any primary application code for ClineAGI itself (potentially in `projects/clineagi-dev/`) need to be assessed if it exists beyond the rule/prompt engine.
+4.  **Documentation Gaps:**
+    *   Critical workflows or components might lack clear, up-to-date documentation.
 
-*   **Outdated Information & Inconsistencies:**
-    *   **Prompt Inventory Filename:** The system refers to `prompts/prompt_inventory.md` in some places (e.g., old recovery plan, `ClineAGI_Project_File_Directory_Inventory.md`), but the actual functional inventory is `prompts/prompt_inventory.yaml`. All references should be updated to `prompt_inventory.yaml`.
-    *   **Redundancy in Core Docs:** `memory-bank/techContext.md` and `memory-bank/systemPatterns.md` have overlapping content regarding AGI concepts, constraints, and dependencies that needs streamlining. `techContext.md` also has several placeholder sections.
-    *   **Project Listings:** Discrepancy between `memory-bank/projects.md` (lists 2 projects) and `projects/README.md` (lists 4 projects). `memory-bank/projects.md` should be the source of truth and updated.
-    *   **Missing Project Files:** `projectbrief.md` and `activeContext.md` are missing for the `happy-friends` and `sad-friends` projects.
-    *   **`replace_in_file` Diff Format:** Discrepancy in the description of the diff format for the `replace_in_file` tool between `000-04_core-ai-tool-usage-guidelines.md` and the main tool documentation (the latter being more current with `SEARCH`/`REPLACE` blocks).
-    *   **`Cline Docs` Terminology:** The term "Cline Docs" is used in `000-00_core-memory-bank-structure.md` referring to `memory-bank/`; this should be standardized to "Memory Bank" for clarity.
-    *   **`.gitignore` for Template:** Clarify the `.gitignore` handling for the local `ClineAGI-Project-Template/` clone.
-    *   **`memory-bank-template-source/`:** The purpose of this directory (if it exists or is planned) is unclear.
+## 3. Proposed Recovery and Refocus Plan
 
-*   **Incomplete Documentation & Placeholders:**
-    *   **Root `README.md`:** Missing dependency installation and launch instructions, and potentially contact/contribution info.
-    *   **Empty/Placeholder Directories in `prompts/`:**
-        *   `prompts/project_types/` is empty.
-        *   `prompts/shared_templates/api-documentation/` and `prompts/shared_templates/emails/` are empty.
-    *   **`memory-bank/raw_reflection_log.md`:** Currently empty; needs to be actively used as per protocol.
-    *   **User Onboarding/Tutorial:** A dedicated guide for first-time users of ClineAGI is missing.
-    *   **VSCode Extension Internals:** While `001-00_reference-cline-extension-architecture.md` provides a good overview, more detailed diagrams or explanations for specific complex interactions within the VSCode extension could be beneficial for core development.
+This plan will be executed iteratively.
 
-*   **Operational Clarity & Strategy:**
-    *   **Rule/Prompt Prioritization Logic:** The exact algorithm or decision-making process for how Cline selects among multiple potentially relevant rules or prompts (beyond `weight` and `type` in `prompt_inventory.yaml`) is not explicitly documented.
-    *   **Maintenance Strategy for `.clinerules` and `prompts/`:** A formal strategy for reviewing, updating, and deprecating items in these extensive libraries is needed.
-    *   **Definition of "Core AGI Functionalities":** A clearer definition of what constitutes these functionalities and their interaction model with user projects is needed.
-    *   **"Non-Disruptive Core Updates" Strategy:** The technical approach for this needs to be detailed.
-    *   **Role Activation Mechanism:** How roles are activated and how this impacts rule/prompt loading needs to be explicitly documented.
-    *   **Project Template Update Conflict Management:** The strategy for handling conflicts when users pull updates from the master project template needs to be defined.
-    *   **Intake Log Decision:** Clarify whether a dedicated intake log is needed or if `activeContext.md` suffices.
-    *   **User Review of New AGI Concepts:** The workflow for user review of new AGI concepts identified during intake processing needs to be formalized.
+### Phase 3.1: Re-establish Core Project Focus & Vision
+    *   **Action:** Read and critically analyze `memory-bank/projectbrief.md` and `memory-bank/productContext.md`.
+    *   **Tool:** `read_file`
+    *   **Follow-up:** Use `ask_followup_question` to discuss these documents with the user. Confirm if they accurately reflect the current vision for ClineAGI. If not, collaboratively update them. This updated vision will guide subsequent steps.
 
-*   **Prompt System & Use Cases (Related to Issue #7 & #16):**
-    *   **Prompt Management (Issue #7):** The current operational `prompts/prompt_inventory.yaml` needs to be fully leveraged for granular loading to improve token efficiency, as detailed in `design/logs/refined_prompt_management_plan.md`.
-    *   **Prompt Clarity:** Many existing prompt files across various categories require review for clarity, consistency, and effectiveness.
-    *   **Incomplete Use Case Definitions:** Many use cases listed in `prompts/prompt_inventory.yaml` (originating from the old inventory) point to files in `prompts/use_cases/` that may be placeholders or incomplete.
+### Phase 3.2: Audit and Refine `.clinerules` and `prompts`
+    *   **Goal:** Ensure clarity, consistency, and alignment with the re-established project focus.
+    *   **Step 3.2.1: `.clinerules` Review:**
+        *   **Action:** Systematically review each subdirectory within `.clinerules/` (`000_core`, `002_workflow`, etc.). For each rule, assess its relevance, clarity, and consistency with the project vision.
+        *   **Tools:** `list_files` (for each subdirectory), `read_file` (for each rule).
+        *   **Output:** Identify rules that are outdated, redundant, unclear, or misaligned. Note them for revision or deprecation.
+    *   **Step 3.2.2: `prompts` Review:**
+        *   **Action:** Systematically review each subdirectory within `prompts/` (e.g., `agent_prompts`, `use_cases`). Assess relevance, clarity, and consistency.
+        *   **Tools:** `list_files`, `read_file`.
+        *   **Output:** Identify prompts that are outdated, redundant, unclear, or misaligned. Note them for revision or deprecation.
+    *   **Step 3.2.3: Ensure `.clinerules` vs. `prompts` Distinction:**
+        *   **Action:** During the review, specifically check if operational logic is correctly placed in `.clinerules` and guidance/templates in `prompts`.
+        *   **Output:** Note any files that need to be moved or refactored.
 
-*   **Tooling & Examples:**
-    *   **Practical Tool Examples:** More diverse and complex examples for `execute_command` (chaining, script error handling) and `use_mcp_tool` would be beneficial in `000-04_core-ai-tool-usage-guidelines.md`.
-    *   **Prometheus-0 Cycle Example:** A concrete example of a fully "executed" Prometheus-0 planning/reasoning cycle would clarify its application.
+### Phase 3.3: Verify Inventory Accuracy
+    *   **Step 3.3.1: Prompt Inventory Audit:**
+        *   **Action:** Read `prompts/prompt_inventory.yaml`. List all files in `prompts/` (recursively). Compare the inventory against actual files.
+        *   **Tools:** `read_file`, `list_files`.
+        *   **Output:** List of discrepancies (missing entries, broken paths, incorrect metadata) in `prompt_inventory.yaml`.
+    *   **Step 3.3.2: Tool Script Inventory Audit:**
+        *   **Action:** Read `tools/scripts_inventory.yaml`. List all files in `tools/scripts/`. Compare.
+        *   **Tools:** `read_file`, `list_files`.
+        *   **Output:** List of discrepancies in `tools/scripts_inventory.yaml`.
+    *   **Step 3.3.3: Update Inventories:**
+        *   **Action:** Based on audit findings, update `prompt_inventory.yaml` and `tools/scripts_inventory.yaml`.
+        *   **Tool:** `replace_in_file` or `write_to_file`.
 
-## 3. Proposed High-Level Action Plan (YOLO Mode Approach)
+### Phase 3.4: Analyze Core ClineAGI Code (If Applicable)
+    *   **Action:** Investigate `projects/clineagi-dev/` (or other potential locations if identified) for core application source code.
+    *   **Tools:** `list_files` (recursive for `projects/clineagi-dev/`), `list_code_definition_names` (on source subdirectories found).
+    *   **Output:** Summary of the core application's structure if found, to be added to the main analysis report.
 
-To get the `clineagi-dev-project` back on track, focusing on clarity, efficiency, and addressing known issues:
+### Phase 3.5: Documentation Linkage and Gap Analysis
+    *   **Action:** Review key `README.md` files and core `memory-bank` documents. Identify missing links between related documents and any critical components/workflows lacking clear documentation.
+    *   **Tools:** `read_file` (for multiple READMEs and memory bank files).
+    *   **Output:** A list of documentation gaps and linkage improvements needed.
 
-**Phase 1: Foundational Cleanup & Documentation (Immediate Focus)**
+### Phase 3.6: Implement Changes and Consolidate Learnings
+    *   **Action:** Based on the findings from previous phases, implement necessary changes (revising files, moving content, updating links).
+    *   **Tools:** `replace_in_file`, `write_to_file`, `execute_command` (for moving files if necessary, e.g., `mv old_path new_path`).
+    *   **Action:** Update `memory-bank/activeContext.md` and `memory-bank/progress.md` to reflect the recovery efforts.
+    *   **Action:** Log all significant learnings and changes in `memory-bank/raw_reflection_log.md` and subsequently `memory-bank/consolidated_learnings.md` as per `000-05_core-continuous-improvement-protocol.md`.
 
-1.  **Implement Prompt Management Refinement (Address Issue #7 - In Progress):**
-    *   Action: Proceed with the steps outlined in `design/logs/refined_prompt_management_plan.md`. This involves:
-        *   Restructuring `prompts/prompt_inventory.md` for granular loading.
-        *   Reviewing and clarifying all existing prompt files in `prompts/prompt_styles/`, `prompts/project_types/`, etc.
-        *   Developing and integrating new prompting style templates (ReAct, Self-Critique, etc.) into `prompts/agent_prompting_styles/`.
-        *   Updating the core prompt loading mechanism.
-    *   Output: Updated `prompts/prompt_inventory.md`, revised/new prompt files, updated analysis report.
-    *   GitHub: Update Issue #7 with progress.
+### Phase 3.7: Final Report Update and User Review
+    *   **Action:** Update the main `clineagi_project_analysis_report.md` (sections 5 and 6) with a summary of findings, actions taken, and recommendations.
+    *   **Tool:** `replace_in_file`.
+    *   **Action:** Present the updated analysis report and this recovery plan to the user for review and further direction.
+    *   **Tool:** `attempt_completion`.
 
-2.  **Update Core Documentation:**
-    *   Action: Populate missing sections in `README.md` (Dependencies, Launch Instructions, Contact/Contribution).
-    *   Action: Populate placeholder sections in `memory-bank/techContext.md` (Tool Usage Patterns, Critical Implementation Paths, Future Considerations). Review for redundancy with `systemPatterns.md`.
-    *   Action: Correct `.gitignore` for `ClineAGI-Project-Template/`.
-    *   Output: Updated `README.md`, `techContext.md`, `.gitignore`.
-    *   GitHub: Create new issues for these documentation tasks or link to existing ones if applicable.
+## 4. Timeline
+(To be determined based on the complexity revealed in each phase)
 
-3.  **Standardize Terminology & Resolve Minor Discrepancies:**
-    *   Action: Clarify "Cline Docs" reference in `000-00_core-memory-bank-structure.md` (recommend standardizing to "Memory Bank").
-    *   Action: Resolve `replace_in_file` diff format discrepancy between `000-07_core-ai-tool-usage-guidelines.md` and main tool docs.
-    *   Output: Updated `.clinerules` files.
-    *   GitHub: Create issues for these clarifications.
-
-**Phase 2: Enhancing Operational Clarity & Workflows**
-
-4.  **Define Pending Processes:**
-    *   Action: Document the mechanism for role activation.
-    *   Action: Document the strategy for project template update conflict management.
-    *   Action: Decide on and document the use of a dedicated intake log (vs. `activeContext.md`).
-    *   Action: Document the workflow for user review of new AGI concepts from intake.
-    *   Output: New/updated `.clinerules` or Memory Bank documents.
-    *   GitHub: Create issues for these process definitions.
-
-5.  **Populate Use Case Library:**
-    *   Action: Begin systematically populating the detailed Markdown files for use cases listed in `.clinerules/999_01_use_case_inventory.md`, prioritizing those relevant to core ClineAGI functionality and software development assistance.
-    *   Output: New files in `prompts/use_cases/`.
-    *   GitHub: Link to Issue #16 and potentially create sub-tasks.
-
-**Phase 3: Broader Project Review & Code-Level Analysis (Future Step)**
-
-6.  **Full Codebase Scan & Analysis (If Still Needed):**
-    *   Action: After addressing documentation and high-level structural issues, if specific problems persist or a deeper understanding of the VSCode extension code (`src/`) is required, perform a targeted scan of that codebase. This would involve using `list_files`, `read_file`, and `list_code_definition_names` on the `src/` directory (and potentially `projects/clineagi-dev/` if it contains its own source code distinct from the main extension).
-    *   Output: Further updates to `design/logs/clineagi_project_analysis_report.md` with code-specific findings.
-    *   GitHub: New issues based on code-level findings.
-
-**Ongoing:**
-
-*   Maintain `memory-bank/activeContext.md` and `memory-bank/progress.md` with current status.
-*   Apply Continuous Improvement Protocol after completing significant parts of this plan.
-
-This plan prioritizes fixing the prompt system (Issue #7) and clarifying existing documentation, which should provide a more stable and understandable foundation for further development and for addressing other GitHub issues.
+---
+*Plan drafted by ClineAGI*

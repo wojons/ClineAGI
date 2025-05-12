@@ -81,3 +81,76 @@
 *   **Specificity:** Are suggestions concrete rather than vague?
 *   **Balance:** Does it offer a good mix of refactoring and optimization ideas if both are relevant?
 *   **Educational Value:** Does the user learn something about code quality or performance from the suggestions?
+
+## 6. Example Output Structure/Format
+**Scenario:** User provides a Python function that could be refactored for clarity and optimized.
+*   **User Input:**
+    *   Source Code:
+        ```python
+        # Processes a list of items and returns a new list with items that meet a certain criteria
+        # and are transformed.
+        def process_my_list(items_list, criteria_value, transform_factor):
+            new_list = []
+            for i in range(len(items_list)):
+                if items_list[i] > criteria_value: # Check criteria
+                    # Apply transformation
+                    transformed_item = items_list[i] * transform_factor
+                    new_list.append(transformed_item)
+            return new_list
+        ```
+    *   Language: Python
+    *   Goal: Improve readability and suggest potential optimizations.
+
+*   **Cline Generated Suggestions:**
+
+    **Refactoring & Optimization Suggestions for `process_my_list`:**
+
+    **Refactoring Suggestions:**
+
+    1.  **Use List Comprehension for Clarity & Conciseness:**
+        *   **Issue:** The current `for` loop with an `if` condition and `append` can be made more Pythonic and readable using a list comprehension.
+        *   **Suggestion:** Convert the loop to a list comprehension.
+        *   **Example:**
+            ```python
+            # Before
+            # new_list = []
+            # for i in range(len(items_list)):
+            #     if items_list[i] > criteria_value:
+            #         transformed_item = items_list[i] * transform_factor
+            #         new_list.append(transformed_item)
+            # return new_list
+
+            # After
+            def process_my_list_refactored(items_list, criteria_value, transform_factor):
+                return [item * transform_factor for item in items_list if item > criteria_value]
+            ```
+        *   **Rationale:** List comprehensions are more idiomatic in Python for this type of filtering and transformation, leading to more concise and often more readable code.
+
+    2.  **More Descriptive Variable Names (Minor):**
+        *   **Issue:** `items_list` is acceptable, but `data` or a more specific name based on context could be considered if the list's content is known. `transform_factor` is clear.
+        *   **Suggestion:** Consider renaming `items_list` if a more domain-specific term applies. (Low priority for this example).
+
+    **Optimization Suggestions:**
+
+    1.  **Consider NumPy for Large Lists (If Applicable):**
+        *   **Issue:** For very large numerical lists, Python's native loops can be slower than vectorized operations using libraries like NumPy.
+        *   **Suggestion:** If `items_list` is expected to be very large and performance is critical, consider using NumPy arrays and its vectorized operations.
+        *   **Example (Conceptual):**
+            ```python
+            # import numpy as np
+            # def process_with_numpy(items_array, criteria_value, transform_factor):
+            #     filtered_array = items_array[items_array > criteria_value]
+            #     transformed_array = filtered_array * transform_factor
+            #     return transformed_array.tolist()
+            ```
+        *   **Rationale:** NumPy operations are implemented in C and can be significantly faster for numerical computations on large arrays.
+        *   **Trade-off:** Adds a dependency on NumPy. Only beneficial for large datasets where the overhead of NumPy is offset by performance gains.
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Code Refactoring & Optimization Suggestions"
+path: "prompts/use_cases/content-creation-and-management/code-generation-software-development/code-refactoring-optimization-suggestions.md"
+type: "use_case_guide"
+description: "Analyzes source code to provide suggestions for refactoring (improving structure, readability) or optimization (improving performance)."
+triggers: ["refactor code", "optimize code", "code review suggestions", "improve code quality", "performance optimization tips"]
+weight: 100

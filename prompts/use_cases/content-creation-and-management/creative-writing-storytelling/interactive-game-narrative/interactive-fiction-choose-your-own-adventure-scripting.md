@@ -82,3 +82,49 @@
 *   **Replayability Potential:** Would a player be motivated to try different choices?
 *   **Completeness:** Are all described branches followed through to some form of outcome?
 *   **Adherence to Prompt:** Does it fulfill the user's requirements for the interactive story?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants a short interactive scene where the player explores a cave.
+*   **User Input:**
+    *   Premise: Player is an explorer who has just found the entrance to a dark cave.
+    *   Genre: Adventure/Exploration.
+    *   Desired Format: Twine-like (using `[[Link Text->Target Node]]` for choices).
+
+*   **Cline Generated Interactive Fiction Script (Excerpt):**
+
+    **:: Start**
+    You stand at the mouth of a dark cave. A cool, damp breeze issues from within, carrying the scent of wet stone and something else... something ancient and unknown. The opening is just large enough to squeeze through.
+    *   [[Enter the cave cautiously.->CaveEntrance]]
+    *   [[Light a torch before entering.->LightTorch]]
+    *   [[Decide it's too risky and turn back.->TurnBack]]
+
+    **:: CaveEntrance**
+    The darkness inside is almost total. You take a few hesitant steps forward, your hands outstretched. The ground is uneven. You hear a faint dripping sound echoing from deeper within.
+    *   [[Try to find your way by touch.->TouchAhead]]
+    *   [[Call out to see if anyone (or anything) is there.->CallOut]]
+    *   [[Attempt to light your emergency flare.->LightFlare_Entrance]]
+
+    **:: LightTorch**
+    You fumble for your tinderbox and torch. After a few tries, the torch catches, casting flickering orange light on the rough-hewn cave walls. The entrance passage seems to narrow ahead.
+    *   [[Proceed into the narrowing passage.->NarrowPassage_Torch]]
+    *   [[Examine the cave mouth more closely with the torchlight.->ExamineMouth_Torch]]
+
+    **:: TurnBack**
+    Wisdom, or perhaps caution, gets the better of you. This cave has waited for centuries; it can wait a little longer. You turn away from the dark opening and head back towards the sunlight.
+    **(Ending: Safe Retreat)**
+
+    **:: TouchAhead**
+    Your hands brush against something cold and slimy on the wall. Further ahead, you stumble, your foot catching on a loose rock.
+    *   [[Try to regain your balance.->RegainBalance_Stumble]]
+    *   [[Fall.->Fall_Darkness]]
+
+    *(...and so on for other nodes like CallOut, LightFlare_Entrance, NarrowPassage_Torch, etc.)*
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Interactive Fiction/CYOA Scripting"
+path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/interactive-game-narrative/interactive-fiction-choose-your-own-adventure-scripting.md"
+type: "use_case_guide"
+description: "Generates branching narrative scripts for interactive fiction or choose-your-own-adventure stories."
+triggers: ["interactive fiction script", "choose your own adventure story", "cyoa writing", "branching narrative", "Twine story script"]
+weight: 100

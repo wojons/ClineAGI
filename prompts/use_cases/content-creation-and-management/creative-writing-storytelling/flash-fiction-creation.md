@@ -72,3 +72,26 @@
 *   **Originality:** Does it offer a creative or unique snippet?
 *   **Adherence to Constraints:** Does it meet word count limits and incorporate user prompts?
 *   **Craftsmanship:** Is the language precise and well-chosen?
+
+## 6. Example Output Structure/Format
+**Scenario:** User requests a flash fiction story under 100 words about a lonely lighthouse keeper who receives an unexpected message.
+*   **User Input:**
+    *   Theme: Loneliness and unexpected connection.
+    *   Character: Old lighthouse keeper.
+    *   Setting: Isolated lighthouse.
+    *   Key Event: Receives a message in a bottle.
+    *   Word Limit: Under 100 words.
+    *   Mood: Melancholy, then hopeful.
+
+*   **Cline Generated Flash Fiction:**
+
+    The beam cut its lonely arc through the endless night. Seventy years, Thomas had watched it turn, a solitary sentinel. The sea only ever offered gulls' cries and the crash of waves. Tonight, though, it offered something more. A glint at the tide line. A bottle. Inside, a single, water-stained word on a scrap of parchment: "Hello." Thomas smiled, the first time in what felt like another seventy years. The beam suddenly seemed a little less lonely. (78 words)
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Flash Fiction Creation"
+path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/flash-fiction-creation.md"
+type: "use_case_guide"
+description: "Generates extremely brief, complete, and impactful fictional narratives, typically under 1,000 words."
+triggers: ["flash fiction", "short short story", "micro-fiction", "drabble", "write a very short story"]
+weight: 100

@@ -72,3 +72,46 @@
 *   **Clarity of Node Labels:** Are the phrases used for each item clear and concise?
 *   **Usefulness as an Organizational Tool:** Does the outline help in structuring thoughts or information about the topic?
 *   **Readability of Text Format:** Is the indentation and list formatting clear and consistent?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants a text-based mind map outline for "Effective Time Management".
+*   **User Input:**
+    *   Central Topic: Effective Time Management
+    *   Desired Depth: 2-3 levels
+
+*   **Cline Generated Text-Based Mind Map Outline:**
+    ```
+    Effective Time Management
+    *   I. Prioritization
+        *   A. Identifying High-Impact Tasks
+            *   1. Eisenhower Matrix (Urgent/Important)
+            *   2. Pareto Principle (80/20 Rule)
+        *   B. Goal Setting
+            *   1. SMART Goals
+            *   2. Breaking Down Large Goals
+    *   II. Planning & Scheduling
+        *   A. Time Blocking
+        *   B. Using Calendars/Planners
+        *   C. Daily/Weekly Reviews
+    *   III. Minimizing Distractions
+        *   A. Digital Distractions (Notifications, Social Media)
+        *   B. Physical Environment
+        *   C. Saying "No" to Non-Essential Commitments
+    *   IV. Tools & Techniques
+        *   A. To-Do Lists
+        *   B. Pomodoro Technique
+        *   C. Delegation
+    *   V. Overcoming Procrastination
+        *   A. Understanding Causes
+        *   B. Starting Small (Two-Minute Rule)
+        *   C. Setting Rewards
+    ```
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Mind Map Generation (Text-Based Outline)"
+path: "prompts/use_cases/content-creation-and-management/brainstorming-idea-generation/mind-map-generation-text-based-outline.md"
+type: "use_case_guide"
+description: "Generates a hierarchical, text-based outline representing a mind map for a given central topic."
+triggers: ["mind map text", "text mind map", "idea outline", "hierarchical brainstorm", "topic exploration outline"]
+weight: 100

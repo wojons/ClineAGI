@@ -79,3 +79,34 @@
 *   **Originality:** Does it offer a creative or unique poetic expression?
 *   **Conciseness & Precision:** Is every word and line impactful?
 *   **Overall Artistic Impression:** Does it feel like a well-crafted piece of poetry?
+
+## 6. Example Output Structure/Format
+**Scenario:** User requests a short, free-verse poem about the feeling of autumn.
+*   **User Input:**
+    *   Theme: Autumn
+    *   Mood: Reflective, slightly melancholic but beautiful.
+    *   Form: Free verse
+    *   Length: Short (around 8-12 lines)
+
+*   **Cline Generated Poem:**
+
+    Golden leaves detach,
+    spiral dancers on a chill wind.
+    The sun, a lower, softer eye,
+    watches the world prepare for sleep.
+
+    A scent of woodsmoke,
+    and distant, fading laughter.
+    Summer's vibrant song
+    quiets to a whisper,
+    a sigh of russet and brown.
+    Beauty in the letting go.
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Poetry Generation"
+path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/poetry-lyrical-content/poetry-generation.md"
+type: "use_case_guide"
+description: "Generates original poetry based on themes, styles, forms, or moods, aiming for artistic expression and emotional resonance."
+triggers: ["write a poem", "poetry generation", "create a sonnet", "haiku about", "free verse poem on"]
+weight: 100

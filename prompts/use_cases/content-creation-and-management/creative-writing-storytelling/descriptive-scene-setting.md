@@ -82,3 +82,26 @@
 *   **Originality:** Does it avoid clichéd descriptions?
 *   **Conciseness (relative to impact):** Is the description efficient in conveying its effect?
 *   **Integration with Narrative:** Does it feel like a natural part of the scene rather than a tacked-on block of text?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants a description for a scene in a horror story: an abandoned Victorian mansion at night during a thunderstorm.
+*   **User Input:**
+    *   Location: Abandoned Victorian mansion, interior, dusty grand foyer.
+    *   Time: Midnight, during a fierce thunderstorm.
+    *   Mood: Eerie, suspenseful, decaying grandeur.
+    *   POV Character: Sarah, a paranormal investigator, is cautiously entering.
+
+*   **Cline Generated Descriptive Scene Setting (Excerpt):**
+
+    "Rain lashed against the tall, grimy windows of Blackwood Manor, each gust of wind rattling the frames like skeletal fingers. Sarah pushed open the heavy oak door, its groan echoing into the cavernous foyer. Dust, thick as a shroud, lay over everything – the grand staircase that spiraled into darkness, the peeling wallpaper that clung to the walls like sunburnt skin, the cobweb-draped chandelier that threatened to fall with every thunderclap.
+
+    The air was cold, heavy with the scent of mildew and something else… something acrid and unsettling. A floorboard creaked upstairs, a sound too deliberate for the storm's random fury. Sarah's flashlight beam cut a nervous swathe through the oppressive gloom, glinting off a shard of a broken mirror, reflecting her own wide eyes back at her for a disorienting moment. The only other light came from the jagged flashes of lightning, briefly illuminating the decaying grandeur before plunging the foyer back into near-total darkness."
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Descriptive Scene Setting (Fiction)"
+path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/descriptive-scene-setting.md"
+type: "use_case_guide"
+description: "Generates vivid and immersive descriptions of a story's setting, including environment, atmosphere, and sensory details."
+triggers: ["describe scene", "set the scene", "fiction setting description", "worldbuilding details", "immersive description"]
+weight: 100

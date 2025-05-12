@@ -72,3 +72,54 @@
 *   **Adherence to Language Idioms:** Does it use the target language effectively and conventionally?
 *   **Completeness:** Does it handle the specified inputs and produce the specified outputs?
 *   **Efficiency (Relative to Algorithm):** Is the translation reasonably efficient, not introducing unnecessary overhead?
+
+## 6. Example Output Structure/Format
+**Scenario:** User provides pseudocode for a simple linear search and wants it in Python.
+*   **User Input:**
+    *   Algorithm Description (Pseudocode):
+        ```
+        FUNCTION LinearSearch(list, target_value)
+          FOR EACH item IN list
+            IF item EQUALS target_value THEN
+              RETURN TRUE
+            END IF
+          END FOR
+          RETURN FALSE
+        END FUNCTION
+        ```
+    *   Target Language: Python
+    *   Inputs: `list` (a list of numbers), `target_value` (a number)
+    *   Output: Boolean (True if found, False otherwise)
+
+*   **Cline Generated Python Code:**
+    ```python
+    def linear_search(data_list, target_value):
+        """
+        Performs a linear search for a target value in a list.
+
+        Args:
+            data_list: The list of items to search through.
+            target_value: The value to search for.
+
+        Returns:
+            True if the target_value is found in the list, False otherwise.
+        """
+        for item in data_list:  # Corresponds to "FOR EACH item IN list"
+            if item == target_value:  # Corresponds to "IF item EQUALS target_value THEN"
+                return True  # Corresponds to "RETURN TRUE"
+        return False  # Corresponds to "RETURN FALSE"
+
+    # Example usage (optional, for demonstration)
+    # my_list = [1, 5, 8, 12, 3, 7]
+    # print(f"Is 12 in the list? {linear_search(my_list, 12)}")
+    # print(f"Is 4 in the list? {linear_search(my_list, 4)}")
+    ```
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Algorithm Implementation from Pseudocode/Description"
+path: "prompts/use_cases/content-creation-and-management/code-generation-software-development/algorithm-implementation-from-pseudocode.md"
+type: "use_case_guide"
+description: "Translates a given algorithm, described in pseudocode or natural language, into functional code in a specified programming language."
+triggers: ["implement algorithm", "pseudocode to code", "translate algorithm", "code from description", "algorithm to python", "algorithm to javascript"]
+weight: 100

@@ -76,3 +76,24 @@
 *   **Purpose Fulfillment:** If rewritten for a specific purpose (e.g., simplification), does it achieve that goal?
 *   **Grammatical Correctness:** Is the rewritten text free of errors?
 *   **Originality (Plagiarism Avoidance):** Would it be considered an original expression of the source ideas?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants to paraphrase a sentence to avoid plagiarism and simplify it.
+*   **User Input:**
+    *   Original Text: "The intricate and multifaceted nature of quantum entanglement posits a significant conundrum for physicists endeavoring to reconcile it with classical mechanics."
+    *   Purpose: Simplify and rephrase for a general audience.
+
+*   **Cline Generated Paraphrased Text:**
+    "Quantum entanglement, with its complex and many-sided characteristics, presents a major puzzle for physicists who are trying to make it compatible with traditional physics concepts."
+
+    *Alternative (more simplified):*
+    "Physicists find quantum entanglement very puzzling because its complex nature is hard to fit with older ideas about how physics works."
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Paraphrasing & Rewriting Content"
+path: "prompts/use_cases/content-creation-and-management/content-editing-and-refinement/paraphrasing-rewriting-content.md"
+type: "use_case_guide"
+description: "Rephrases existing text in different words while retaining original meaning, for various purposes like simplification or plagiarism avoidance."
+triggers: ["paraphrase text", "rewrite content", "rephrase sentence", "simplify language", "reword document"]
+weight: 100

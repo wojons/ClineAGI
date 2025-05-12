@@ -322,12 +322,12 @@
   description: "Defines a use case for generating persuasive and concise advertising copy for various platforms."
   triggers: ["ad copy", "copywriting", "google ads text", "facebook ad copy", "marketing copy"]
   weight: 8
-- name: "API Documentation Generation Use Case"
+- name: "API Documentation Generation"
   path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/api-documentation-generation.md"
   type: "use_case_guide"
-  description: "Defines a use case for generating clear, comprehensive, and accurate documentation for an API."
-  triggers: ["api documentation", "generate api docs", "swagger documentation", "openapi spec", "developer portal content"]
-  weight: 9
+  description: "Generates comprehensive documentation for APIs, including endpoints, requests, responses, auth, and examples."
+  triggers: ["api documentation", "document rest api", "swagger generation help", "openapi spec writing", "api reference guide"]
+  weight: 100
 - name: "Automated Proofreading & Grammar Correction Use Case"
   path: "prompts/use_cases/content-creation-and-management/content-editing-and-refinement/automated-proofreading-grammar-correction.md"
   type: "use_case_guide"
@@ -388,12 +388,12 @@
   description: "Defines a use case for developing a distinct persona for a chatbot or virtual assistant, including personality, communication style, and example dialogue."
   triggers: ["chatbot persona", "virtual assistant personality", "ai character design", "conversation design"]
   weight: 7
-- name: "Code Comment Generation & Explanation Use Case"
-  path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/code-comment-generation-explanation.md"
+- name: "Code Comment & Explanation Generation"
+  path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/code-comment-explanation.md"
   type: "use_case_guide"
-  description: "Defines a use case for generating comments for source code or explaining existing code segments in natural language."
-  triggers: ["code comments", "explain code", "document code", "generate docstrings", "code understanding"]
-  weight: 8
+  description: "Generates comments for code blocks or explains code functionality in natural language."
+  triggers: ["comment code", "explain code", "generate docstrings", "document function", "code explanation"]
+  weight: 100
 - name: "Competitor Content Analysis Use Case"
   path: "prompts/use_cases/content-creation-and-management/marketing-sales-content-strategy-planning/competitor-content-analysis.md"
   type: "use_case_guide"
@@ -442,18 +442,18 @@
   description: "Defines a use case for generating scripts (e.g., Python with Matplotlib, Seaborn, Plotly) for creating various types of charts and graphs."
   triggers: ["data visualization", "create chart", "plot data", "graph generation", "matplotlib script", "seaborn script", "plotly script"]
   weight: 8
-- name: "Descriptive Scene Setting (Fiction) Use Case"
+- name: "Descriptive Scene Setting (Fiction)"
   path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/descriptive-scene-setting.md"
   type: "use_case_guide"
-  description: "Defines a use case for generating vivid and immersive descriptions of a story's setting, including environment, atmosphere, and sensory details."
-  triggers: ["scene setting", "describe setting", "fiction description", "world building", "immersive writing"]
-  weight: 7
-- name: "Dialogue Generation & Refinement (Fiction) Use Case"
+  description: "Generates vivid and immersive descriptions of a story's setting, including environment, atmosphere, and sensory details."
+  triggers: ["describe scene", "set the scene", "fiction setting description", "worldbuilding details", "immersive description"]
+  weight: 100
+- name: "Dialogue Generation & Refinement (Fiction)"
   path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/dialogue-generation-refinement.md"
   type: "use_case_guide"
-  description: "Defines a use case for generating or refining dialogue between fictional characters that is natural-sounding, reveals character, and advances plot."
-  triggers: ["dialogue generation", "write dialogue", "refine dialogue", "fiction dialogue", "character conversation"]
-  weight: 7
+  description: "Generates or refines dialogue for fictional characters that is natural, reveals character, and advances plot."
+  triggers: ["write dialogue", "character conversation", "fiction dialogue", "refine dialogue scene", "script dialogue"]
+  weight: 100
 - name: "E-book Writing Use Case"
   path: "prompts/use_cases/content-creation-and-management/long-form-written-content-generation-and-augmentation/e-book-writing.md"
   type: "use_case_guide"
@@ -502,12 +502,12 @@
   description: "Defines a use case for summarizing key figures from financial statements and providing basic, high-level analysis for informational purposes ONLY (NOT financial advice)."
   triggers: ["financial statement summary", "analyze income statement", "balance sheet summary", "cash flow analysis", "financial ratios"]
   weight: 7
-- name: "Flash Fiction Creation Use Case"
+- name: "Flash Fiction Creation"
   path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/flash-fiction-creation.md"
   type: "use_case_guide"
-  description: "Defines a use case for generating an extremely brief, complete, and impactful piece of fictional narrative."
-  triggers: ["flash fiction", "short story", "micro fiction", "drabble", "brief narrative"]
-  weight: 7
+  description: "Generates extremely brief, complete, and impactful fictional narratives, typically under 1,000 words."
+  triggers: ["flash fiction", "short short story", "micro-fiction", "drabble", "write a very short story"]
+  weight: 100
 - name: "Grant Proposal Writing Assistance Use Case"
   path: "prompts/use_cases/content-creation-and-management/long-form-written-content-generation-and-augmentation/grant-proposal-writing-assistance.md"
   type: "use_case_guide"
@@ -520,24 +520,24 @@
   description: "Defines a use case for generating concise, descriptive, and contextually relevant captions and alt text for images."
   triggers: ["image caption", "alt text", "image description", "accessibility text", "social media caption"]
   weight: 7
-- name: "Interactive Fiction/Choose-Your-Own-Adventure Scripting Use Case"
+- name: "Interactive Fiction/CYOA Scripting"
   path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/interactive-game-narrative/interactive-fiction-choose-your-own-adventure-scripting.md"
   type: "use_case_guide"
-  description: "Defines a use case for generating the branching narrative script for interactive fiction or choose-your-own-adventure stories."
-  triggers: ["interactive fiction", "cyoa", "choose your own adventure", "branching narrative", "game writing"]
-  weight: 7
+  description: "Generates branching narrative scripts for interactive fiction or choose-your-own-adventure stories."
+  triggers: ["interactive fiction script", "choose your own adventure story", "cyoa writing", "branching narrative", "Twine story script"]
+  weight: 100
 - name: "Interactive Learning Module Scripting Use Case"
   path: "prompts/use_cases/content-creation-and-management/educational-content-courseware-development/interactive-learning-module-scripting.md"
   type: "use_case_guide"
   description: "Defines a use case for designing and scripting content for an interactive e-learning module, including objectives, instructional text, interactive elements, and feedback."
   triggers: ["interactive learning module", "e-learning script", "courseware development", "instructional design", "interactive lesson"]
   weight: 8
-- name: "Knowledge Base Article Creation Use Case"
+- name: "Knowledge Base Article Creation"
   path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/knowledge-base-article-creation.md"
   type: "use_case_guide"
-  description: "Defines a use case for creating clear, concise, and informative articles for a knowledge base."
-  triggers: ["knowledge base article", "help center content", "support documentation", "faq article", "how-to article"]
-  weight: 8
+  description: "Creates clear, concise articles for knowledge bases, addressing specific user questions or problems."
+  triggers: ["knowledge base article", "write help document", "create faq entry", "how-to guide for product", "troubleshooting article"]
+  weight: 100
 - name: "Landing Page Content Structure & Copywriting Use Case"
   path: "prompts/use_cases/content-creation-and-management/marketing-sales-content-strategy-planning/landing-page-content-structure-copywriting.md"
   type: "use_case_guide"
@@ -598,12 +598,12 @@
   description: "Defines a use case for brainstorming plot twists and subtle foreshadowing techniques to enhance a fictional narrative."
   triggers: ["plot twist", "foreshadowing", "story ideas", "narrative surprise", "fiction writing help"]
   weight: 7
-- name: "Poetry Generation Use Case"
+- name: "Poetry Generation"
   path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/poetry-lyrical-content/poetry-generation.md"
   type: "use_case_guide"
-  description: "Defines a use case for generating original poetry based on themes, styles, forms, or specific prompts."
-  triggers: ["poetry generation", "write poem", "generate verse", "creative writing poetry", "lyric writing"]
-  weight: 7
+  description: "Generates original poetry based on themes, styles, forms, or moods, aiming for artistic expression and emotional resonance."
+  triggers: ["write a poem", "poetry generation", "create a sonnet", "haiku about", "free verse poem on"]
+  weight: 100
 - name: "Policy & Procedure Document Drafting Use Case"
   path: "prompts/use_cases/content-creation-and-management/legal-business-document-drafting/policy-procedure-document-drafting.md"
   type: "use_case_guide"
@@ -652,12 +652,12 @@
   description: "Defines a use case for generating new recipes or modifying existing ones based on specified criteria."
   triggers: ["recipe generation", "modify recipe", "cooking instructions", "create recipe", "dietary recipe adaptation"]
   weight: 7
-- name: "Release Notes & Changelog Generation Use Case"
-  path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/release-notes-changelog-generation.md"
+- name: "Release Notes & Changelog Generation"
+  path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/release-notes-changelog.md"
   type: "use_case_guide"
-  description: "Defines a use case for compiling and writing clear, concise, and informative release notes or a changelog for a software product update."
-  triggers: ["release notes", "changelog", "software update notes", "version history", "product updates"]
-  weight: 8
+  description: "Generates release notes or changelogs for software, detailing new features, fixes, and changes for a specific version."
+  triggers: ["release notes", "changelog generation", "software update notes", "what's new in version", "product update summary"]
+  weight: 100
 - name: "Research Paper Assistance Use Case"
   path: "prompts/use_cases/content-creation-and-management/long-form-written-content-generation-and-augmentation/research-paper-assistance.md"
   type: "use_case_guide"
@@ -670,12 +670,12 @@
   description: "Defines a use case for assisting users in drafting or refining resumes/CVs and cover letters."
   triggers: ["resume drafting", "cv writing", "cover letter help", "job application documents", "career documents"]
   weight: 8
-- name: "RPG Scenario/Encounter Design Use Case"
+- name: "RPG Scenario/Encounter Design"
   path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/interactive-game-narrative/rpg-scenario-encounter-design.md"
   type: "use_case_guide"
-  description: "Defines a use case for designing a self-contained scenario or encounter for a tabletop or computer role-playing game."
-  triggers: ["rpg scenario", "rpg encounter", "d&d encounter", "game master help", "ttrpg design"]
-  weight: 7
+  description: "Designs self-contained scenarios or encounters for RPGs, including setting, NPCs, challenges, and outcomes."
+  triggers: ["rpg encounter design", "d&d scenario", "pathfinder encounter", "create rpg quest", "tabletop game encounter"]
+  weight: 100
 - name: "Sales Email Sequence Creation Use Case"
   path: "prompts/use_cases/content-creation-and-management/marketing-sales-content-strategy-planning/sales-email-sequence-creation.md"
   type: "use_case_guide"
@@ -694,12 +694,12 @@
   description: "Defines a use case for generating scripts (Bash, Python, etc.) to automate repetitive system tasks or workflows."
   triggers: ["scripting", "automation script", "bash script", "python script", "automate task"]
   weight: 8
-- name: "SDK Documentation Use Case"
+- name: "Software Development Kit (SDK) Documentation"
   path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/sdk-documentation.md"
   type: "use_case_guide"
-  description: "Defines a use case for creating comprehensive documentation for a Software Development Kit (SDK)."
-  triggers: ["sdk documentation", "developer kit docs", "software development kit guide", "api library documentation"]
-  weight: 9
+  description: "Creates comprehensive documentation for SDKs, including setup, concepts, guides, API reference, and examples."
+  triggers: ["sdk documentation", "document software kit", "sdk guide", "api client library docs", "developer kit documentation"]
+  weight: 100
 - name: "SEO Content Analysis & Optimization Use Case"
   path: "prompts/use_cases/content-creation-and-management/content-editing-and-refinement/seo-content-analysis-optimization.md"
   type: "use_case_guide"
@@ -724,18 +724,18 @@
   description: "Defines a use case for generating engaging and platform-appropriate social media posts."
   triggers: ["social media post", "tweet generation", "facebook post", "instagram caption", "linkedin update"]
   weight: 7
-- name: "Song Lyric Writing Use Case"
+- name: "Song Lyric Writing"
   path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/poetry-lyrical-content/song-lyric-writing.md"
   type: "use_case_guide"
-  description: "Defines a use case for generating original song lyrics based on themes, genre, mood, or song structure."
-  triggers: ["song lyrics", "write lyrics", "lyric generation", "songwriting", "music lyrics"]
-  weight: 7
-- name: "Standard Operating Procedure (SOP) Writing Use Case"
+  description: "Generates original song lyrics based on themes, genre, mood, or structure, focusing on emotional resonance and singability."
+  triggers: ["write song lyrics", "lyrics for a song", "songwriting help", "create lyrics for pop song", "folk song lyrics about"]
+  weight: 100
+- name: "Standard Operating Procedure (SOP) Writing"
   path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/sop-writing.md"
   type: "use_case_guide"
-  description: "Defines a use case for creating clear, step-by-step instructions for performing a specific routine task or process consistently and correctly."
-  triggers: ["sop writing", "standard operating procedure", "process documentation", "work instructions", "operational guide"]
-  weight: 8
+  description: "Creates clear, step-by-step instructions for performing routine tasks consistently and correctly."
+  triggers: ["write sop", "standard operating procedure", "create procedure document", "task instructions", "process documentation"]
+  weight: 100
 - name: "Speech & Monologue Writing Use Case"
   path: "prompts/use_cases/content-creation-and-management/specialized-creative-content-forms/speech-monologue-writing.md"
   type: "use_case_guide"
@@ -784,12 +784,12 @@
   description: "Defines a use case for translating text and adapting it to cultural, linguistic, and contextual nuances of a target audience/region."
   triggers: ["translate text", "localize content", "language translation", "cultural adaptation", "multilingual content"]
   weight: 7
-- name: "Tutorial & How-To Guide Writing Use Case"
-  path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/tutorial-how-to-guide-writing.md"
+- name: "Tutorial & How-To Guide Creation"
+  path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/tutorial-how-to-guide.md"
   type: "use_case_guide"
-  description: "Defines a use case for creating clear, step-by-step instructional content to guide a user through a specific task or process."
-  triggers: ["tutorial writing", "how-to guide", "instructional content", "step-by-step guide", "user tutorial"]
-  weight: 8
+  description: "Creates step-by-step instructional content to guide users through a specific task, process, or feature usage."
+  triggers: ["create tutorial", "how-to guide", "step-by-step instructions", "write a guide for", "product tutorial"]
+  weight: 100
 - name: "TV Show Episode Outlining/Beat Sheet Creation Use Case"
   path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/tv-show-episode-outlining-beat-sheet-creation.md"
   type: "use_case_guide"
@@ -802,12 +802,12 @@
   description: "Defines a use case for generating unit tests for a given piece of code to verify its correctness."
   triggers: ["unit test", "generate tests", "test code", "software testing", "jest", "pytest", "junit"]
   weight: 8
-- name: "User Manual & Guide Creation Use Case"
+- name: "User Manual & Guide Creation"
   path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/user-manual-guide-creation.md"
   type: "use_case_guide"
-  description: "Defines a use case for creating comprehensive, clear, and user-friendly manuals or guides for a product, software, or system."
-  triggers: ["user manual", "instruction guide", "product documentation", "software manual", "how to use guide"]
-  weight: 8
+  description: "Creates comprehensive user manuals or guides for products/software, covering installation, operation, and troubleshooting."
+  triggers: ["user manual", "product guide", "instruction manual", "how to use product", "software user guide"]
+  weight: 100
 - name: "Video Game Quest/Mission Scripting Use Case"
   path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/video-game-quest-mission-scripting.md"
   type: "use_case_guide"
@@ -826,12 +826,12 @@
   description: "Defines a use case for generating an authoritative, well-researched, and persuasive white paper on a complex issue or solution."
   triggers: ["white paper", "develop white paper", "authoritative report", "in-depth analysis", "thought leadership content"]
   weight: 8
-- name: "White Paper & Case Study Development Use Case"
+- name: "White Paper & Case Study Development"
   path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/whitepaper-case-study-development.md"
   type: "use_case_guide"
-  description: "Defines a use case for developing authoritative white papers and compelling case studies."
-  triggers: ["white paper development", "case study writing", "technical report", "customer success story creation", "in-depth analysis document"]
-  weight: 8
+  description: "Develops authoritative white papers on complex issues or compelling case studies showcasing real-world success."
+  triggers: ["write white paper", "develop case study", "thought leadership content", "customer success story", "in-depth report on"]
+  weight: 100
 - name: "World-Building (Fiction) Use Case"
   path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/world-building.md"
   type: "use_case_guide"

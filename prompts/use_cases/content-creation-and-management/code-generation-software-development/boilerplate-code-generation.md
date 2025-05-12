@@ -65,3 +65,74 @@
 *   **Adherence to Conventions:** Does it follow common practices for the language/framework?
 *   **Ease of Getting Started:** Does the boilerplate significantly reduce the initial setup effort for a developer?
 *   **Readability & Cleanliness:** Is the generated code and structure easy to understand?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants boilerplate for a simple Node.js/Express web server.
+*   **User Input:**
+    *   Project Type: Node.js Express web server
+    *   Programming Language: JavaScript (Node.js)
+    *   Framework: Express
+    *   Project Name: "my-simple-server"
+    *   Package Manager: npm
+
+*   **Cline Generated Boilerplate (Conceptual - would describe file creation):**
+
+    **File Structure:**
+    ```
+    my-simple-server/
+    ├── src/
+    │   └── app.js
+    ├── public/
+    ├── package.json
+    └── README.md
+    ```
+
+    **`my-simple-server/package.json` (Excerpt):**
+    ```json
+    {
+      "name": "my-simple-server",
+      "version": "1.0.0",
+      "main": "src/app.js",
+      "scripts": {
+        "start": "node src/app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "dependencies": {
+        "express": "^4.17.1"
+      }
+    }
+    ```
+
+    **`my-simple-server/src/app.js` (Excerpt):**
+    ```javascript
+    const express = require('express');
+    const app = express();
+    const port = process.env.PORT || 3000;
+
+    app.get('/', (req, res) => {
+      res.send('Hello World from my-simple-server!');
+    });
+
+    app.listen(port, () => {
+      console.log(`Server listening at http://localhost:${port}`);
+    });
+    ```
+
+    **`my-simple-server/README.md` (Excerpt):**
+    ```markdown
+    # my-simple-server
+    A basic Node.js Express web server.
+
+    ## Getting Started
+    1. Install dependencies: `npm install`
+    2. Run the server: `npm start`
+    ```
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Boilerplate Code Generation"
+path: "prompts/use_cases/content-creation-and-management/code-generation-software-development/boilerplate-code-generation.md"
+type: "use_case_guide"
+description: "Generates initial boilerplate code for a new project, module, or file based on specified language, framework, and common patterns."
+triggers: ["boilerplate code", "generate project starter", "scaffold application", "new project setup", "starter code"]
+weight: 100

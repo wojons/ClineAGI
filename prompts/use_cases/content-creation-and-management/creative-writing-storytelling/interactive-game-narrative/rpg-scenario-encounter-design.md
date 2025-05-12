@@ -83,3 +83,56 @@
 *   **Meaningful Outcomes & Rewards:**
 *   **World/Campaign Consistency:** Does it fit the established game setting and narrative?
 *   **Originality/Creativity:** Does it offer a fresh or memorable encounter idea?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants a D&D 5e combat encounter for a party of 3 level 5 adventurers in a ruined shrine.
+*   **User Input:**
+    *   RPG System: D&D 5e
+    *   Party: 3 players, Level 5
+    *   Encounter Type: Combat with a small puzzle/trap element.
+    *   Setting: Ruined shrine in a swamp.
+    *   Enemies: Undead, perhaps a minor spellcaster.
+    *   Mood: Creepy, dangerous.
+
+*   **Cline Generated RPG Encounter Design (Excerpt):**
+
+    **Encounter: The Sunken Shrine of Sylas**
+
+    *   **Setting:**
+        *   The encounter takes place in the partially flooded main chamber of a small, ruined shrine. Crumbling stone walls are slick with algae. Murky water, about 2 feet deep, covers most of the floor (difficult terrain).
+        *   A central dais rises slightly above the water, upon which sits a moss-covered stone altar.
+        *   Three crumbling pillars offer partial cover.
+        *   **Trap/Puzzle:** The altar has a hidden pressure plate. If stepped on (DC 13 Perception to spot, DC 15 Dexterity (Thieves' Tools) to disable), or if a heavy object is removed from it, spectral hands erupt from the water, attempting to grapple (DC 12 Strength save to avoid) anyone in the water for 1d4 rounds.
+    *   **NPCs/Antagonists:**
+        1.  **Ghast (1):** Lurks behind the altar, initially hidden (DC 14 Perception to spot). It will try to use its Stench ability and then target weaker-looking PCs.
+        2.  **Zombies (3):** Submerged in the murky water, they rise and attack when PCs enter the chamber or the Ghast attacks.
+        3.  **(Optional) Will-o'-Wisp (1):** If the fight is too easy, it flickers into existence near a pillar, trying to lure a PC into a deeper, more treacherous part of the water or onto the altar trap.
+    *   **Player Objectives:**
+        *   Defeat the undead.
+        *   (Optional) Discover a clue or item on the altar.
+    *   **Challenges:**
+        *   Combat with Ghast and Zombies in difficult terrain.
+        *   Ghast's Stench and Paralyzing Touch.
+        *   The pressure plate trap on the altar.
+        *   Potential misdirection by Will-o'-Wisp.
+    *   **Potential Resolutions & Outcomes:**
+        *   **Success:** Undead are defeated. Trap is avoided or overcome. Players can safely investigate the altar.
+        *   **Partial Success:** Undead defeated, but someone triggered the trap and suffered its effects.
+        *   **Failure:** Party is overwhelmed (TPK or forced retreat).
+    *   **Rewards:**
+        *   XP for defeated monsters.
+        *   On the altar, a small, waterlogged pouch containing 35 gp and a tarnished silver locket (non-magical but could be a plot hook).
+        *   If the trap was disabled or cleverly bypassed, perhaps an inspiration point.
+    *   **GM Notes:**
+        *   Emphasize the creepy atmosphere, the smell of decay, and the unsettling sounds of the swamp.
+        *   The Zombies are slow but relentless. The Ghast is more cunning.
+        *   If players search the altar after the fight, they find the pouch. If they triggered the trap, the pouch might be partially submerged or harder to find.
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "RPG Scenario/Encounter Design"
+path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/interactive-game-narrative/rpg-scenario-encounter-design.md"
+type: "use_case_guide"
+description: "Designs self-contained scenarios or encounters for RPGs, including setting, NPCs, challenges, and outcomes."
+triggers: ["rpg encounter design", "d&d scenario", "pathfinder encounter", "create rpg quest", "tabletop game encounter"]
+weight: 100

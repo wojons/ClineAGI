@@ -65,3 +65,37 @@
 *   **Clarity & Actionability:** Is the output clear, and does it provide a good basis for the user to proceed with fact-checking?
 *   **Neutrality:** Is the process and reporting unbiased?
 *   **Coverage:** For a given text, does it identify a reasonable set of important claims to check (without being overly pedantic about every minor detail)?
+
+## 6. Example Output Structure/Format
+**Scenario:** User provides a short paragraph with a few factual claims.
+*   **User Input:**
+    *   Text: "The Eiffel Tower, located in Paris, was completed in 1889 and is taller than the Chrysler Building. It receives over 10 million visitors annually. The primary material used in its construction was steel."
+
+*   **Cline Generated Fact-Checking Assistance Output:**
+
+    **Identified Claims for Verification:**
+
+    1.  **Claim:** The Eiffel Tower was completed in 1889.
+        *   **Suggested Verification:** Search "Eiffel Tower completion date" on a reputable encyclopedia (e.g., Britannica, Wikipedia) or historical website.
+        *   **(AI Verification Attempt - if enabled):** Confirmed. Multiple sources state completion in March 1889.
+
+    2.  **Claim:** The Eiffel Tower is taller than the Chrysler Building.
+        *   **Suggested Verification:** Search "Eiffel Tower height vs Chrysler Building height" using a search engine, looking for official structure heights.
+        *   **(AI Verification Attempt - if enabled):** Confirmed. Eiffel Tower (current tip height ~330m) is taller than Chrysler Building (~319m).
+
+    3.  **Claim:** The Eiffel Tower receives over 10 million visitors annually.
+        *   **Suggested Verification:** Check the official Eiffel Tower website or recent tourism reports for Paris for visitor statistics. Note that visitor numbers can fluctuate yearly.
+        *   **(AI Verification Attempt - if enabled):** Partially Confirmed/Context Needed. Pre-pandemic figures were around 6-7 million. "Over 10 million" might be an overstatement or refer to a specific peak period. Recent numbers should be checked.
+
+    4.  **Claim:** The primary material used in its construction was steel.
+        *   **Suggested Verification:** Search "Eiffel Tower construction material" on architectural or historical websites.
+        *   **(AI Verification Attempt - if enabled):** Correction. The primary material was wrought iron, not steel.
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Fact-Checking Assistance"
+path: "prompts/use_cases/content-creation-and-management/content-editing-and-refinement/fact-checking-assistance.md"
+type: "use_case_guide"
+description: "Assists in verifying factual accuracy of claims in text by identifying claims and suggesting credible sources or attempting verification."
+triggers: ["fact check text", "verify claims", "check accuracy of statements", "validate information in document"]
+weight: 100

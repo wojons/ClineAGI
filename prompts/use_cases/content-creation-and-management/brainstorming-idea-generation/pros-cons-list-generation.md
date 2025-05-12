@@ -65,3 +65,37 @@
 *   **Comprehensiveness:** Does it cover the most significant, commonly discussed pros and cons?
 *   **Usefulness for Decision-Making/Evaluation:** Does the list provide a helpful framework for thinking about the topic?
 *   **Clear Structure:** Are pros and cons clearly separated and formatted?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants a pros and cons list for "switching to a four-day work week".
+*   **User Input:**
+    *   Topic: Switching to a four-day work week.
+    *   Aspects to Consider: Employee well-being, productivity, operational costs.
+
+*   **Cline Generated Pros & Cons List:**
+
+    **Topic: Switching to a Four-Day Work Week**
+
+    **Pros:**
+    *   **Improved Employee Well-being:** Longer weekends can lead to better work-life balance, reduced stress, and lower burnout rates.
+    *   **Increased Productivity:** Some studies suggest employees can be more focused and productive in a condensed work week.
+    *   **Reduced Operational Costs:** Potential savings on utilities, office supplies, and commuting costs for employees.
+    *   **Attract & Retain Talent:** Can be a significant perk to attract top candidates and improve employee retention.
+    *   **Lower Absenteeism:** Employees may take fewer sick days with an extra day off for personal appointments.
+
+    **Cons:**
+    *   **Customer Service Challenges:** May be difficult to maintain consistent customer service coverage without careful scheduling.
+    *   **Increased Workload Intensity:** Longer workdays can be tiring and may not suit all roles or individuals.
+    *   **Scheduling Complexity:** Coordinating schedules for teams and ensuring handover can be challenging.
+    *   **Not Suitable for All Industries:** Some industries require 24/7 operations or have client-facing demands that make a 4-day week difficult.
+    *   **Potential for Overtime Costs:** If work cannot be completed in four days, overtime costs might negate savings.
+    *   **Communication Gaps:** Reduced overlap in working hours could lead to communication delays if not managed well.
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Pros and Cons List Generation"
+path: "prompts/use_cases/content-creation-and-management/brainstorming-idea-generation/pros-cons-list-generation.md"
+type: "use_case_guide"
+description: "Generates a balanced list of advantages (pros) and disadvantages (cons) for a given topic, decision, or course of action."
+triggers: ["pros and cons", "advantages disadvantages", "evaluate options", "decision making list", "benefits drawbacks"]
+weight: 100

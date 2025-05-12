@@ -78,3 +78,56 @@
 *   **Completeness:** Are all specified entities, attributes, and relationships accounted for?
 *   **Efficiency (Conceptual):** Does the schema seem reasonably designed for typical query patterns (e.g., basic indexing on foreign keys)?
 *   **Adherence to Best Practices:** Does it follow common database design principles (e.g., reasonable normalization)?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants SQL DDL for a simple blog with Users, Posts, and Comments.
+*   **User Input:**
+    *   Entities: Users (user_id PK, username, email), Posts (post_id PK, author_id FK to Users, title, content), Comments (comment_id PK, post_id FK to Posts, commenter_id FK to Users, comment_text).
+    *   Relationships: User-Posts (one-to-many), Post-Comments (one-to-many), User-Comments (one-to-many).
+    *   SQL Dialect: PostgreSQL
+
+*   **Cline Generated SQL DDL:**
+    ```sql
+    -- Users Table
+    CREATE TABLE Users (
+        user_id SERIAL PRIMARY KEY,
+        username VARCHAR(255) UNIQUE NOT NULL,
+        email VARCHAR(255) UNIQUE NOT NULL,
+        password_hash VARCHAR(255) NOT NULL, -- Assuming password will be hashed
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+    );
+
+    -- Posts Table
+    CREATE TABLE Posts (
+        post_id SERIAL PRIMARY KEY,
+        author_id INTEGER NOT NULL REFERENCES Users(user_id) ON DELETE CASCADE,
+        title VARCHAR(255) NOT NULL,
+        content TEXT,
+        published_at TIMESTAMP WITH TIME ZONE,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+    );
+
+    -- Comments Table
+    CREATE TABLE Comments (
+        comment_id SERIAL PRIMARY KEY,
+        post_id INTEGER NOT NULL REFERENCES Posts(post_id) ON DELETE CASCADE,
+        commenter_id INTEGER NOT NULL REFERENCES Users(user_id) ON DELETE CASCADE,
+        comment_text TEXT NOT NULL,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+    );
+
+    -- Optional: Indexes for foreign keys and frequently queried columns
+    CREATE INDEX idx_posts_author_id ON Posts(author_id);
+    CREATE INDEX idx_comments_post_id ON Comments(post_id);
+    CREATE INDEX idx_comments_commenter_id ON Comments(commenter_id);
+    ```
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Database Schema Generation (SQL DDL)"
+path: "prompts/use_cases/content-creation-and-management/code-generation-software-development/database-schema-generation-sql-ddl.md"
+type: "use_case_guide"
+description: "Generates SQL DDL statements (CREATE TABLE, etc.) for a database schema based on a conceptual model."
+triggers: ["generate sql schema", "database ddl", "create table sql", "sql schema generation", "database design to sql"]
+weight: 100

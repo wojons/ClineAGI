@@ -13,11 +13,15 @@
 -   **Prompt & Rule Management:** A `.clinerules` system for dynamic prompt and rule loading based on roles and context.
     -   **`.clinerules` Directory:** Located at the root of the ClineAGI project (`<CLINEAGI_ROOT>/.clinerules/`). This directory stores the active operational rules and IS version-controlled. Files follow the `NNN-MM_descriptive-name.md` convention within subdirectories.
     -   **`.clinerules_archive/` Directory:** Located at the root of the ClineAGI project (`<CLINEAGI_ROOT>/.clinerules_archive/`). Stores copies of all `.clinerules` that have been used or developed. Gitignored.
+    -   **`prompts/` Directory:** A comprehensive library of use cases, workflows, reference documents, and other guiding materials, indexed by `prompts/prompt_inventory.yaml` for dynamic loading.
 -   **Information Intake Directories:**
     -   `intake/`: Located at the root of the ClineAGI project (`<CLINEAGI_ROOT>/intake/`). For user-provided files awaiting processing. Gitignored.
     -   `intake-archive/`: Located at the root of the ClineAGI project (`<CLINEAGI_ROOT>/intake-archive/`). For processed files. Gitignored.
 -   **Containerization:** Docker (for containerization of user projects or core services if needed).
 -   **User's IDE/Editor:** VSCode. Auto-formatting and linting are expected.
+-   **CLI Tooling:**
+    -   A suite of shell scripts located in `tools/scripts/` provides command-line access to core functionalities.
+    -   These scripts are inventoried in `tools/scripts_inventory.yaml`.
 -   **Future/Potential Technologies:**
     -   **UI Framework:** e.g., React/Next.js for potential Web UI components.
     -   **Vector Database:** e.g., Pinecone, Weaviate for advanced Retrieval Augmented Generation (RAG) capabilities.
@@ -44,12 +48,13 @@
 
 ## 5. Tool Usage Patterns
 -   Key tools include `write_to_file`, `replace_in_file`, `read_file`, `list_files`, `search_files`, `execute_command`, `browser_action`, and MCP tools.
+-   Shell scripts in `tools/scripts/` (e.g., `read-file-content.sh`, `write-to-file.sh`, `search-files-regex.sh`) offer CLI alternatives for core operations.
     *(Specific patterns and detailed Git commands are documented in `systemPatterns.md`)*
 
 ## 6. AGI Agent Prompting and Knowledge Organization
 -   **Purpose:** Knowledge base and prompt library for "Prometheus-0".
--   **Location:** `<CLINEAGI_ROOT>/.clinerules/000_core/000_agent_prompts/`.
--   **Key Files:** `agent_knowledge_base_summary.md`, `agent_self_programming_main_loop_prompt.md`, etc.
+-   **Location:** `<CLINEAGI_ROOT>/.clinerules/000_core/000_agent_prompts/` and the broader `prompts/` directory.
+-   **Key Files:** `agent_knowledge_base_summary.md`, `agent_self_programming_main_loop_prompt.md`, `prompts/prompt_inventory.yaml`, and various use case/workflow files in `prompts/`.
     *(Detailed in `systemPatterns.md`)*
 
 ## 7. Project Templating System

@@ -78,3 +78,55 @@
 *   **Uniqueness:** Does the character feel distinct and memorable?
 *   **Usefulness for Writer:** Can a writer use this profile to consistently and believably portray the character?
 *   **Adherence to Prompt:** Does it incorporate all user-specified elements?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants a profile for a fantasy character.
+*   **User Input:**
+    *   Name: Lyra
+    *   Role: Protagonist, a young sorceress
+    *   Genre: High Fantasy
+    *   Core Concept: Reluctant hero, initially afraid of her own powers.
+    *   Key Conflict: Must learn to control her magic to save her village from a magical blight.
+
+*   **Cline Generated Character Profile (Excerpt):**
+
+    **Character Profile: Lyra**
+
+    *   **Role:** Protagonist
+    *   **Age:** 19
+    *   **Physical Appearance:** Slender build, with long, dark wavy hair often tied back. Bright, intelligent green eyes that sometimes glow faintly when her magic is active. Wears simple, practical clothes suitable for a village setting, perhaps with a few subtle magical charms woven in.
+    *   **Personality Traits:**
+        *   *Positive:* Kind, empathetic, intelligent, resourceful, fiercely loyal to her village.
+        *   *Negative:* Initially timid, self-doubting, fearful of her untrained magical abilities, prone to anxiety under pressure.
+    *   **Backstory:**
+        *   Grew up in a small, isolated village where magic is rare and often misunderstood.
+        *   Her magical abilities manifested unexpectedly in her early teens, causing a minor accident that frightened her and some villagers.
+        *   Has since tried to suppress her powers, fearing she might hurt someone or be ostracized.
+    *   **Motivations/Goals:**
+        *   *Primary Goal:* To save her village from the spreading magical blight.
+        *   *Internal Desire:* To understand and control her magic, and to be accepted for who she is.
+    *   **Flaws/Fears:**
+        *   *Major Flaw:* Lack of confidence in her own abilities, leading to hesitation.
+        *   *Greatest Fear:* Losing control of her magic and harming those she cares about, or being rejected by her community.
+    *   **Internal Conflict:** The desire to help her village vs. the fear of her own uncontrolled power.
+    *   **Key Relationships:**
+        *   *Elder Maeve (Mentor Figure):* The village elder who recognizes Lyra's potential and tries to guide her, though Lyra is initially resistant.
+        *   *Rhys (Childhood Friend):* Supportive but perhaps a little fearful of her magic, representing the village's ambivalence.
+    *   **Skills/Abilities:**
+        *   Untrained but potent innate magical ability (e.g., nature-based or elemental magic).
+        *   Good knowledge of local herbs and remedies (pre-magic skills).
+        *   Quick learner.
+    *   **Beliefs/Values:**
+        *   Values community, nature, and kindness.
+        *   *Initial False Belief:* "My magic is a curse and dangerous."
+        *   *Potential Truth to Learn:* "My magic, when controlled and understood, can be a gift to protect others."
+    *   **Potential Arc:** From fear and suppression of her powers to acceptance, control, and using her magic responsibly to become a protector.
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Character Profile Generation (Fiction)"
+path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/character-profile-generation.md"
+type: "use_case_guide"
+description: "Generates a detailed profile for a fictional character, outlining appearance, personality, backstory, motivations, and more."
+triggers: ["character profile", "create fiction character", "character sheet", "novel character details", "story character bio"]
+weight: 100

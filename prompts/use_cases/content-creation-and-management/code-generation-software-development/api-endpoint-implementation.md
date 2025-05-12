@@ -89,3 +89,77 @@
 *   **Adherence to Framework Conventions:**
 *   **Security Awareness:** Are there notes or placeholders for essential security checks like authentication/authorization?
 *   **Completeness (for the endpoint's scope):** Does it provide a solid starting point for a developer to complete the endpoint, including data integration?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants to implement a `POST /users` endpoint in Node.js with Express.
+*   **User Input:**
+    *   Endpoint: `POST /users`
+    *   Request Body Schema: `{ "username": "string", "email": "string", "password": "string" }`
+    *   Success Response: `201 Created` with `{ "user_id", "username", "email", "created_at" }`
+    *   Business Logic: Create a new user record. Hash password before saving.
+    *   Language/Framework: Node.js with Express
+    *   Database Interaction: Conceptually save user to a database.
+
+*   **Cline Generated Node.js/Express Code Snippet:**
+    ```javascript
+    const express = require('express');
+    const router = express.Router();
+    // Assume bcrypt for password hashing and some form of DB utility (e.g., db.js)
+    // const bcrypt = require('bcryptjs');
+    // const db = require('../db'); // Conceptual database utility
+
+    router.post('/users', async (req, res) => {
+        const { username, email, password } = req.body;
+
+        // 1. Validate input
+        if (!username || !email || !password) {
+            return res.status(400).json({ error: 'Username, email, and password are required.' });
+        }
+
+        // TODO: Add more robust validation (e.g., email format, password strength)
+
+        try {
+            // 2. Check if user already exists (Conceptual DB call)
+            // const existingUser = await db.query('SELECT * FROM users WHERE email = $1', [email]);
+            // if (existingUser.rows.length > 0) {
+            //     return res.status(409).json({ error: 'User with this email already exists.' });
+            // }
+
+            // 3. Hash password
+            // const salt = await bcrypt.genSalt(10);
+            // const hashedPassword = await bcrypt.hash(password, salt);
+
+            // 4. Save user to database (Conceptual DB call)
+            // const newUser = await db.query(
+            //     'INSERT INTO users (username, email, password_hash) VALUES ($1, $2, $3) RETURNING user_id, username, email, created_at',
+            //     [username, email, hashedPassword]
+            // );
+
+            // Placeholder for successful creation
+            const createdUser = {
+                user_id: Date.now(), // Placeholder ID
+                username: username,
+                email: email,
+                created_at: new Date().toISOString()
+            };
+
+            // 5. Return success response
+            res.status(201).json(createdUser);
+
+        } catch (err) {
+            console.error('Error creating user:', err.message);
+            res.status(500).json({ error: 'Failed to create user.' });
+        }
+    });
+
+    module.exports = router;
+    ```
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "API Endpoint Implementation"
+path: "prompts/use_cases/content-creation-and-management/code-generation-software-development/api-endpoint-implementation.md"
+type: "use_case_guide"
+description: "Generates server-side code for a specific API endpoint, including request handling, business logic, and response generation."
+triggers: ["implement api endpoint", "create api route", "backend endpoint code", "rest endpoint", "graphql resolver code"]
+weight: 100

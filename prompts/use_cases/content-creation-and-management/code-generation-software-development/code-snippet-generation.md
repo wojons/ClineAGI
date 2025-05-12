@@ -76,3 +76,64 @@
 *   **Adherence to Language Conventions:** Does it follow idiomatic practices for the specified language?
 *   **Helpfulness of Examples/Comments (if included):**
 *   **Completeness (for its scope):** Does it include necessary setup like imports to be runnable or easily integrated?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants a Python snippet to read a CSV file into a list of dictionaries.
+*   **User Input:**
+    *   Task: Python function to read a CSV file into a list of dictionaries.
+    *   Language: Python
+    *   Inputs: `file_path` (string)
+    *   Output: List of dictionaries, where each dictionary represents a row.
+    *   Libraries: Use the `csv` module.
+
+*   **Cline Generated Python Code Snippet:**
+    ```python
+    import csv
+
+    def read_csv_to_list_of_dicts(file_path):
+        """
+        Reads a CSV file and returns its content as a list of dictionaries.
+        Assumes the first row of the CSV is the header row.
+
+        Args:
+            file_path (str): The path to the CSV file.
+
+        Returns:
+            list: A list of dictionaries, where each dictionary represents a row
+                  with column headers as keys. Returns an empty list if file
+                  not found or in case of error.
+        """
+        data = []
+        try:
+            with open(file_path, mode='r', newline='', encoding='utf-8') as csvfile:
+                reader = csv.DictReader(csvfile)
+                for row in reader:
+                    data.append(dict(row)) # Convert OrderedDict to dict if necessary
+        except FileNotFoundError:
+            print(f"Error: File not found at {file_path}")
+            return []
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return []
+        return data
+
+    # Example Usage:
+    # Assuming 'data.csv' exists with content like:
+    # name,age,city
+    # Alice,30,New York
+    # Bob,24,Los Angeles
+    #
+    # file_data = read_csv_to_list_of_dicts('data.csv')
+    # if file_data:
+    #     for row in file_data:
+    #         print(row)
+    ```
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Code Snippet Generation"
+path: "prompts/use_cases/content-creation-and-management/code-generation-software-development/code-snippet-generation.md"
+type: "use_case_guide"
+description: "Generates a functional code snippet in a specified language to perform a specific task or demonstrate a feature."
+triggers: ["code snippet", "generate function", "sample code", "programming example", "write code for"]
+weight: 100

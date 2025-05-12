@@ -66,3 +66,25 @@
 *   **Naturalness:** Does the revised text read well and sound authentic in the new style/tone?
 *   **Improvement (if applicable):** If the goal was to improve an inappropriate style/tone, is the new version better suited to the context?
 *   **Adherence to User Specifications:** Are all instructions regarding style and tone met?
+
+## 6. Example Output Structure/Format
+**Scenario:** User provides a formal sentence and wants to make it more informal and friendly.
+*   **User Input:**
+    *   Original Text: "It is imperative that all personnel adhere strictly to the established protocols to ensure optimal operational efficiency."
+    *   Target Style: Informal, friendly.
+    *   Target Tone: Encouraging.
+
+*   **Cline Generated Adjusted Text:**
+    "Hey team! Just a friendly reminder to please stick to our usual ways of doing things – it really helps everything run smoothly for everyone. Thanks!"
+
+    *Alternative (slightly more direct but still informal):*
+    "Let's all make sure we're following the team guidelines. It makes a big difference in keeping things efficient! Appreciate it."
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Style and Tone Adjustment"
+path: "prompts/use_cases/content-creation-and-management/content-editing-and-refinement/style-tone-adjustment.md"
+type: "use_case_guide"
+description: "Revises text to match a specified style (e.g., formal, informal) or tone (e.g., humorous, persuasive) while preserving core meaning."
+triggers: ["change text style", "adjust tone of writing", "make text more formal", "make content informal", "rewrite with different tone"]
+weight: 100

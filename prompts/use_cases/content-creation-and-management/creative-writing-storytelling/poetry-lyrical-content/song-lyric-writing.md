@@ -82,3 +82,59 @@
 *   **Singability (Conceptual):** Do the lyrics seem like they would be easy and pleasing to sing?
 *   **Originality:** Do they offer a fresh take or unique expression?
 *   **Genre Appropriateness (if specified):** Do the lyrics fit the conventions of the target genre?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants lyrics for a folk song about a lost love and the changing seasons.
+*   **User Input:**
+    *   Theme: Lost love, passage of time, memories tied to seasons.
+    *   Mood: Melancholy, wistful, a touch of hope.
+    *   Genre: Folk
+    *   Structure: Verse-Chorus-Verse-Chorus-Bridge-Chorus
+    *   Key Imagery: Autumn leaves, winter snow, spring thaw, summer sun.
+
+*   **Cline Generated Lyrics (Excerpt):**
+
+    **(Verse 1)**
+    The autumn leaves fell gold and red, the year we said goodbye
+    Whispered words on a pathway spread, beneath a fading sky
+    You walked away, the air grew cold, a story left untold
+    And every falling leaf, I'm told, carries a memory old.
+
+    **(Chorus)**
+    Oh, the seasons turn, the river flows, the winter snows descend
+    But in my heart, a memory glows, of a love that knew no end
+    Though summer sun may warm the land, and spring may heal the pain
+    I still recall you holding my hand, in the gentle autumn rain.
+
+    **(Verse 2)**
+    The winter came with icy breath, and covered all in white
+    The world seemed hushed and still as death, lost in the fading light
+    I searched for you in frosted panes, in patterns on the glass
+    Just echoes of your voice remains, as lonely moments pass.
+
+    **(Chorus)**
+    Oh, the seasons turn, the river flows, the winter snows descend
+    But in my heart, a memory glows, of a love that knew no end
+    Though summer sun may warm the land, and spring may heal the pain
+    I still recall you holding my hand, in the gentle autumn rain.
+
+    **(Bridge)**
+    Now spring arrives with hopeful green, the birds begin to sing
+    A different life, a different scene, new chances it may bring
+    But still I look to that old tree, where we carved our names so true
+    And wonder if you think of me, the way I think of you.
+
+    **(Chorus)**
+    Oh, the seasons turn, the river flows, the winter snows descend
+    But in my heart, a memory glows, of a love that knew no end
+    Though summer sun may warm the land, and spring may heal the pain
+    I still recall you holding my hand, in the gentle autumn rain.
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Song Lyric Writing"
+path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/poetry-lyrical-content/song-lyric-writing.md"
+type: "use_case_guide"
+description: "Generates original song lyrics based on themes, genre, mood, or structure, focusing on emotional resonance and singability."
+triggers: ["write song lyrics", "lyrics for a song", "songwriting help", "create lyrics for pop song", "folk song lyrics about"]
+weight: 100

@@ -72,3 +72,51 @@
 *   **Thematic Connection:** Does the arc effectively explore or support the story's themes?
 *   **Actionability for Writer:** Does the planned arc provide a strong guide for writing the character's scenes?
 *   **Completeness of Arc:** Does it cover key stages from setup to resolution?
+
+## 6. Example Output Structure/Format
+**Scenario:** User is planning a character arc for "Liam," a cynical detective who learns to trust again.
+*   **User Input:**
+    *   Character: Liam, a cynical, lone-wolf detective.
+    *   Flaw: Deep distrust of others due to past betrayal.
+    *   False Belief: "You can only rely on yourself."
+    *   Story Premise: Liam must partner with a rookie, idealistic detective, Sarah, to solve a complex case that forces him to confront his past.
+    *   Desired Arc: Positive change arc – Liam learns to trust Sarah and open up.
+
+*   **Cline Generated Character Arc Plan (Excerpt):**
+
+    **Character Arc Plan: Detective Liam**
+
+    1.  **Initial State (The Lie He Believes):**
+        *   Liam is highly skilled but jaded and isolated. He keeps everyone at arm's length.
+        *   His mantra: "Trust no one. Rely only on yourself."
+        *   He's effective but his methods alienate colleagues. His personal life is non-existent.
+
+    2.  **Inciting Incident (Plot & Arc):**
+        *   A high-profile, difficult case lands on his desk.
+        *   He's unwillingly partnered with the enthusiastic rookie, Sarah, whose optimism clashes with his cynicism.
+
+    3.  **Rising Action / Confronting the Flaw:**
+        *   **Obstacle 1:** Liam initially dismisses Sarah's ideas, tries to work alone. This leads to a setback in the case.
+        *   **Obstacle 2:** Sarah's genuine attempts to connect are met with Liam's suspicion. A clue related to Liam's past betrayal surfaces, intensifying his distrust.
+        *   **Turning Point 1 (Midpoint approx.):** Sarah, despite Liam's coldness, saves him from a dangerous situation using a method Liam had dismissed. He's forced to acknowledge her competence and, grudgingly, her loyalty in that moment. He starts to share minimal case details.
+        *   **Obstacle 3:** The case requires them to rely on each other's complementary skills. Liam sees Sarah take a risk for the case (and for him), further challenging his "trust no one" belief. He shares a small, guarded piece of his past.
+
+    4.  **Climax of Arc (Often aligns with Plot Climax):**
+        *   The main antagonist exploits Liam's known distrust, trying to frame Sarah or turn them against each other.
+        *   Liam is faced with a critical choice: revert to his old belief and suspect Sarah, or fully trust her despite appearances and his past trauma.
+        *   He chooses to trust Sarah. This trust is key to them solving the case and apprehending the villain.
+
+    5.  **Final State (The Truth He Learns):**
+        *   Liam has learned that meaningful connections and trust are possible and valuable. He's still a sharp detective, but no longer a lone wolf.
+        *   He forms a genuine professional partnership (and perhaps friendship) with Sarah.
+        *   He's started to heal from his past betrayal, understanding it doesn't define all relationships.
+        *   His new understanding: "Trust is a risk, but some people are worth it."
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Character Arc Planning (Fiction)"
+path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/character-arc-planning.md"
+type: "use_case_guide"
+description: "Outlines a character's transformation over a story, detailing initial state, conflicts, key decisions, and final state."
+triggers: ["character arc", "plan character development", "story character journey", "fiction character transformation", "narrative arc for character"]
+weight: 100

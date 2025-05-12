@@ -83,3 +83,69 @@
 *   **Actionability:** If it's a how-to, are the steps clear and easy to follow?
 *   **Findability (Title & Keywords):** Is the title descriptive and likely to match user search queries?
 *   **Readability & Formatting:** Is the article well-structured and easy to scan?
+
+## 6. Example Output Structure/Format
+**Scenario:** User needs a knowledge base article on how to reset a password for "AppX."
+*   **User Input:**
+    *   Topic: How to reset password for AppX.
+    *   Product: AppX
+    *   Target Audience: End-users.
+    *   Key Steps: Go to login page, click "Forgot Password," enter email, receive reset link, create new password.
+
+*   **Cline Generated Knowledge Base Article:**
+
+    ---
+    **Title:** How to Reset Your AppX Password
+
+    **Applies to:** AppX User Accounts
+
+    **Last Updated:** {{CURRENT_DATE_YYYY_MM_DD}}
+
+    ---
+
+    If you've forgotten your password for AppX, you can easily reset it by following these steps:
+
+    1.  **Navigate to the Login Page:**
+        *   Open your web browser and go to the AppX login page (e.g., `https://appx.example.com/login`).
+
+    2.  **Click "Forgot Password":**
+        *   On the login form, locate and click the link that says "Forgot Password?" or "Reset Password." This is usually found below the password input field.
+        *   *(Suggested Screenshot: Login page with "Forgot Password?" link highlighted)*
+
+    3.  **Enter Your Email Address:**
+        *   You will be prompted to enter the email address associated with your AppX account.
+        *   Type your email address into the field and click "Submit" or "Send Reset Link."
+        *   *(Suggested Screenshot: Email input field for password reset)*
+
+    4.  **Check Your Email:**
+        *   AppX will send a password reset link to the email address you provided. This email usually arrives within a few minutes.
+        *   **Important:** If you don't see the email in your inbox, please check your spam or junk folder.
+        *   The email will contain a unique link to reset your password. Click on this link.
+
+    5.  **Create a New Password:**
+        *   The link will take you to a page where you can create a new password for your AppX account.
+        *   Enter your new password in the designated fields. Ensure it meets any stated complexity requirements (e.g., minimum length, use of numbers or special characters).
+        *   Confirm your new password by typing it again.
+        *   Click "Save Password" or "Reset Password."
+        *   *(Suggested Screenshot: New password creation form)*
+
+    6.  **Login with Your New Password:**
+        *   Once your password has been successfully reset, you can return to the AppX login page and sign in with your email address and your new password.
+
+    **Troubleshooting:**
+
+    *   **Didn't receive the reset email?** Double-check your spam/junk folder. Ensure you entered the correct email address associated with your account. If you still don't receive it after 15-20 minutes, try the "Forgot Password" process again or contact AppX support.
+    *   **Reset link expired?** Password reset links are often time-sensitive. If the link has expired, you'll need to restart the "Forgot Password" process.
+
+    **Related Articles:**
+    *   [[How to Change Your AppX Email Address]]
+    *   [[Securing Your AppX Account]]
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Knowledge Base Article Creation"
+path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/knowledge-base-article-creation.md"
+type: "use_case_guide"
+description: "Creates clear, concise articles for knowledge bases, addressing specific user questions or problems."
+triggers: ["knowledge base article", "write help document", "create faq entry", "how-to guide for product", "troubleshooting article"]
+weight: 100

@@ -91,3 +91,96 @@
 *   **Navigability & Organization:** Can information be found quickly?
 *   **Adherence to Standards (if specified):** Does it meet OpenAPI or other formatting requirements?
 *   **Reduction in Support Questions (Indirect):** Good documentation should reduce the need for developers to ask basic questions about API usage.
+
+## 6. Example Output Structure/Format
+**Scenario:** User needs documentation for a `GET /products/{id}` endpoint.
+*   **User Input:**
+    *   Endpoint: `GET /products/{id}`
+    *   Description: Retrieves details for a specific product.
+    *   Authentication: API Key in `X-API-KEY` header.
+    *   Path Parameter: `id` (integer, required, product's unique identifier).
+    *   Successful Response (200 OK): JSON object with `id`, `name`, `description`, `price`.
+    *   Error Response (404 Not Found): JSON object with `error`, `message`.
+    *   Code Example Language: Python
+
+*   **Cline Generated API Documentation Snippet:**
+
+    ---
+
+    ### Get Product by ID
+
+    Retrieves the details of a specific product identified by its ID.
+
+    **HTTP Request**
+    `GET /products/{id}`
+
+    **Authentication**
+    Requires an API Key passed in the `X-API-KEY` header.
+
+    **Path Parameters**
+
+    | Parameter | Type    | Required | Description                  |
+    | :-------- | :------ | :------- | :--------------------------- |
+    | `id`      | Integer | Yes      | The unique identifier of the product. |
+
+    **Responses**
+
+    *   **`200 OK`** - Product details retrieved successfully.
+        ```json
+        {
+          "id": 123,
+          "name": "Wireless Noise-Cancelling Headphones",
+          "description": "Premium headphones with active noise cancellation and long battery life.",
+          "price": 299.99,
+          "category": "Electronics"
+        }
+        ```
+
+    *   **`401 Unauthorized`** - API key is missing or invalid.
+        ```json
+        {
+          "error": "Unauthorized",
+          "message": "Valid API key required."
+        }
+        ```
+
+    *   **`404 Not Found`** - No product found with the specified ID.
+        ```json
+        {
+          "error": "Not Found",
+          "message": "Product with ID {id} not found."
+        }
+        ```
+
+    **Example Request (Python):**
+    ```python
+    import requests
+
+    api_key = "YOUR_API_KEY"
+    product_id = 123
+    base_url = "https://api.example.com/v1" # Assuming v1 is part of base URL
+
+    headers = {
+        "X-API-KEY": api_key
+    }
+
+    response = requests.get(f"{base_url}/products/{product_id}", headers=headers)
+
+    if response.status_code == 200:
+        product_data = response.json()
+        print("Product Name:", product_data.get("name"))
+        print("Price:", product_data.get("price"))
+    elif response.status_code == 404:
+        print("Error:", response.json().get("message"))
+    else:
+        print("An error occurred:", response.status_code, response.text)
+    ```
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "API Documentation Generation"
+path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/api-documentation-generation.md"
+type: "use_case_guide"
+description: "Generates comprehensive documentation for APIs, including endpoints, requests, responses, auth, and examples."
+triggers: ["api documentation", "document rest api", "swagger generation help", "openapi spec writing", "api reference guide"]
+weight: 100

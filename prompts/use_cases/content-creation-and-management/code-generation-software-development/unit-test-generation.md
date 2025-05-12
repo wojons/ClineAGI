@@ -75,3 +75,70 @@
 *   **Readability & Maintainability:** Is the test code clear, well-named, and easy to understand?
 *   **Adherence to Framework Conventions:**
 *   **Usefulness:** Would these tests genuinely help in verifying the correctness of the code and preventing regressions?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants unit tests for a simple Python function `add(a, b)` using `unittest`.
+*   **User Input:**
+    *   Source Code:
+        ```python
+        def add(a, b):
+            """Returns the sum of two numbers."""
+            return a + b
+        ```
+    *   Language: Python
+    *   Testing Framework: `unittest`
+
+*   **Cline Generated Unit Tests (Conceptual - would be in a separate test file):**
+    ```python
+    import unittest
+    # Assuming the function 'add' is in a file named 'my_module.py'
+    # from my_module import add # Or however the function is imported
+
+    # For demonstration, defining 'add' here if not importing
+    def add(a, b):
+        return a + b
+
+    class TestAddFunction(unittest.TestCase):
+
+        def test_add_positive_numbers(self):
+            """Test adding two positive numbers."""
+            self.assertEqual(add(2, 3), 5)
+            self.assertEqual(add(100, 200), 300)
+
+        def test_add_negative_numbers(self):
+            """Test adding two negative numbers."""
+            self.assertEqual(add(-2, -3), -5)
+            self.assertEqual(add(-100, -50), -150)
+
+        def test_add_positive_and_negative_number(self):
+            """Test adding a positive and a negative number."""
+            self.assertEqual(add(5, -3), 2)
+            self.assertEqual(add(-7, 4), -3)
+
+        def test_add_zero(self):
+            """Test adding zero to a number."""
+            self.assertEqual(add(0, 5), 5)
+            self.assertEqual(add(5, 0), 5)
+            self.assertEqual(add(0, 0), 0)
+            self.assertEqual(add(-5, 0), -5)
+
+        # Optional: Test for non-numeric input if error handling is expected
+        # def test_add_non_numeric_input(self):
+        #     """Test adding non-numeric types (should raise TypeError)."""
+        #     with self.assertRaises(TypeError):
+        #         add(2, "hello")
+        #     with self.assertRaises(TypeError):
+        #         add("world", 3)
+
+    if __name__ == '__main__':
+        unittest.main()
+    ```
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Unit Test Generation"
+path: "prompts/use_cases/content-creation-and-management/code-generation-software-development/unit-test-generation.md"
+type: "use_case_guide"
+description: "Generates unit tests for a given piece of code (function, method, class) using a specified testing framework."
+triggers: ["generate unit tests", "write tests for code", "create test cases", "pytest generation", "jest test generation", "junit tests"]
+weight: 100

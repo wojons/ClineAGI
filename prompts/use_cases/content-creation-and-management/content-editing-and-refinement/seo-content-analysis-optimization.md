@@ -72,3 +72,50 @@
 *   **Actionable Suggestions:** Are the recommendations clear and easy to implement?
 *   **Holistic Approach:** Does the optimization consider both keywords and content quality/user value?
 *   **Avoidance of Negative Practices:** Does it avoid keyword stuffing or other black-hat techniques?
+
+## 6. Example Output Structure/Format
+**Scenario:** User provides a blog post about "healthy breakfast ideas" and wants SEO suggestions.
+*   **User Input:**
+    *   Text Content: (A blog post about various breakfast recipes)
+    *   Target Keywords: "healthy breakfast ideas", "quick morning meals", "nutritious breakfast"
+    *   Target Audience: Health-conscious individuals, busy professionals.
+
+*   **Cline Generated SEO Suggestions (Excerpt):**
+
+    **SEO Analysis & Optimization Suggestions for "Healthy Breakfast Ideas"**
+
+    1.  **Title Tag:**
+        *   *Current (Assumed):* "My Favorite Breakfasts"
+        *   *Suggestion:* "Top 10 Healthy Breakfast Ideas for Quick Morning Meals"
+        *   *Rationale:* Incorporates primary ("healthy breakfast ideas") and secondary ("quick morning meals") keywords. More descriptive and compelling for SERPs.
+
+    2.  **Meta Description:**
+        *   *Current (Assumed):* (Missing or generic)
+        *   *Suggestion:* "Discover 10 delicious and nutritious breakfast ideas perfect for busy mornings. Fuel your day with these quick, healthy recipes!"
+        *   *Rationale:* Includes "nutritious breakfast ideas" and "quick healthy recipes." Action-oriented and highlights benefits.
+
+    3.  **Header Tags (H1-H6):**
+        *   *H1 Suggestion:* Ensure the main blog post title is wrapped in an H1 tag and includes "Healthy Breakfast Ideas."
+        *   *H2 Suggestions:* Use H2 tags for main sections like "Quick Oatmeal Variations," "Smoothie Power-Ups," "Egg-cellent Choices." Incorporate keywords like "quick morning meals" or "nutritious breakfast" naturally within these if possible.
+
+    4.  **Keyword Integration in Body:**
+        *   *Observation:* The term "nutritious breakfast" appears only once. "Quick morning meals" is not present.
+        *   *Suggestion:*
+            *   In the introduction, mention "Finding nutritious breakfast ideas that are also quick morning meals can be a challenge..."
+            *   When describing recipes, use phrases like "This is a great nutritious breakfast option..." or "For those needing quick morning meals, try..."
+        *   *Caution:* Integrate naturally; do not force keywords.
+
+    5.  **Content Depth & Value:**
+        *   *Suggestion:* Consider adding a small section on the "Benefits of a Healthy Breakfast" or "Tips for Meal-Prepping Breakfasts" to add more value and naturally incorporate related terms.
+
+    6.  **Internal Linking:**
+        *   *Suggestion:* If you have other articles on "healthy snacks" or "meal prep guides," link to them from this post where relevant.
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "SEO Content Analysis & Optimization"
+path: "prompts/use_cases/content-creation-and-management/content-editing-and-refinement/seo-content-analysis-optimization.md"
+type: "use_case_guide"
+description: "Analyzes text content for SEO effectiveness and suggests revisions to improve search engine visibility for target keywords."
+triggers: ["seo content analysis", "optimize for seo", "keyword optimization", "improve search ranking", "on-page seo suggestions"]
+weight: 100

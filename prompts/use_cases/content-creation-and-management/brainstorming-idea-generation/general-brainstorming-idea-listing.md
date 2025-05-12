@@ -67,3 +67,29 @@
 *   **Stimulation of Further Thought:** Does the list inspire the user to think of more ideas or refine existing ones?
 *   **Organization (if categorized):** Is the categorization logical and helpful?
 *   **Adherence to Constraints:** If the user provided specific focus areas or limitations, were they respected?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants ideas for a new sustainable product.
+*   **User Input:**
+    *   Topic: Ideas for a new sustainable product.
+    *   Focus: Household items.
+    *   Constraint: Must use recycled materials.
+
+*   **Cline Generated Idea List (Excerpt):**
+    *   **Product Idea:** Reusable food wraps made from recycled cotton and beeswax.
+        *   *Elaboration:* Alternative to plastic cling film, washable and biodegradable.
+    *   **Product Idea:** Modular shelving units made from reclaimed wood.
+        *   *Elaboration:* Customizable, reduces timber harvesting, promotes circular economy.
+    *   **Product Idea:** Plantable greeting cards embedded with wildflower seeds, made from recycled paper.
+        *   *Elaboration:* Card can be planted after use, zero waste, promotes biodiversity.
+    *   **Product Idea:** Compostable phone cases made from bioplastics derived from cornstarch or agricultural waste.
+        *   *Elaboration:* Reduces plastic pollution from tech accessories.
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "General Brainstorming & Idea Listing"
+path: "prompts/use_cases/content-creation-and-management/brainstorming-idea-generation/general-brainstorming-idea-listing.md"
+type: "use_case_guide"
+description: "Generates a diverse list of ideas, concepts, or solutions related to a user-provided topic, problem, or theme."
+triggers: ["brainstorm ideas", "idea generation", "list concepts", "problem solving ideas", "creative thinking", "brainstorming session"]
+weight: 100

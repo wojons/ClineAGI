@@ -92,3 +92,74 @@
 *   **Navigability:** Can developers find the information they need efficiently?
 *   **Reduction in SDK-Related Support Questions (Indirect):** Good documentation should empower developers to solve problems themselves.
 *   **Developer Onboarding Time (Indirect):** Effective SDK documentation should shorten the time it takes for a new developer to become proficient with the SDK.
+
+## 6. Example Output Structure/Format
+**Scenario:** User needs a part of the API reference for a Python SDK class `ImageProcessor`.
+*   **User Input:**
+    *   SDK Language: Python
+    *   Class: `ImageProcessor`
+    *   Method: `resize(self, new_width, new_height, interpolation_method="bilinear")`
+    *   Method Description: Resizes an image to the specified dimensions using a chosen interpolation method.
+    *   Parameters:
+        *   `new_width` (int): Target width in pixels.
+        *   `new_height` (int): Target height in pixels.
+        *   `interpolation_method` (str, optional): "bilinear" (default) or "bicubic".
+    *   Returns: A new `Image` object with the resized image.
+    *   Raises: `ValueError` if dimensions are non-positive.
+
+*   **Cline Generated API Reference Snippet:**
+
+    ---
+    ### Class: `ImageProcessor`
+
+    Provides methods for image manipulation.
+
+    #### Method: `resize()`
+
+    `resize(self, new_width, new_height, interpolation_method="bilinear")`
+
+    Resizes the currently loaded image to the specified `new_width` and `new_height`.
+
+    **Parameters:**
+
+    *   `new_width` (int):
+        The target width for the resized image in pixels. Must be a positive integer.
+    *   `new_height` (int):
+        The target height for the resized image in pixels. Must be a positive integer.
+    *   `interpolation_method` (str, optional):
+        The algorithm used for resizing. Defaults to `"bilinear"`.
+        Accepted values:
+        *   `"bilinear"`: Bilinear interpolation.
+        *   `"bicubic"`: Bicubic interpolation (often higher quality but slower).
+
+    **Returns:**
+
+    *   `Image`: A new `Image` object containing the resized image data. The original `ImageProcessor` object's image remains unchanged.
+
+    **Raises:**
+
+    *   `ValueError`: If `new_width` or `new_height` are less than or equal to zero.
+
+    **Example:**
+
+    ```python
+    # Assuming 'processor' is an instance of ImageProcessor with an image loaded
+    try:
+        resized_image = processor.resize(800, 600, interpolation_method="bicubic")
+        resized_image.save("resized_photo.jpg")
+        print("Image resized and saved successfully.")
+    except ValueError as e:
+        print(f"Error resizing image: {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+    ```
+    ---
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Software Development Kit (SDK) Documentation"
+path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/sdk-documentation.md"
+type: "use_case_guide"
+description: "Creates comprehensive documentation for SDKs, including setup, concepts, guides, API reference, and examples."
+triggers: ["sdk documentation", "document software kit", "sdk guide", "api client library docs", "developer kit documentation"]
+weight: 100

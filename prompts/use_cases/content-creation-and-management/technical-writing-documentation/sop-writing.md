@@ -91,3 +91,102 @@
 *   **Task Success Rate (Indirect):** If followed correctly, does the SOP lead to the desired, consistent outcome?
 *   **Reduction in Errors/Incidents (Indirect):** Effective SOPs should help reduce mistakes and safety incidents related to the task.
 *   **Ease of Use:** Is the SOP well-formatted and easy to reference during task performance?
+
+## 6. Example Output Structure/Format
+**Scenario:** User needs an SOP for making a backup of a specific server directory.
+*   **User Input:**
+    *   Task: Daily backup of `/srv/appdata` on `Server01` to `/mnt/backups/Server01/`.
+    *   Audience: Junior System Administrators.
+    *   Key Tool: `rsync`.
+    *   Retention: Keep 7 daily backups.
+
+*   **Cline Generated SOP (Excerpt):**
+
+    ---
+    **Standard Operating Procedure**
+    **SOP Number:** OPS-BKUP-001
+    **Title:** Daily Backup of AppData on Server01
+    **Version:** 1.0
+    **Effective Date:** {{CURRENT_DATE_YYYY_MM_DD}}
+    **Author:** Cline AI
+    ---
+
+    **1. Purpose**
+    To ensure a consistent and reliable daily backup of the `/srv/appdata` directory on `Server01`.
+
+    **2. Scope**
+    This SOP applies to all Junior System Administrators responsible for routine server backups.
+
+    **3. Responsibilities**
+    Junior System Administrators are responsible for executing this SOP daily and verifying successful completion. Senior System Administrators are responsible for reviewing backup logs weekly.
+
+    **4. Materials/Equipment Needed**
+    *   Access to a terminal with SSH capabilities.
+    *   Credentials for user `backupadmin` on `Server01`.
+    *   Access to the backup server where `/mnt/backups/` is located.
+
+    **5. Safety Precautions**
+    *   Verify correct server and directory paths before executing commands to prevent accidental data overwrite on the wrong target.
+
+    **6. Procedure**
+
+    *   **6.1. Connect to Server01:**
+        1.  Open a terminal window.
+        2.  SSH into Server01 as the `backupadmin` user:
+            ```bash
+            ssh backupadmin@Server01
+            ```
+    *   **6.2. Prepare Backup Directory:**
+        1.  Define today's date for the backup folder name (YYYY-MM-DD format):
+            ```bash
+            TODAY=$(date +%Y-%m-%d)
+            ```
+        2.  Define the target backup path:
+            ```bash
+            TARGET_DIR="/mnt/backups/Server01/$TODAY"
+            ```
+        3.  Create the target directory if it doesn't exist:
+            ```bash
+            mkdir -p "$TARGET_DIR"
+            ```
+    *   **6.3. Perform Backup using rsync:**
+        1.  Execute the rsync command:
+            ```bash
+            rsync -avh --delete /srv/appdata/ "$TARGET_DIR/"
+            ```
+            *   `-a`: Archive mode (preserves permissions, ownership, timestamps, etc.)
+            *   `-v`: Verbose output.
+            *   `-h`: Human-readable numbers.
+            *   `--delete`: Deletes files in the destination if they no longer exist in the source.
+        2.  Monitor the output for any errors.
+    *   **6.4. Verify Backup (Basic Check):**
+        1.  List the contents of the target directory to ensure files are present:
+            ```bash
+            ls -lR "$TARGET_DIR" | head -n 20 # Display first 20 lines
+            ```
+        2.  Compare file counts or sizes if a more thorough check is needed (detailed check SOP may be separate).
+    *   **6.5. Log Completion:**
+        1.  Record the successful completion (or any errors) in the daily operations log, noting the date and time.
+    *   **6.6. Manage Old Backups (Retention Policy):**
+        1.  List backup directories older than 7 days:
+            ```bash
+            find /mnt/backups/Server01/ -mindepth 1 -maxdepth 1 -type d -mtime +7
+            ```
+        2.  **CAUTION:** Before deleting, verify the list.
+        3.  Delete old backup directories (example, verify before running):
+            ```bash
+            # find /mnt/backups/Server01/ -mindepth 1 -maxdepth 1 -type d -mtime +7 -exec rm -rf {} \;
+            ```
+            *Note: Automated deletion script is preferred and covered in SOP OPS-BKUP-MGMT-002.*
+
+    **7. References**
+    *   SOP OPS-BKUP-MGMT-002: Automated Backup Retention Policy
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Standard Operating Procedure (SOP) Writing"
+path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/sop-writing.md"
+type: "use_case_guide"
+description: "Creates clear, step-by-step instructions for performing routine tasks consistently and correctly."
+triggers: ["write sop", "standard operating procedure", "create procedure document", "task instructions", "process documentation"]
+weight: 100

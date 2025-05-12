@@ -72,3 +72,28 @@
 *   **Coherence:** Do the summarized points flow logically?
 *   **Objectivity:** Does it avoid introducing outside opinions or misrepresenting the source?
 *   **Usefulness:** Would someone reading the summary get a good understanding of the original content's essence?
+
+## 6. Example Output Structure/Format
+**Scenario:** User provides a short news article and requests a one-sentence summary and a three-bullet-point summary.
+*   **User Input:**
+    *   Original Text: "The City Council today approved a new initiative aimed at increasing green spaces within the urban core. The plan involves converting several underutilized parking lots into small public parks over the next two years. Funding for the project will come from a combination of municipal bonds and private donations. Councilmember Jane Doe, who championed the initiative, stated that this project will not only beautify the city but also improve air quality and provide residents with more recreational opportunities. The first phase is expected to begin this fall."
+    *   Desired Lengths: One sentence; three bullet points.
+
+*   **Cline Generated Summaries:**
+
+    **One-Sentence Summary:**
+    The City Council has approved a two-year initiative to convert underutilized parking lots into public parks, funded by municipal bonds and private donations, to beautify the city, improve air quality, and offer more recreational spaces, with the first phase starting this fall.
+
+    **Three-Bullet-Point Summary:**
+    *   The City Council approved a plan to create new public parks from underutilized parking lots over two years.
+    *   The project, funded by municipal bonds and private donations, aims to enhance urban green spaces, improve air quality, and provide recreational areas.
+    *   Championed by Councilmember Jane Doe, the first phase is set to begin in the fall.
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Content Summarization"
+path: "prompts/use_cases/content-creation-and-management/content-editing-and-refinement/content-summarization.md"
+type: "use_case_guide"
+description: "Condenses longer text into a shorter version, capturing main points and key information, tailored to a specified length or detail level."
+triggers: ["summarize text", "content summary", "abstract generation", "executive summary", "key takeaways from document"]
+weight: 100

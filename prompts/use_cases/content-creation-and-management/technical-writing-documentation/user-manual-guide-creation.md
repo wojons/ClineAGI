@@ -81,3 +81,127 @@
 *   **Organization & Navigability:** Is information easy to find?
 *   **Usefulness of Troubleshooting/FAQs:** Are common problems addressed effectively?
 *   **Consistency:** Is terminology and style consistent?
+
+## 6. Example Output Structure/Format
+**Scenario:** User needs a section for a user manual on how to assemble a "SmartDesk Lamp."
+*   **User Input:**
+    *   Product: SmartDesk Lamp
+    *   Section: Assembly Instructions
+    *   Target Audience: General consumers.
+    *   Key Parts: Lamp Base, Lamp Arm, Shade, LED Bulb, Power Adapter.
+    *   Key Steps: Attach arm to base, attach shade to arm, install bulb, connect power.
+
+*   **Cline Generated User Manual Excerpt:**
+
+    ---
+    **Chapter 2: Assembling Your SmartDesk Lamp**
+
+    This section will guide you through the simple assembly process for your new SmartDesk Lamp. Please identify all parts before you begin.
+
+    **Parts Included:**
+    *   (A) Lamp Base (1)
+    *   (B) Lamp Arm (1)
+    *   (C) Lamp Shade (1)
+    *   (D) LED Bulb (1)
+    *   (E) Power Adapter (1)
+    *(Suggested Illustration: Labeled diagram of all parts)*
+
+    **Assembly Steps:**
+
+    1.  **Attach the Lamp Arm to the Base:**
+        *   Take the Lamp Base (A) and place it on a flat, stable surface.
+        *   Align the bottom connector of the Lamp Arm (B) with the receiving port on the top of the Lamp Base (A).
+        *   Gently push the Lamp Arm downwards into the Lamp Base until you hear or feel a click, indicating it is securely attached.
+        *   *(Suggested Illustration: Close-up of arm connecting to base)*
+
+    2.  **Attach the Lamp Shade:**
+        *   Take the Lamp Shade (C).
+        *   Locate the threaded connector at the top of the Lamp Arm (B).
+        *   Align the opening of the Lamp Shade with the threaded connector and gently screw the shade clockwise until it is snug. Do not overtighten.
+        *   *(Suggested Illustration: Shade being attached to arm)*
+
+    3.  **Install the LED Bulb:**
+        *   Carefully unpack the LED Bulb (D).
+        *   Gently screw the LED Bulb clockwise into the socket located inside the Lamp Shade (C) until it is secure.
+        *   *(Suggested Illustration: Bulb being screwed into socket)*
+
+    4.  **Connect the Power Adapter:**
+        *   Plug the small connector of the Power Adapter (E) into the power input port located on the back of the Lamp Base (A).
+        *   Plug the other end of the Power Adapter into a standard electrical outlet.
+
+    5.  **Test Your Lamp:**
+        *   Use the power button (usually located on the Lamp Base or Arm) to turn on your SmartDesk Lamp.
+        *   If the lamp does not turn on, please double-check all connections (Steps 1-4) and ensure the power outlet is working. Refer to the "Troubleshooting" section if issues persist.
+
+    Your SmartDesk Lamp is now assembled and ready to use! Refer to Chapter 3 for Operating Instructions.
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "User Manual & Guide Creation"
+path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/user-manual-guide-creation.md"
+type: "use_case_guide"
+description: "Creates comprehensive user manuals or guides for products/software, covering installation, operation, and troubleshooting."
+triggers: ["user manual", "product guide", "instruction manual", "how to use product", "software user guide"]
+weight: 100
+
+## 6. Example Output Structure/Format
+**Scenario:** User needs a section for a user manual on how to assemble a "SmartDesk Lamp."
+*   **User Input:**
+    *   Product: SmartDesk Lamp
+    *   Section: Assembly Instructions
+    *   Target Audience: General consumers.
+    *   Key Parts: Lamp Base, Lamp Arm, Shade, LED Bulb, Power Adapter.
+    *   Key Steps: Attach arm to base, attach shade to arm, install bulb, connect power.
+
+*   **Cline Generated User Manual Excerpt:**
+
+    ---
+    **Chapter 2: Assembling Your SmartDesk Lamp**
+
+    This section will guide you through the simple assembly process for your new SmartDesk Lamp. Please identify all parts before you begin.
+
+    **Parts Included:**
+    *   (A) Lamp Base (1)
+    *   (B) Lamp Arm (1)
+    *   (C) Lamp Shade (1)
+    *   (D) LED Bulb (1)
+    *   (E) Power Adapter (1)
+    *(Suggested Illustration: Labeled diagram of all parts)*
+
+    **Assembly Steps:**
+
+    1.  **Attach the Lamp Arm to the Base:**
+        *   Take the Lamp Base (A) and place it on a flat, stable surface.
+        *   Align the bottom connector of the Lamp Arm (B) with the receiving port on the top of the Lamp Base (A).
+        *   Gently push the Lamp Arm downwards into the Lamp Base until you hear or feel a click, indicating it is securely attached.
+        *   *(Suggested Illustration: Close-up of arm connecting to base)*
+
+    2.  **Attach the Lamp Shade:**
+        *   Take the Lamp Shade (C).
+        *   Locate the threaded connector at the top of the Lamp Arm (B).
+        *   Align the opening of the Lamp Shade with the threaded connector and gently screw the shade clockwise until it is snug. Do not overtighten.
+        *   *(Suggested Illustration: Shade being attached to arm)*
+
+    3.  **Install the LED Bulb:**
+        *   Carefully unpack the LED Bulb (D).
+        *   Gently screw the LED Bulb clockwise into the socket located inside the Lamp Shade (C) until it is secure.
+        *   *(Suggested Illustration: Bulb being screwed into socket)*
+
+    4.  **Connect the Power Adapter:**
+        *   Plug the small connector of the Power Adapter (E) into the power input port located on the back of the Lamp Base (A).
+        *   Plug the other end of the Power Adapter into a standard electrical outlet.
+
+    5.  **Test Your Lamp:**
+        *   Use the power button (usually located on the Lamp Base or Arm) to turn on your SmartDesk Lamp.
+        *   If the lamp does not turn on, please double-check all connections (Steps 1-4) and ensure the power outlet is working. Refer to the "Troubleshooting" section if issues persist.
+
+    Your SmartDesk Lamp is now assembled and ready to use! Refer to Chapter 3 for Operating Instructions.
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "User Manual & Guide Creation"
+path: "prompts/use_cases/content-creation-and-management/technical-writing-documentation/user-manual-guide-creation.md"
+type: "use_case_guide"
+description: "Creates comprehensive user manuals or guides for products/software, covering installation, operation, and troubleshooting."
+triggers: ["user manual", "product guide", "instruction manual", "how to use product", "software user guide"]
+weight: 100

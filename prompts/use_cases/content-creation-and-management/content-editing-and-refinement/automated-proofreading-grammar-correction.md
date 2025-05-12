@@ -67,3 +67,39 @@
 *   **Readability Improvement:** Is the corrected text easier to read and understand?
 *   **False Positive Rate:** How many "errors" were flagged that were not actually errors?
 *   **User Satisfaction:** Does the user find the proofreading helpful and accurate?
+
+## 6. Example Output Structure/Format
+**Scenario:** User provides a sentence with a few errors.
+*   **User Input:**
+    *   Text: "Their going to the park, its a beautifull day too."
+    *   Language: English US
+
+*   **Cline Generated Output (Corrected Text):**
+    "They're going to the park; it's a beautiful day, too."
+
+*   **Cline Generated Output (List of Suggestions, if preferred):**
+    1.  **"Their" -> "They're"**: "Their" is possessive (e.g., their car). "They're" is a contraction for "they are."
+        *   *Original:* Their going to the park...
+        *   *Suggestion:* They're going to the park...
+    2.  **"its" -> "it's"**: "its" is possessive (e.g., the dog wagged its tail). "it's" is a contraction for "it is" or "it has."
+        *   *Original:* ...park, its a beautifull...
+        *   *Suggestion:* ...park, it's a beautiful...
+    3.  **"beautifull" -> "beautiful"**: Spelling correction.
+        *   *Original:* ...its a beautifull day...
+        *   *Suggestion:* ...it's a beautiful day...
+    4.  **Punctuation Suggestion (Comma to Semicolon/Period):** The original uses a comma splice.
+        *   *Original:* ...to the park, its a beautifull day too.
+        *   *Suggestion (Option 1 - Semicolon):* ...to the park; it's a beautiful day, too.
+        *   *Suggestion (Option 2 - Period):* ...to the park. It's a beautiful day, too.
+    5.  **"too" -> "too." (Missing end punctuation if part of a larger text where this is the end of a sentence):**
+        *   *Original:* ...day too
+        *   *Suggestion:* ...day, too. (Assuming it's the end of the sentence and a comma is desired before "too" for emphasis/flow).
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Automated Proofreading & Grammar Correction"
+path: "prompts/use_cases/content-creation-and-management/content-editing-and-refinement/automated-proofreading-grammar-correction.md"
+type: "use_case_guide"
+description: "Automatically reviews text to identify and correct errors in grammar, spelling, punctuation, and syntax."
+triggers: ["proofread text", "grammar check", "spell check document", "correct grammar", "edit for errors"]
+weight: 100

@@ -79,3 +79,25 @@
 *   **Sentence Simplicity:** Are sentences generally shorter and less complex?
 *   **Logical Flow:** Is the information presented in an easy-to-follow manner?
 *   **User Feedback:** Does the user find the simplified version effective?
+
+## 6. Example Output Structure/Format
+**Scenario:** User provides a complex sentence and asks for simplification for a general audience.
+*   **User Input:**
+    *   Original Text: "The epistemological underpinnings of post-structuralist discourse necessitate a deconstruction of logocentric paradigms to unveil the inherent multiplicity of meaning."
+    *   Target Audience: General public.
+
+*   **Cline Generated Simplified Text:**
+
+    "Post-structuralist thinking challenges the idea that words have single, fixed meanings. It suggests we need to look closely at how language is used to find the many different meanings that can exist."
+
+    *Alternative (even simpler):*
+    "Some modern thinkers believe that words can mean many different things. They say we should question the idea that there's only one 'true' meaning for something."
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Readability Improvement & Simplification"
+path: "prompts/use_cases/content-creation-and-management/content-editing-and-refinement/readability-improvement-simplification.md"
+type: "use_case_guide"
+description: "Revises text to make it easier to read and understand by simplifying language, shortening sentences, and improving structure."
+triggers: ["improve readability", "simplify text", "make content clearer", "plain language editing", "explain simply"]
+weight: 100

@@ -76,3 +76,41 @@
 *   **Actionability for Writer:** Does it provide a useful guide for drafting the actual chapter?
 *   **Consistency with Broader Narrative:** Does it fit well with the overall story arc provided by the user?
 *   **Engagement Potential:** Does the outlined/summarized chapter sound interesting?
+
+## 6. Example Output Structure/Format
+**Scenario:** User is writing a fantasy novel and needs an outline for Chapter 5.
+*   **User Input:**
+    *   Overall Plot: A young mage must find three ancient artifacts to stop an encroaching shadow force.
+    *   Chapter: 5
+    *   Main Goal for Chapter 5: The mage, Elara, discovers the first clue to the location of the Sunstone artifact. She faces a moral dilemma.
+    *   Characters: Elara, her mentor Master Vorlag, a mysterious informant named Kael.
+    *   Desired Output: Detailed Outline.
+
+*   **Cline Generated Chapter Outline:**
+
+    **Chapter 5: The Whispering Map**
+
+    *   **Opening:**
+        *   Elara and Master Vorlag are in the ancient library, frustrated after days of fruitless research on the Sunstone.
+        *   Vorlag expresses concern about the growing shadow activity.
+    *   **Inciting Incident for Chapter:**
+        *   A coded message arrives for Elara from Kael, an informant known for dealing in rare information, hinting he knows something about the Sunstone. The message suggests a clandestine meeting.
+    *   **Rising Action:**
+        1.  **Debate & Decision:** Elara wants to meet Kael. Vorlag is wary, warning Elara about Kael's untrustworthy reputation and the danger of dealing with him. Elara feels the urgency and decides to go against Vorlag's explicit advice, creating a point of tension.
+        2.  **The Meeting:** Elara meets Kael in a shadowy part of the city. Kael is enigmatic and demands a steep price for his information: a rare spellbook from Vorlag's private collection – one Elara knows Vorlag treasures and considers dangerous in the wrong hands.
+        3.  **Moral Dilemma:** Elara struggles with the choice: betray Vorlag's trust and steal the book for a vital clue, or refuse and potentially lose the only lead to the Sunstone.
+    *   **Climax of Chapter:**
+        *   Elara makes her decision. (e.g., She attempts to steal the book, or she tries to negotiate a different price with Kael, or she refuses and Kael gives her a cryptic half-clue out of amusement/pity).
+    *   **Falling Action:**
+        *   Brief immediate consequence of Elara's decision (e.g., she has the book and feels guilty; Kael disappears after giving a partial clue; she returns to Vorlag with a new problem).
+    *   **Closing Hook:**
+        *   The chapter ends with Elara contemplating her next move based on the outcome of her interaction with Kael, and the weight of her decision. (e.g., "The map fragment Kael had given her felt cold in her hand, but not as cold as the lie she would have to tell Vorlag.")
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Chapter Summaries/Outlines (Fiction)"
+path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/chapter-summaries-outlines.md"
+type: "use_case_guide"
+description: "Generates concise summaries or detailed outlines for individual chapters of a novel or long-form fictional work."
+triggers: ["chapter summary", "chapter outline", "fiction chapter plan", "novel chapter structure", "story beat sheet for chapter"]
+weight: 100

@@ -76,3 +76,73 @@
 *   **Adherence to Language/Shell Best Practices:**
 *   **Security (Conceptual):** Does it avoid obvious security pitfalls (e.g., hardcoding passwords, command injection vulnerabilities if processing user input directly in shell commands)?
 *   **Usefulness:** Does the script provide a tangible benefit by automating a manual process?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants a Bash script to back up a directory to a specified location, adding a timestamp to the backup archive name.
+*   **User Input:**
+    *   Task: Backup a source directory to a target directory.
+    *   Scripting Language: Bash
+    *   Source Directory: `/home/user/documents`
+    *   Target Directory: `/mnt/backups/`
+    *   Archive Format: `.tar.gz`
+    *   Timestamp Format: `YYYYMMDD-HHMMSS`
+
+*   **Cline Generated Bash Script:**
+    ```bash
+    #!/bin/bash
+
+    # Script to back up a source directory to a target directory with a timestamp.
+
+    # --- Configuration ---
+    SOURCE_DIR="/home/user/documents"
+    TARGET_BASE_DIR="/mnt/backups"
+    # --- End Configuration ---
+
+    # Check if source directory exists
+    if [ ! -d "$SOURCE_DIR" ]; then
+        echo "Error: Source directory '$SOURCE_DIR' not found."
+        exit 1
+    fi
+
+    # Create target directory if it doesn't exist
+    mkdir -p "$TARGET_BASE_DIR"
+    if [ ! -d "$TARGET_BASE_DIR" ]; then
+        echo "Error: Could not create or find target directory '$TARGET_BASE_DIR'."
+        exit 1
+    fi
+
+    # Generate timestamp
+    TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
+    BASENAME=$(basename "$SOURCE_DIR")
+    ARCHIVE_NAME="${BASENAME}_backup_${TIMESTAMP}.tar.gz"
+    TARGET_FILE_PATH="${TARGET_BASE_DIR}/${ARCHIVE_NAME}"
+
+    echo "Starting backup of '$SOURCE_DIR'..."
+    echo "Archive will be saved as '$TARGET_FILE_PATH'"
+
+    # Create the tarball
+    # Using -C to change directory so the archive doesn't contain the full source path
+    tar -czf "$TARGET_FILE_PATH" -C "$(dirname "$SOURCE_DIR")" "$(basename "$SOURCE_DIR")"
+
+    # Check if tar command was successful
+    if [ $? -eq 0 ]; then
+        echo "Backup completed successfully: $TARGET_FILE_PATH"
+        # Optional: List contents for verification
+        # echo "Archive contents:"
+        # tar -tzf "$TARGET_FILE_PATH"
+    else
+        echo "Error: Backup failed. Check tar command output."
+        exit 1
+    fi
+
+    exit 0
+    ```
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Scripting for Automation"
+path: "prompts/use_cases/content-creation-and-management/code-generation-software-development/scripting-for-automation.md"
+type: "use_case_guide"
+description: "Generates scripts (Bash, Python, etc.) to automate repetitive system tasks, build processes, or other workflows."
+triggers: ["automation script", "bash script for", "python script to automate", "powershell automation", "automate workflow"]
+weight: 100

@@ -22,9 +22,10 @@ ClineAGI employs a two-tiered architecture:
 -   **Memory Bank as Single Source of Truth:** All critical project information is centralized in `memory-bank/`.
 -   **Iterative Development:** The AGI will be built incrementally.
 -   **Role-Based Operations:** Project interactions and workflows will be governed by defined roles (e.g., `ClineAGI-ADMIN`).
--   **Dynamic Prompting (`.clinerules`):** My behavior and context will be dynamically managed through a `.clinerules` system.
+-   **Dynamic Prompting (`.clinerules` & `prompts/`):** My behavior and context are dynamically managed through a `.clinerules` system and a comprehensive `prompts/` directory. The `prompts/` directory houses a structured library of use cases, workflows, and other guiding documents, indexed by `prompts/prompt_inventory.yaml` for dynamic loading.
 -   **AGI Agent Prompting and Knowledge Organization:** Developing prompts and organizing research findings to enhance capabilities towards a self-programming AGI agent.
 -   **Merged Patterns:** Consolidating individual pattern functionality into broader categories for improved usability and clarity.
+-   **CLI Tooling (`tools/scripts/`):** A set of shell scripts in `tools/scripts/` provides command-line access to core functionalities, inventoried in `tools/scripts_inventory.yaml`.
 
 ## 3. Version Control Workflow (Gitflow Adaptation)
 For the core `ClineAGI` repository, especially when operating under a role like `ClineAGI-ADMIN`:

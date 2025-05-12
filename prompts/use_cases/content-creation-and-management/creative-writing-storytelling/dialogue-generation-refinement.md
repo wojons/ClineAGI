@@ -85,3 +85,45 @@
 *   **Clarity:** Is it clear who is speaking and what they are trying to communicate (even if through subtext)?
 *   **Engagement:** Is the dialogue interesting to read?
 *   **Adherence to Scene Context:** Does it fit the situation and character motivations?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants dialogue for a tense negotiation scene.
+*   **User Input:**
+    *   Characters:
+        *   MARA (30s, sharp, negotiator, trying to secure a deal)
+        *   RENN (50s, powerful corporation head, skeptical, holding all the cards)
+    *   Scene Context: Mara is in Renn's opulent office, trying to convince him to fund her risky but potentially revolutionary tech project.
+    *   Objective: Mara needs to secure funding; Renn needs to be convinced it's not a waste.
+    *   Tone: Tense, high-stakes, professional but with underlying power dynamics.
+
+*   **Cline Generated Dialogue (Excerpt):**
+
+    **INT. RENN'S OFFICE - DAY**
+
+    Sunlight streams into a vast, minimalist office. RENN sits behind a large obsidian desk. MARA stands opposite, composed but with a hint of nervousness.
+
+    <center>RENN</center>
+    > Your proposal is... ambitious, Ms. Thorne. Some might say reckless.
+
+    <center>MARA</center>
+    > (Meeting his gaze)
+    > Revolutionary, Mr. Renn. And the data supports its viability. The potential return isn't just financial; it's transformative.
+
+    <center>RENN</center>
+    > Potential. A word that costs investors billions every year. My company deals in certainties. What certainty can you offer me beyond these projections?
+
+    <center>MARA</center>
+    > The certainty that without this kind of innovation, 'certainty' becomes stagnation. We're offering you the chance to lead, not just compete. I've also secured provisional patents on the core technology.
+
+    <center>RENN</center>
+    > (A flicker of interest in his eyes, quickly masked)
+    > Patents can be challenged. And leaders often find themselves with arrows in their backs. What's your bottom line? How much of my 'certainty' are you asking for this 'transformation'?
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Dialogue Generation & Refinement (Fiction)"
+path: "prompts/use_cases/content-creation-and-management/creative-writing-storytelling/dialogue-generation-refinement.md"
+type: "use_case_guide"
+description: "Generates or refines dialogue for fictional characters that is natural, reveals character, and advances plot."
+triggers: ["write dialogue", "character conversation", "fiction dialogue", "refine dialogue scene", "script dialogue"]
+weight: 100

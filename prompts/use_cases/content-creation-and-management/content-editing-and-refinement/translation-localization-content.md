@@ -80,3 +80,34 @@
 *   **Completeness:** Has all relevant source content been translated and localized?
 *   **Tone Preservation/Adaptation:** Is the intended tone effectively rendered in the target language?
 *   **User/Target Audience Acceptance (Indirect):** Would a native speaker from the target locale find the content clear, natural, and appropriate?
+
+## 6. Example Output Structure/Format
+**Scenario:** User wants to translate a simple English marketing slogan into Spanish for Spain, with localization.
+*   **User Input:**
+    *   Source Text: "Our new app: Your daily dose of sunshine!"
+    *   Source Language: English (US)
+    *   Target Language & Locale: Spanish (Spain)
+    *   Purpose: App store description snippet.
+    *   Brand Voice: Playful, friendly.
+
+*   **Cline Generated Translated & Localized Text:**
+
+    **Original (English US):** "Our new app: Your daily dose of sunshine!"
+
+    **Translation & Localization (Spanish - Spain):**
+    "Nuestra nueva app: ¡Tu rayito de sol diario!"
+
+    *   **Localization Notes/Rationale:**
+        *   "Rayito de sol" (little ray of sunshine) maintains the playful and positive imagery of "dose of sunshine" while being a natural and endearing expression in Spanish.
+        *   Using "¡...!" for exclamations is standard.
+        *   "Diario" correctly translates to "daily."
+        *   The overall tone remains friendly and inviting.
+
+---
+**Frontmatter for `prompt_inventory.yaml`:**
+name: "Translation and Localization of Content"
+path: "prompts/use_cases/content-creation-and-management/content-editing-and-refinement/translation-localization-content.md"
+type: "use_case_guide"
+description: "Translates text and adapts (localizes) it for cultural and linguistic nuances of a target audience/market."
+triggers: ["translate content", "localize text", "multilingual adaptation", "translate to spanish", "localize for japan"]
+weight: 100
