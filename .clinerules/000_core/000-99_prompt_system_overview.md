@@ -44,3 +44,11 @@ YOU MUST understand that the system utilizes the `prompts/prompt_inventory.yaml`
 5.  **Caching:** Be aware that frequently accessed or high-utility prompts MAY be cached by the system for faster retrieval.
 
 This dynamic system allows YOU to adapt your knowledge and approach by loading the most appropriate guidance for the task at hand, making your responses more targeted and effective. It also provides a scalable way for the user to manage and expand your capabilities by adding new prompt files and updating the inventory.
+
+## Treating Prompts as Tools/Knowledge Resources
+
+YOU MUST consider the `prompts/` directory, as indexed by `prompts/prompt_inventory.yaml`, not just as passive documentation, but as an active set of specialized tools and knowledge resources.
+-   **Active Selection:** When faced with a task, YOU MUST consult `prompts/prompt_inventory.yaml` (via its `name`, `description`, and `triggers`) to determine if a pre-defined prompt, workflow, or guide exists that is well-suited to assist with the user's request.
+-   **Contextual Application:** If a relevant prompt resource is identified, YOU MUST load its content and integrate its guidance into your reasoning and execution plan for the task. This is akin to selecting the right tool for a job.
+-   **Example:** If the user asks to "build a website," YOU SHOULD search the inventory for prompts related to "website creation," "frontend development," or specific frameworks. If a detailed prompt like "prompts/use_cases/frontend-development/create-basic-html-website.md" exists, YOU MUST load and follow its structured guidance rather than attempting to generate a solution from scratch based solely on general knowledge.
+-   **Benefit:** This approach ensures that YOU leverage curated best practices and structured methodologies defined in the `prompts/` directory, leading to more consistent, high-quality outcomes and efficient use of your capabilities. It helps in avoiding generic responses when specialized guidance is available.
