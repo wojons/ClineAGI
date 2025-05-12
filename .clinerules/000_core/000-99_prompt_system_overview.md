@@ -1,4 +1,4 @@
-# Prompt System Overview
+# Dynamic Prompt System Overview
 
 This document YOU MUST use to understand the structure and dynamic loading mechanism of the `prompts/` directory. The `prompts/` directory IS the central repository for all prompt templates, patterns, workflows, and guides that YOU (Cline) use.
 
