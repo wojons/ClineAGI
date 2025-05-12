@@ -10,25 +10,25 @@ globs: []
 
 ## Objective
 
-To ensure that user feedback is systematically captured and stored in dedicated `feedback.md` files, either globally or within the active project's memory bank, to inform continuous improvement and preference learning.
+YOU MUST ensure that user feedback is systematically captured and stored in dedicated `feedback.md` files, either globally or within the active project's memory bank, to inform continuous improvement and preference learning.
 
 ## Trigger
 
-This workflow is triggered whenever the user provides explicit feedback, praise, or criticism regarding Cline's performance, actions, or suggestions.
+This workflow IS TRIGGERED whenever the user provides explicit feedback, praise, or criticism regarding Cline's performance, actions, or suggestions.
 
 ## Workflow
 
-1.  **Identify Feedback:** Recognize when a user message contains feedback about performance, behavior, or results.
+1.  **Identify Feedback:** YOU MUST recognize when a user message contains feedback about performance, behavior, or results.
 2.  **Determine Context:**
-    *   Check if there is an active project context.
-    *   If an active project exists, the feedback is likely related to that project.
-    *   If no active project exists, the feedback is likely general or related to the core system.
+    *   YOU MUST check if there is an active project context.
+    *   If an active project exists, the feedback IS LIKELY related to that project.
+    *   If no active project exists, the feedback IS LIKELY general or related to the core system.
 3.  **Determine Storage Location:**
-    *   If the feedback is project-specific, the target file is `projects/{{PROJECT_NAME}}/memory-bank/feedback.md`.
-    *   If the feedback is global, the target file is `memory-bank/feedback.md`.
-4.  **Format Feedback:** Structure the user's feedback according to the `feedback.md` template defined below. Include relevant metadata.
-5.  **Append Feedback:** Use the `write_to_file` tool with the `append` option (if available, otherwise read, append, and write) to add the formatted feedback entry to the determined `feedback.md` file. Ensure a clear separator (e.g., `---`) between entries.
-6.  **Acknowledge (Optional but Recommended):** Briefly acknowledge to the user that their feedback has been recorded. Avoid conversational apologies unless necessary; focus on confirmation.
+    *   If the feedback is project-specific, the target file IS `projects/{{PROJECT_NAME}}/memory-bank/feedback.md`.
+    *   If the feedback is global, the target file IS `memory-bank/feedback.md`.
+4.  **Format Feedback:** YOU MUST structure the user's feedback according to the `feedback.md` template defined below. YOU MUST include relevant metadata.
+5.  **Append Feedback:** YOU MUST use the `write_to_file` tool with the `append` option (if available, otherwise read, append, and write) to add the formatted feedback entry to the determined `feedback.md` file. YOU MUST ensure a clear separator (e.g., `---`) between entries.
+6.  **Acknowledge (Optional but Recommended):** YOU SHOULD briefly acknowledge to the user that their feedback has been recorded. YOU MUST avoid conversational apologies unless necessary; focus on confirmation.
 
 ## Feedback File Structure (`feedback.md`)
 

@@ -10,10 +10,10 @@ globs: []
 
 These guidelines define how Cline operates in its agent loop and processes information.
 
-- You are operating in an agent loop, iteratively completing tasks through these steps:
-    1. Analyze Events: Understand user needs and current state through event stream, focusing on latest user messages and execution results.
-    2. Select Tools: Choose next tool call based on current state, task planning, relevant knowledge and available data APIs.
-    3. Wait for Execution: Selected tool action will be executed by sandbox environment with new observations added to event stream.
-    4. Iterate: Choose only one tool call per iteration, patiently repeat above steps until task completion.
-    5. Submit Results: Send results to user via message tools, providing deliverables and related files as message attachments.
-    6. Enter Standby: Enter idle state when all tasks are completed or user explicitly requests to stop, and wait for new tasks.
+YOU MUST operate in an agent loop, iteratively completing tasks through these steps:
+1.  **Analyze Events:** YOU MUST understand user needs and current state through the event stream, focusing on the latest user messages and execution results.
+2.  **Select Tools:** YOU MUST choose the next tool call based on the current state, task planning, relevant knowledge, and available data APIs.
+3.  **Wait for Execution:** The selected tool action will be executed by the sandbox environment, with new observations added to the event stream.
+4.  **Iterate:** YOU MUST choose only one tool call per iteration and patiently repeat the above steps until task completion.
+5.  **Submit Results:** YOU MUST send results to the user via message tools, providing deliverables and related files as message attachments.
+6.  **Enter Standby:** YOU MUST enter an idle state when all tasks are completed or when the user explicitly requests to stop, and wait for new tasks.

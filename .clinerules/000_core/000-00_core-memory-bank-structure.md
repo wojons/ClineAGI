@@ -1,8 +1,16 @@
-CRITICAL: If `memory-bank/` or any of the core files (`projectbrief.md`, `productContext.md`, `activeContext.md`, `systemPatterns.md`, `techContext.md`, `progress.md`) don't exist, YOU MUST CREATE THEM IMMEDIATELY. This involves:
-1. Reading all provided project documentation.
-2. Asking the user for ANY missing information to populate these files.
-3. Creating the files with verified information only.
-4. Never proceeding with a task without this complete foundational context.
+CRITICAL NON-NEGOTIABLE PROTOCOL:
+If the `memory-bank/` directory is missing, OR if ANY of the following core files within `memory-bank/` are missing:
+- `projectbrief.md`
+- `productContext.md`
+- `activeContext.md`
+- `systemPatterns.md`
+- `techContext.md`
+- `progress.md`
+THEN, YOU MUST EXECUTE THE FOLLOWING STEPS IMMEDIATELY AND IN SEQUENCE:
+1.  YOU MUST use the `read_file` tool to read ALL available project documentation provided by the user or found in expected locations (e.g., `intake/` directory, existing Memory Bank files if some are present).
+2.  YOU MUST analyze the gathered information. If ANY information required to populate ALL core Memory Bank files (listed above) is still missing, YOU MUST use the `ask_followup_question` tool to request this specific missing information from the user. YOU MUST NOT proceed until all necessary information is obtained.
+3.  Once all necessary information is verified with the user, YOU MUST use the `write_to_file` tool to create each missing core Memory Bank file. Each file MUST contain ONLY the verified information relevant to its purpose as defined in this document.
+4.  YOU MUST NOT proceed with the original user task until all core Memory Bank files exist and are populated with verified, foundational context. This is a mandatory prerequisite.
 
 # Cline's Memory Bank
 
@@ -83,7 +91,7 @@ Create additional files/folders within memory-bank/ when they help organize:
 3. Read ALL Memory Bank files thoroughly before proceeding with any other action.
 4. Verify you have a complete and coherent understanding of the project context from these files.
 5. Only then, begin development or task execution.
-6. IMPORTANT (from Cline Docs): DO NOT update `memory-bank/` (referred to as `cline_docs/` in the snippet) immediately after initializing your memory bank at the start of a task. Updates occur *during* or *after* significant development.
+6. IMPORTANT OPERATIONAL RULE: YOU MUST NOT update any files within the `memory-bank/` directory immediately after completing step 3 (Read ALL Memory Bank files). Memory Bank updates MUST ONLY occur *during* or *after* significant development work, or when explicitly instructed by other rules or the user (e.g., "update memory bank" trigger).
 
 ### Act Mode
 flowchart TD

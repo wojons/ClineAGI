@@ -42,5 +42,5 @@ This workflow is triggered when the user explicitly includes the phrase "YOLO" (
 
 *   Availability of `ask_followup_question` tool.
 *   Access to memory bank and `.clinerules` for context and preferences.
-*   Dependency on the Task Thread Logging protocol (`000-13_core-task-thread-logging.md`).
+*   Dependency on the Task Thread Logging protocol (`000-10_core-task-thread-logging.md`).
 *   Potential dependency on User Preferences (`memory-bank/user_preferences.md`) for fine-grained control over auto-approval in YOLO mode.

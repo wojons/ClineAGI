@@ -1,10 +1,10 @@
 # Prompt System Overview
 
-This document outlines the structure and dynamic loading mechanism of the `prompts/` directory, which serves as the central repository for all prompt templates, patterns, workflows, and guides used by Cline.
+This document YOU MUST use to understand the structure and dynamic loading mechanism of the `prompts/` directory. The `prompts/` directory IS the central repository for all prompt templates, patterns, workflows, and guides that YOU (Cline) use.
 
 ## `prompts/` Directory Structure
 
-The `prompts/` directory is organized hierarchically to categorize different types of prompt resources:
+YOU MUST understand that the `prompts/` directory IS organized hierarchically to categorize different types of prompt resources:
 
 -   **`agent_prompts/`**: Contains core prompts related to the agent's fundamental reasoning and operational loops.
 -   **`core_workflows/`**: Defines essential, high-level workflows that are central to Cline's operation (e.g., intake processing).
@@ -24,7 +24,7 @@ The `prompts/` directory is organized hierarchically to categorize different typ
 
 ## `prompts/prompt_inventory.yaml`
 
-This crucial YAML file acts as the master index for all dynamically loadable prompts within the `prompts/` directory. Each entry in this file describes a prompt resource and includes:
+YOU MUST understand that this crucial YAML file acts as the master index for all dynamically loadable prompts within the `prompts/` directory. Each entry in this file describes a prompt resource and includes:
 
 -   `name`: A human-readable name for the prompt.
 -   `path`: The file path to the prompt's Markdown file within the `prompts/` directory.
@@ -35,12 +35,12 @@ This crucial YAML file acts as the master index for all dynamically loadable pro
 
 ## Dynamic Prompt Loading Mechanism
 
-The system utilizes the `prompts/prompt_inventory.yaml` file to dynamically select and load relevant prompts based on the current task or user query. The process generally involves:
+YOU MUST understand that the system utilizes the `prompts/prompt_inventory.yaml` file to dynamically select and load relevant prompts based on the current task or user query. The process generally involves these steps, which YOU MUST follow:
 
-1.  **Query Analysis:** The user's input and the current task context are analyzed to extract key terms, intents, and relevant entities.
-2.  **Inventory Matching:** These extracted elements are matched against the `name`, `description`, and `triggers` fields of each entry in `prompts/prompt_inventory.yaml`.
-3.  **Relevance Scoring & Prioritization:** Matches are scored based on relevance (e.g., number of trigger words matched, semantic similarity) and the predefined `weight` of the prompt. The `type` field can also be used for context-specific filtering (e.g., if the task involves "Slidev," `tech_specific_guide` prompts related to Slidev would be prioritized).
-4.  **Prompt Loading:** The Markdown content from the `path` of the highest-scoring, relevant prompt(s) is loaded into Cline's context.
-5.  **Caching:** Frequently accessed or high-utility prompts may be cached for faster retrieval.
+1.  **Query Analysis:** YOU MUST analyze the user's input and the current task context to extract key terms, intents, and relevant entities.
+2.  **Inventory Matching:** YOU MUST match these extracted elements against the `name`, `description`, and `triggers` fields of each entry in `prompts/prompt_inventory.yaml`.
+3.  **Relevance Scoring & Prioritization:** YOU MUST score matches based on relevance (e.g., number of trigger words matched, semantic similarity) and the predefined `weight` of the prompt. The `type` field CAN also be used for context-specific filtering (e.g., if the task involves "Slidev," `tech_specific_guide` prompts related to Slidev SHOULD be prioritized).
+4.  **Prompt Loading:** YOU MUST load the Markdown content from the `path` of the highest-scoring, relevant prompt(s) into your active context.
+5.  **Caching:** Be aware that frequently accessed or high-utility prompts MAY be cached by the system for faster retrieval.
 
-This dynamic system allows Cline to adapt its knowledge and approach by loading the most appropriate guidance for the task at hand, making its responses more targeted and effective. It also provides a scalable way to manage and expand Cline's capabilities by simply adding new prompt files and updating the inventory.
+This dynamic system allows YOU to adapt your knowledge and approach by loading the most appropriate guidance for the task at hand, making your responses more targeted and effective. It also provides a scalable way for the user to manage and expand your capabilities by adding new prompt files and updating the inventory.

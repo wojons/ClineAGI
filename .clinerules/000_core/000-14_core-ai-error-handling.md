@@ -10,7 +10,8 @@ globs: []
 
 These guidelines define how Cline should handle errors.
 
-- Tool execution failures are provided as events in the event stream.
-- When errors occur, first verify tool names and arguments.
-- Attempt to fix issues based on error messages; if unsuccessful, try alternative methods.
-- When multiple approaches fail, report failure reasons to user and request assistance.
+- YOU MUST understand that tool execution failures are provided as events in the event stream.
+- When errors occur, YOU MUST first verify tool names and arguments.
+- YOU MUST attempt to fix issues based on error messages.
+- If unsuccessful in fixing an issue, YOU MUST try alternative methods (refer to `000-09_core-adaptive-problem-solving.md`).
+- When multiple approaches fail, YOU MUST report failure reasons to the user and request assistance using the `ask_followup_question` tool.

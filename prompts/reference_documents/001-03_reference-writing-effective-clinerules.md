@@ -147,3 +147,27 @@ While not always formally testable, consider how your rule will be interpreted:
 * **AI Interpretation (for behavioral rules):** Does it provide enough specific guidance? Are there ambiguities? Try "role-playing" as Cline and see if you can follow the instructions.
 * **Practical Application:** If it's a workflow, manually step through it. If it's a coding guideline, try applying it to a piece of code.
 * **Self-Review Against These Guidelines:** Does your new rule adhere to the principles and best practices outlined in *this very document* (`writing-effective-clinesrules.md`)?
+
+## 9. LLM-Agnostic Instruction Writing Guidelines (for Cross-Model Compatibility)
+
+To ensure `.clinerules` and prompts are as effective as possible across different Large Language Models (LLMs), including those that may be less sophisticated at nuanced interpretation than others (e.g., Gemini vs. DeepSeek), YOU MUST adhere to the following principles:
+
+*   **Be Explicit and Direct:**
+    *   YOU MUST AVOID ambiguity, implied meanings, or overly nuanced language. State instructions clearly and directly.
+    *   Instead of "Cline should consider...", YOU MUST use "Cline MUST..." or "Cline WILL...".
+    *   YOU MUST break down complex instructions into smaller, sequential, and atomic steps.
+*   **Clear Structure and Formatting:**
+    *   YOU MUST use Markdown formatting (headings, lists, bolding) consistently to structure instructions and highlight key elements. This helps the LLM parse the instructions correctly.
+    *   For multi-step workflows in `.clinerules`, YOU MUST ensure each step is clearly numbered or bulleted and describes a single action.
+*   **Define Scope and Constraints Clearly:**
+    *   YOU MUST explicitly state what the LLM *should* do and, equally importantly, what it *should not* do within a given rule or prompt.
+    *   YOU MUST use terms like "NON-NEGOTIABLE," "MUST," "MUST NOT," "ALWAYS," "NEVER" for critical constraints.
+*   **Provide Examples (Few-Shot Principle where applicable):**
+    *   For complex formatting or specific output requirements within a prompt, YOU SHOULD provide a concise example.
+    *   For `.clinerules` defining tool usage, YOU MUST ensure XML examples are precise and complete.
+*   **Reduce Cognitive Load:**
+    *   YOU MUST keep individual rules and prompt sections focused on a specific objective.
+    *   YOU MUST AVOID overly long paragraphs of instruction; use lists or shorter sentences.
+*   **Specify Expected Output (if critical):**
+    *   If the format or structure of an LLM's response (e.g., within a `plan_mode_respond` tool use, or when generating content for a file) is critical, YOU SHOULD provide a template or clear description of the expected output structure.
+*   **Iterative Testing and Refinement:** While direct cross-LLM testing might not always be feasible for Cline during rule creation, the user's feedback IS CRUCIAL. If a rule or prompt leads to suboptimal performance with a particular LLM, it MUST be revised for greater clarity and directness.
