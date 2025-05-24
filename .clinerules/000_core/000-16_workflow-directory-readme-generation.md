@@ -84,5 +84,6 @@ This workflow IS TRIGGERED when:
 *   **Clarity:** Is the README easy to understand?
 *   **Accuracy:** Does it correctly describe the directory's current purpose and typical contents?
 *   **Completeness:** Does it provide enough information for someone to understand how to use/manage the directory?
-*   **Helpfulness:** Would this README help a developer (including future Cline or human developers) navigate and contribute to this part of the project effectively?
+*   **Helpfulness:** Would this README help a developer (including future Cline or human developers) navigate and contribute to this part of the project effectively? These READMEs can act as "breadcrumbs" for the LLM to understand directory context.
 *   **Actionability:** Does it provide clear guidelines on what belongs (and doesn't belong) in the directory?
+*   **Future Considerations:** The naming convention or visibility (e.g., making them hidden files like `.directory-purpose.md`) might be revisited in the future to optimize LLM interaction or reduce clutter for human users, while still serving their primary purpose as contextual guides.
